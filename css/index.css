@@ -1,0 +1,113 @@
+/*-----------------------------------------------------------------------------------------------------
+
+
+Diese css datei gilt NUR für den Index-Slider!
+
+
+------------------------------------------------------------------------------------------------------*/
+
+
+@font-face { 
+		font-family: 'meine-schrift';
+		src: url('../fonts/Raleway-Medium.ttf') format('truetype'); }
+		
+			body{				
+							
+			font-family: meine-schrift;
+			color: black;	
+			box-shadow: none;
+			
+				}	
+				
+			footer {
+				background: #fff;
+				width: 100%;
+				height: 60px;
+				padding-top: 1%;
+				position: fixed;
+				left: 0;
+				bottom: 0;
+			}		
+			
+		
+			.txt{
+				margin-top: 230px;
+				font-size: 14.5px;
+			}			
+			
+			.item{				
+			
+			box-shadow: none;		
+
+			}				
+			
+			#logo{			
+			margin-top:-30px;	
+			margin-bottom: 15%;		
+			}		
+
+			.wrapper{		
+			margin-top: 0%;		
+			}		
+			
+			#loginBtn{			
+			width: 30%;			
+			height: 30px;			
+			font-size: 12px;		
+			margin-left: 35%;		
+			float: left;			
+			color: #fff;		
+			margin-top: 5%;			
+			background-color: #a4338a;			
+			border-radius: 5%;		}
+			
+			/* linker Button*/			
+			#btnLeft{			
+			float:left; 	
+			margin-left: 4%;
+			background-color: Honeydew;	
+			}/* Rechter Button*/
+
+			#btnRight{		
+			float:right; 		
+			margin-right: 2%;	
+			background-color: Honeydew;	
+			}
+			
+			/* Links und rechts */	
+
+			#btnRight,#btnLeft{		
+			margin-top: -20%;
+			text-align: center;		
+			width: 30%;			
+			height: 25px;		
+			padding-top: 1%;
+			font-size: 12px;	
+			color: #a4338a;		
+			margin-top: 5%;		
+			background-color: #ffffff;		
+			border-radius: 5%;			
+			box-shadow: 0 5px 5px -5px #333;	
+			z-index: 11;
+
+			}	
+
+			#btnRight:hover, #btnLeft:hover{	
+			transition: background 2s #383838;	
+			-webkit-box-shadow: 0px 9px 2px #a4338a;	
+			-moz-box-shadow: 0px 9px 2px #a4338a;	
+			box-shadow: 0px 0px 9px #a4338a;		
+			}				
+			
+			#rM, #bId, #email, #pw0, #pw1{	
+			font-size: 12px;		
+			padding-top: 7px;	
+			}
+			
+			.butnsf{
+				margin-top: -2.5%;
+			}
+			
+			.butns{
+				margin-top: -3%;
+			}

@@ -1,0 +1,62 @@
+/****************************************************
+		* Seitenspezifische CSS Für die Farben
+		****************************************************/	
+		@font-face { font-family: 'meine-schrift';
+				 src: url('../fonts/Raleway-Medium.ttf') format('truetype'); }
+				
+		h1{
+			font-size: 		16px;
+			font-family:	meine-schrift;
+		}
+		
+		h2{
+			font-size: 		12px;
+			font-family: 	meine-schrift;
+			color: 			#8fbc26;
+		}
+		
+		body{
+			font-family: 	  meine-schrift;
+			background-color: white;
+			font-size: 		  12px;
+			color: 			  #383838;
+		}
+		
+		#notiz{
+			font-size: 		12px;
+		}
+		
+
+			h4{
+				font-size: 14px;
+				color: : #8fbc26;
+				float: left;
+				margin-left: 2%;
+				margin-bottom: 1%;
+			}
+			h5{
+				font-size: 14px;
+				color: : #8fbc26;
+				float: left;
+				margin-left: 7%;
+				margin-bottom: 2%;
+			}
+			
+			.btn{  
+				  background: white;
+				  border: 1px solid #8fbc26;
+				  color: #8fbc26;
+				}
+
+			.btn:hover {
+				  background: #383838;
+				  border: 1px solid white;
+				  color: #c0c0c0;
+				}
+			.switch{
+				margin-left: 8%;
+			}
+			
+			#vertrag{
+				margin-left: 8%;
+			}
