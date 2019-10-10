@@ -62,110 +62,78 @@
     </head>
 
     <body>
-        <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
-            
-<!--  Indikatoren definiert, class activ auf wert 0 (Erstes Bild) gesetzt. -->			
-			<ol class="carousel-indicators">
-                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-				<li data-target="#bootstrap-touch-slider" data-slide-to="3"></li>
-				<li data-target="#bootstrap-touch-slider" data-slide-to="4"></li>
-				<li data-target="#bootstrap-touch-slider" data-slide-to="5"></li>
-			</ol>
-           
-<!--  Erstes Bild und Text im Silder, durch  class= item activ definiert -->
-		   <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                   <!--  Verlinkung zum 1.Bild -->
-				   <img src="img/slider1_5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="container">
-                        <div class="row">
-                            <div class="slide-text slide_style_center">
-                               <div class="txt"> 
-									</br> </br> 
-									<!--  Textbereich -->
-									<p>Herzlichen Glückwunsch</p>
-									<p>zu deinem digitalen Haushaltsordner</p>
-							   </div>
-							   </br>
-							</div>
-                        </div>
-                    </div>
-                </div>
+		<div class="row" style="max-height: 50px;">
+		<!--  Die Buttons -->
+		<!-- Navigation 1. Registrieren (register.php) / 2. Einloggen (page-login.php) -->
+				<a id="btnLeft" href="forms/register.php"><p class="btn-text">Registrieren</p></a>
+				<a id="btnRight" href="forms/page-login.php"><p class="btn-text">Einloggen</p></a>
+		</div>
+		<div class="row" style="width: 100%;">
 
-<!--  Zweites Bild und Text im Silder -->
-                <div class="item">
-                    <!--  Verlinkung zum 2.Bild -->
-					<img src="img/slider2_5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="row">
-							<div id="second" class="slide-text slide_style_center">
-								<div class="txt"> 
-								</br> </br> 
-								 <!--  Textbereich -->
-								 <p>Ab heute hast du alles übersichtlich</p>
-								 <p>in deiner Hosentasche</p>
-							</div>
-					
-						</div>
-					</div>
-				</div>
+		<div class="col-lg-12" style="margin: 0 0 0 0;">
+            <div id="my-slider" class="carousel slide" data-ride="carousel" style="width: 100%">
+              <!--  Indikatoren definiert, class activ auf wert 0 (Erstes Bild) gesetzt. -->			
+   
+                 <ol class="carousel-indicators" style="background-color: #a4338a;">
+                    <li data-target="#my-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#my-slider" data-slide-to="1"></li>
+                    <li data-target="#my-slider" data-slide-to="2"></li>
+					<li data-target="#my-slider" data-slide-to="3"></li>
+                    <li data-target="#my-slider" data-slide-to="4"></li>
+                 </ol>
+                <!--  Erstes Bild und Text im Silder, durch  class= item activ definiert -->
+ 
+                <div class="carousel-inner" role="listbox" style="position: relative;">
+                     <div class="item active">
+                         <img class="center-block" style="width:auto; height:auto;" src="img/slider1_5.jpg" alt="carousel" />
+                         <div class="carousel-caption" style="position: absolute;">
+						 	<h3><p class="carousel-text" style="color: black;">Herzlichen Glückwunsch</p></>
+							<h3><p style="color: black;">zu deinem digitalen Haushaltsordner</p></h3>
+                         </div>
+                     </div>
+					 <!--  Zweites Bild und Text im Silder -->
 
+                     <div class="item">
+                         <img class="center-block" style="width:auto; height:auto;" src="img/slider2_5.jpg" alt="carousel" />
+                         <div class="carousel-caption">
+                             <h3><p style="color: black;">Ab heute hast du alles übersichtlich</p></h3>
+							 <h3><p style="color: black;">in deiner Hosentasche</p></h3>
+                         </div>
+                     </div>
+					 <!--  Drittes Bild und Text im Silder -->				
 
-<!--  Drittes Bild und Text im Silder -->				
-				<div class="item">
-                    <!--  Verlinkung zum 3.Bild -->
-					<img src="img/slider3_5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="row">
-						<div id="second" class="slide-text slide_style_center">
-							 <div class="txt"> 
-								</br> </br> 
-								 <!--  Textbereich -->
-								 <p>Durch den Vertragswecker verpasst</p>
-								 <p>du keine Kündigungsfrist mehr</p>
-							 </div>
-						</div>
-					</div>
-				</div>
-			
+                        <div class="item">
+                         <img class="center-block" style="width:auto; height:auto;" src="img/slider3_5.jpg" alt="carousel" />
+                         <div class="carousel-caption">
+                             <h3><p style="color: black;">Durch den Vertragswecker verpasst</p></h3>
+							 <h3><p style="color: black;">du keine Kündigungsfrist mehr</p></h3>
+                         </div>
+                     </div>
+					 <!--  Viertes Bild im Slider -->			
 
-<!--  Viertes Bild im Slider -->			
-				<div class="item">
-                    <!--  Verlinkung zum 4.Bild -->
-					<img src="img/slider4_5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="row">
-						<div id="second" class="slide-text slide_style_center">
-							<div class="txt"> 
-								 </br></br>
-								 <!--  Textbereich -->
-								 <p>Wir suchen dir Verträge raus,</p>
-								 <p>die zu dir passen</p> 
-							</div>						
-						
-						</div>
-					</div>
-				</div>
+					 <div class="item">
+                         <img class="center-block" style="width:auto; height:auto;" src="img/slider4_5.jpg" alt="carousel" />
+                         <div class="carousel-caption">
+                             <h3><p style="color: black;">Wir suchen dir Verträge raus,</p></h3>
+							 <h3><p style="color: black;">die zu dir passen</p></h3>
+                         </div>
+                     </div>
+					 <!--  Fünftes Bild im Slider -->				
 
-
-<!--  Fünftes Bild im Slider -->				
-				<div class="item">
-                    <!--  Verlinkung zum 5.Bild -->
-					<img src="img/slider5_5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="row">
-						<div id="second" class="slide-text slide_style_center">
-						  <div class="txt">
-								</br></br>
-								<!--  Textbereich -->
-								<p>Dabei brauchst nicht auf </p>
-								<p>persönliche Beratung verzichten</p>
-						  </div>
-						</div>
-					</div>
-				</div>
-            </div>
-					
+					 <div class="item">
+                         <img class="center-block" style="width:auto; height:auto;" src="img/slider5_5.jpg" alt="carousel" />
+                         <div class="carousel-caption">
+                             <h3><p style="color: black;">Dabei brauchst nicht auf</p></h3>
+							 <h3><p style="color: black;">persönliche Beratung verzichten</p></h3>
+                         </div>
+                     </div>
+                 </div>
          
-		</div> 
+                   
+               </div>
+            </div>
+
+        
 <!-- Einbindung der Bootstrap-Slider Scripts -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -177,20 +145,16 @@
 				<script type="text/javascript">
 					$('#bootstrap-touch-slider').bsTouchSlider();
 				</script>
-
-<!--  Footer mit Navigation 1. Registrieren (register.php) / 2. Einloggen (page-login.php) -->
-			<footer>
-				<div class="butns"> <!--  Die Buttons -->
-					<a id="btnLeft"   href="forms/register.php" >Registrieren</a>
-					<a id="btnRight" href="forms/page-login.php" >Einloggen</a>
-				</div>
+		</div>
+<!-- Navigation 1. Registrieren (register.php) / 2. Einloggen (page-login.php) -->
+				
 							   
 <!--  Scripts zu den Bootstrap template -->
 				<script src="vendor/jquery/jquery.min.js"></script>
 				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 				<script src="vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 				<script src="js/klorofil-common.js"></script>
-			</footer>			
+					
     </body>
 </html>
 <?php } ?>

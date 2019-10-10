@@ -7,7 +7,8 @@
 	$sparten = [1 =>'strom',2 =>'gas',3 =>'mobilfunk',4 =>'tv',5 =>'internet'];
 	//Anmeldung Datenbank
 	try {
-		$pdo = new PDO('mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!');
+		$pdo = new PDO('mysql:host=localhost;dbname=db385776_41', 'root', '');
+		//'mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!'
 	} catch (PDOException $e) {
 		echo 'Verbindung fehlgeschlagen';
 		// Exception nur ausgeben, wenn getestet wird, sonst werden fuer jeden sichtbar alle Verbindungsdaten inklusive Passwort ausgegeben

@@ -63,9 +63,9 @@
 	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">		<!-- navbar-fixed-top-->
-			<div>
+			<span>
 				<h1>Deine Verträge</h1>  <!-- Anzeige im Header -->
-			</div>
+			</span>
 		</nav>
 		<div class="main">
 			<div class="main-content">
