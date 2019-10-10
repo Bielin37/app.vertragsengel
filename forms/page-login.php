@@ -100,18 +100,10 @@
 			background-color: white;
 			font-family: meine-schrift;
 			color: black;
+			padding-left: 10%;
+			padding-right: 10%;
 		}
 		
-		footer {
-            background: #fff;
-            width: 100%;
-            height: 60px;
-            padding-top: 1%;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-			border: none;
-        }
 		main{
 			padding-left: 10%;
 		}
@@ -120,23 +112,16 @@
 			color: #383838;
 		}
 		
-		.lead{
-			
-		
-		}
-		
 		input{
 			margin-left: 14.5%;
 		}
 		.form-control{
 			width: 70%;
-			margin-top: 1.5%;
+			margin-top: 5%;
 		}
-
-
 		
 		#all{
-			margin-top: 5%;
+			margin-top: ;
 			font-size: 12px;
 		}
 		
@@ -146,34 +131,35 @@
 		}
 		
 		#logo{
-			margin-top:-30px;
-			margin-bottom: 15%;
+			padding: 2% 5% 5% 5%;
 		}
-		
-		
+				
 		#loginBtn{
 			width: 30%;
 			height: 30px;
 			font-size: 12px;
-			margin-left: 35%;
-			float: left;
 			color: #fff;
-			margin-top: 5%;
 			background-color: #a4338a;
 			border-radius: 5%;
+			text-align:center;
+			margin-top: 5%;
 		}
 /* linker Button*/		
 		#btnLeft{
 			float:left; 
 			margin-left: 4%;
 			background-color: Honeydew;
+			position: absolute;
+			top: 90%;
+			width: auto;
 		}
 /* Rechter Button*/		
 		#btnRight{
 
 			float:right; 
-			margin-right: 2%;
 			background-color: Honeydew;
+			position: absolute;
+			top: 90%;
 		}
 
 /* Links und rechts */			
@@ -185,9 +171,10 @@
 			padding-top: 1%;
 			font-size: 12px;
 			color: #a4338a;
-			margin-top: 5%;
 			background-color: #ffffff;
 			border-radius: 5%;
+			position: relative;
+			bottom: 0;
 			
 			
 			box-shadow: 0 5px 5px -5px #333;
@@ -220,6 +207,29 @@
 			font-size: 12px;
 			padding-left: 7px;
 		}
+
+		.cursor{
+			position: absolute;
+			top: 5%;
+			right: 25%;
+			left: 25%;
+			bottom: 5%;
+			font-size: 25px;
+		}
+
+		.text{
+			position: absolute;
+			top: 25%;
+			right: 5%;
+			left: 5%;
+			bottom: 25%;
+		}
+
+		.button{
+			text-align: center;
+		}
+
+		
 		
 		
 		</style>
@@ -227,11 +237,10 @@
 
 <body>
 	<!-- WRAPPER -->
-	<div id="wrapper">
+	<div id="wrapper" style="position: relative;">
+	<div class="row">
 		<div class="vertical-align-wrap">
-			<div class="vertical-align-middle">
 					<div class="left">
-						<div class="content">
 							<div class="header">
 								<div id="logo" class="logo text-center"><img src="../img/logo2.png" alt="Vertragsengel Logo" width="180" height="70"></div>
 							</div>
@@ -246,29 +255,26 @@
 										<input type="password" name="passwort" class="form-control" id="signin-password" placeholder="Passwort" >
 									</div>
 									<div class="form-group clearfix">
-										</br></br>
 										<label class="fancy-checkbox element-left">
 											<input type="checkbox"	name="remember" value="1">
 											<span id="rM">remember</span>
 										</label>
 									</div>
-									<button id="loginBtn" type="submit" value="Abschicken" >LOGIN</button>
-									
+									<div class="button">
+										<button id="loginBtn" type="submit" value="Abschicken" >LOGIN</button>	
+									</div>
 								</form>
-						</div>
+
 					</div>
-					<div class="clearfix"></div>
-				</div>
 			</div>
-		</div>
-		<footer>
-			<a  id="btnLeft"  href="../index.php" ><i class="fa fa-arrow-circle-left"></i></a>
-			<a  id="btnRight" href="forms/register.php">Registrieren</a>
 			
+		</div>
+			<a  id="btnLeft"  href="../index.php" ><i class="fa fa-arrow-circle-left cursor"></i></a>
+			<a  id="btnRight" href="forms/register.php"><p class="text"><p class="text">Registrieren</p></a>
+		</div>
 			<script src="../vendor/jquery/jquery.min.js"></script>
 			<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 			<script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 			<script src="../js/klorofil-common.js"></script>
-		</footer>
 	</body>
 </html>

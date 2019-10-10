@@ -16,10 +16,10 @@ Diese css datei gilt NUR für den Index-Slider!
 			font-family: meine-schrift;
 			color: black;	
 			box-shadow: none;
-			width: 100%;
-		
+			padding-left: 15%;
+			padding-right: 15%;		
 			
-				}	
+		}	
 				
 			footer {
 				background: #fff;
@@ -80,7 +80,7 @@ Diese css datei gilt NUR für den Index-Slider!
 
 			#btnRight,#btnLeft{		
 			text-align: center;		
-			width: 30%;			
+			width: 20%;			
 			height: 25px;		
 			font-size: 12px;	
 			color: #a4338a;		
