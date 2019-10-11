@@ -52,47 +52,75 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
 	<link rel="stylesheet" href="css/auswahl_ueber.css">  <!--  Hier kann auf den style der vertragsAuswahl und VertragsUebersicht zugegriffen werden -->
 
-	<style>
-		#wrapper .main {
-  			padding-top: 50px; 
-  		}
-	</style>
 </head>
 	
 <body>	
-	<div id="wrapper">
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-default navbar-fixed-top">		<!-- navbar-fixed-top-->
+		<div>
 			<span>
-				<h1>Deine Verträge</h1>  <!-- Anzeige im Header -->
+				<h1 class="alert alert-success" style="width=100%;">Deine Verträge</h1>  <!-- Anzeige im Header -->
 			</span>
-		</nav>
-		<div class="main">
-			<div class="main-content">
-				<div class="container-fluid">
+		</div>
+	<div id="wrapper" style="display: flex; align-items: stretch;">
+	
+		
+	<div id="navbar-menu" style="display: flex; flex-direction: column; flex-wrap: no-wrap; width: 20%;">
+		<ul class="nav navbar-nav navbar-right" style="display: flex; flex-direction: column; flex-wrap: no-wrap; ">
+			<!-- Default dropup button -->	
+			 <li class="btn-group dropup">
+					<a href="vertragsAuswahl.php" class="dropdown-toggle" ><i class="glyphicon glyphicon-th"></i><span>VA</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
+			 </li>
+			<!-- Default dropup button -->		
+			 <li class="btn-group dropup">
+				<a href="vertragsUebersicht.php" class="dropdown-toggle"><i class="glyphicon glyphicon-list-alt"></i><span>VUe</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
+			 </li>
+			<!-- Default dropup button -->	
+			 <li class="btn-group dropup">
+				<a href="forms/pDaten.php" class="dropdown-toggle"><i class="glyphicon glyphicon-user"></i><span>Profil</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
+			 </li>
+			<!-- Default dropup button -->	
+			 <li class="btn-group dropup">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i><span>Einstellungen</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+				<ul class="dropdown-menu">
+					<li><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+					<li><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
+					<li><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
+					<li><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
+					<li><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+		<!-- NAVBAR -->
+			<!-- navbar-fixed-top-->
+		
 
 					<!-- Diagramm -->
+					
 
-					<div class="col-md-4-2">
+					<div style="margin-top: 0px; display: flex; flex-direction: row; flex-wrap: no-wrap; width: 100%; padding-left:5%;">
+						
 						<!-- REALTIME CHART -->
-						<div class="panel panel-headline">
-							<div class="panel-heading">
-								<h2>Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2>
-								<!-- hier funktion einbauen! -->
-							</div>
-							</br></br>
-							<div class="panel-body">
-								<div id="system-load" class="easy-pie-chart" data-percent="">
-									<span class="percent"></span>
+						<div class="panel panel-headline" style="margin-top: 0px;">
+								<div class="alert alert-danger alert-dismissible" >
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+									<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
+								</div> 
+								<div class="panel-heading">
+									<h2>Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2>
+									<!-- hier funktion einbauen! -->
 								</div>
-								<ul class="list-unstyled list-justify">
-									<li>Im Moment hast du <label id="anzahlvertraege"> Verträge
-									<li>und zahlst dafür <label id="gesamtkosten">.
-								</ul>	
-							</div>
+								<div class="panel-body">
+									<div id="system-load" class="easy-pie-chart" data-percent="" style="margin-top: 0px;">
+										<span class="percent"></span>
+									</div>
+									<ul class="list-unstyled list-justify">
+										<li>Im Moment hast du <label id="anzahlvertraege"> Verträge
+										<li>und zahlst dafür <label id="gesamtkosten">.
+									</ul>	
 						</div>
-					</div>	
-
+						
+					
 					<!-- Diagramm Ende -->
 					<!-- Start - Profil vervollständigen: Meldung -->
 
@@ -127,11 +155,7 @@
 							$_SESSION['profil'] = 0;
 					?>
 			
-		 			<div class="alert alert-danger alert-dismissible">
-						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
-						<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-					</div> 
+		 			
 					
 					<?php
 						 } else {
@@ -324,7 +348,8 @@
 	</script>
 
 	<!-- footer -->
-	<?php include('forms/include/footer2.php'); ?>
+	
+
 
 </body>
 </html>

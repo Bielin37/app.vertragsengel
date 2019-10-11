@@ -9,6 +9,7 @@ html {
   }
 
 body {
+  width: 100%;
   height: 100%;
   background-color: white;
   font-family: Calibri;
@@ -65,7 +66,7 @@ footer {
   position: fixed;
   left: 0; }
 
-#wrapper .main {
+/** #wrapper .main {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -75,22 +76,22 @@ footer {
   left: 0;
   position: relative;
   float: right;
-  background-color: white; }
+  background-color: white; }**/
 
-#wrapper #sidebar-nav,
+/*#wrapper #sidebar-nav,
 #wrapper .main {
-  padding-top: 80px; }
+  padding-top: 80px; }**/
 
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
   #wrapper #sidebar-nav,
   #wrapper .main {
-    padding-top: 130px; } }
+    padding-top: 130px; } }**/
 
 .layout-fullwidth #wrapper .sidebar {
   left: -260px; }
 
-.layout-fullwidth #wrapper .main {
-  width: 100%; }
+/*.layout-fullwidth #wrapper .main {
+  width: 100%; }*/
 
 .layout-fullwidth #wrapper .navbar {
   left: 0 !important; }
@@ -101,12 +102,12 @@ footer {
 .offcanvas-active #wrapper .sidebar {
   left: 0; }
 
-.offcanvas-active #wrapper .main {
+/*.offcanvas-active #wrapper .main {
   width: 100%;
   position: relative;
-  left: 260px; }
+  left: 260px; }*/
 
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
   #wrapper .sidebar {
     left: -260px; }
   #wrapper .main {
@@ -116,7 +117,7 @@ footer {
   #wrapper .btn-toggle-fullwidth {
     color: #00AAFF; }
   .btn-toggle-minified {
-    display: none; } }
+    display: none; } }*/
 
 .main-content {
   padding: 28px 10px; }

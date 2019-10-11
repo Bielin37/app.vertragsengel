@@ -1,6 +1,6 @@
-<footer>
-	<div id="navbar-menu">
-		<ul class="nav navbar-nav navbar-right">
+<footer class="footer" style="display: flex; flex-direction: column; flex-wrap: no-wrap;">
+	<div id="navbar-menu" style="display: flex; flex-direction: column; flex-wrap: no-wrap;">
+		<ul class="nav navbar-nav navbar-right" style="display: flex; flex-direction: column; flex-wrap: no-wrap;">
 			<!-- Default dropup button -->	
 			 <li class="btn-group dropup">
 					<a href="vertragsAuswahl.php" class="dropdown-toggle" ><i class="glyphicon glyphicon-th"></i><span>VA</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>

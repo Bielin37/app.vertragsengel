@@ -1,51 +1,25 @@
-<?php
-
-    include('../db/database.php');
-
-?>
-
-
+<?php include('../db/database.php'); ?>
 
 <!doctype html>
-
 <html lang="en" class="fullscreen-bg">
 
-
-
 <head>
-
     <title>Registrieren</title>
-
     <?php include('include/meta.php'); ?>
-
 	 <meta charset="utf-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
 	<!-- VENDOR CSS -->
-
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-
 	<link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
-
 	<link rel="stylesheet" href="../vendor/linearicons/style.css">
-
 	<!-- MAIN CSS -->
-
 	<link rel="stylesheet" href="../css/main.css">
-
 	<!-- GOOGLE FONTS -->
-
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-
 	<!-- ICONS -->
-
 	<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon.png">
-
 	<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon.png">
-
 	<style>
 
        @font-face { font-family: 'meine-schrift';
@@ -201,7 +175,7 @@
 		echo $error."   ".$email."<br>".$passwort1."   ".$beraterID;
 
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
+            echo '<h5 class="alert alert-danger">Bitte eine gültige E-Mail-Adresse eingeben</h5>';
             $error = true;
         }
 

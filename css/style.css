@@ -180,9 +180,9 @@ input:checked + .slider:before {
 			background-color: white;
 			
 		}
-		.main{
+		/*.main{
 			margin-bottom: 10%;
-		}
+		}*/
 		
 		
 		.row{
@@ -204,3 +204,4 @@ input:checked + .slider:before {
 		  .popup{
 			width: 70%;
 		  }
+		}
