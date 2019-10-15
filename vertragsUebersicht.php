@@ -60,47 +60,38 @@
 				<h1 class="alert alert-success" style="width=100%;">Deine Verträge</h1>  <!-- Anzeige im Header -->
 			</span>
 		</div>
-	<div id="wrapper" style="display: flex; align-items: stretch;">
-	
-		
-	<div id="navbar-menu" style="display: flex; flex-direction: column; flex-wrap: no-wrap; width: 20%;">
-		<ul class="nav navbar-nav navbar-right" style="display: flex; flex-direction: column; flex-wrap: no-wrap; ">
-			<!-- Default dropup button -->	
-			 <li class="btn-group dropup">
-					<a href="vertragsAuswahl.php" class="dropdown-toggle" ><i class="glyphicon glyphicon-th"></i><span>VA</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
-			 </li>
-			<!-- Default dropup button -->		
-			 <li class="btn-group dropup">
-				<a href="vertragsUebersicht.php" class="dropdown-toggle"><i class="glyphicon glyphicon-list-alt"></i><span>VUe</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
-			 </li>
-			<!-- Default dropup button -->	
-			 <li class="btn-group dropup">
-				<a href="forms/pDaten.php" class="dropdown-toggle"><i class="glyphicon glyphicon-user"></i><span>Profil</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
-			 </li>
-			<!-- Default dropup button -->	
-			 <li class="btn-group dropup">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i><span>Einstellungen</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-				<ul class="dropdown-menu">
-					<li><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
-					<li><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
-					<li><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
-					<li><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
-					<li><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-		<!-- NAVBAR -->
-			<!-- navbar-fixed-top-->
-		
+<div id="wrapper" style="display: flex; align-items: stretch;">
+	<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
+                <ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column;">
+                    <li>
+                        <a href="vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>                    
+                    <li>
+                        <a href="vertragsUebersicht.php" data-toggle="collapse" ><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>
+                    <li>
+                        <a href="forms/pDaten.php"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+							<li class="nav-item"><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							<li class="nav-item"><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
+							<li class="nav-item"><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
+							<li class="nav-item"><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
+							<li class="nav-item"><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+    </div>
 
-					<!-- Diagramm -->
+			<!-- Diagramm -->
 					
 
-					<div style="margin-top: 0px; display: flex; flex-direction: row; flex-wrap: no-wrap; width: 100%; padding-left:5%;">
+					<div style="margin-top: 0px; display: flex; flex-direction: row; flex-wrap: no-wrap; width: 100%; padding-left:5%; z-index: 0;">
 						
 						<!-- REALTIME CHART -->
-						<div class="panel panel-headline" style="margin-top: 0px;">
+						<div class="panel panel-headline" style="margin-top: 0px; z-index: 0;">
 								<div class="alert alert-danger alert-dismissible" >
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 									<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 

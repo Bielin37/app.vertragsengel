@@ -66,32 +66,8 @@ footer {
   position: fixed;
   left: 0; }
 
-/** #wrapper .main {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  width: calc(100% - 260px);
-  left: 0;
-  position: relative;
-  float: right;
-  background-color: white; }**/
-
-/*#wrapper #sidebar-nav,
-#wrapper .main {
-  padding-top: 80px; }**/
-
-/*@media screen and (max-width: 767px) {
-  #wrapper #sidebar-nav,
-  #wrapper .main {
-    padding-top: 130px; } }**/
-
 .layout-fullwidth #wrapper .sidebar {
   left: -260px; }
-
-/*.layout-fullwidth #wrapper .main {
-  width: 100%; }*/
 
 .layout-fullwidth #wrapper .navbar {
   left: 0 !important; }
@@ -101,23 +77,6 @@ footer {
 
 .offcanvas-active #wrapper .sidebar {
   left: 0; }
-
-/*.offcanvas-active #wrapper .main {
-  width: 100%;
-  position: relative;
-  left: 260px; }*/
-
-/*@media screen and (max-width: 1024px) {
-  #wrapper .sidebar {
-    left: -260px; }
-  #wrapper .main {
-    width: 100%; }
-  #wrapper .navbar {
-    left: 0 !important; }
-  #wrapper .btn-toggle-fullwidth {
-    color: #00AAFF; }
-  .btn-toggle-minified {
-    display: none; } }*/
 
 .main-content {
   padding: 28px 10px; }
@@ -180,6 +139,20 @@ html.fullscreen-bg #wrapper {
   @media screen and (max-width: 640px) {
     .navbar-default #navbar-menu {
       float: right; } }
+  @media screen and (max-width: 400px) {
+    .text {
+      display: none; } }
+
+      .nav-item{
+        font-size: 1.2rem;
+        -moz-border-radius: 5px 5px 5px 5px;
+             border-radius: 5px 5px 5px 5px;
+             margin-top: 20px;
+      }
+      .nav-item:hover{
+        background-color: rgb(192, 192, 192);
+        min-width: 80px;
+      }
 
 .navbar-btn {
   float: left;
@@ -255,55 +228,13 @@ html.fullscreen-bg #wrapper {
     width: 22px;
     margin-right: 2px; }
 
-.navbar-nav > li > .dropdown-menu {
-  padding: 0;
-  min-width: 200px; }
-
-.navbar-nav .dropdown-menu {
-  border-top: 2px solid #ACB0B5; }
-
-.navbar-nav .dropdown-menu > li > a {
-  padding: 10px 20px; }
-  .navbar-nav .dropdown-menu > li > a:hover, .navbar-nav .dropdown-menu > li > a:focus {
-    background-color: #fafafa; }
-  .navbar-nav .dropdown-menu > li > a span,
-  .navbar-nav .dropdown-menu > li > a i {
-    vertical-align: middle; }
+.dropdown-toggle{
+  min-width: 70px;
+}
 
 @media screen and (min-width: 768px) {
   .navbar-nav.navbar-right {
     margin-right: 0; } }
-
-@media screen and (max-width: 767px) {
-  .navbar-nav {
-    width: 100%;
-    margin: 0; }
-    .navbar-nav > li {
-      display: table-cell;
-      width: 1%;
-      position: inherit;
-      text-align: center; }
-    .navbar-nav > li > a {
-      padding: 15px 20px; }
-      .navbar-nav > li > a span:not(.badge),
-      .navbar-nav > li > a .icon-submenu {
-        display: none; }
-    .navbar-nav .open .dropdown-menu {
-      -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      position: absolute;
-      width: 100%;
-      margin-top: 3px;
-      background-color: #fff; }
-    .navbar-nav .open .dropdown-menu > li > a {
-      padding: 10px 15px; }
-    .navbar-nav .icon-menu {
-      padding-top: 15px;
-      padding-bottom: 15px; }
-      .navbar-nav .icon-menu .badge {
-        top: 10px;
-        right: 15px; } }
 
 .navbar-toggle {
   padding: 5px 8px;
@@ -337,20 +268,6 @@ ul.notifications > li {
     font-weight: 600; }
     ul.notifications > li > .more:hover, ul.notifications > li > .more:focus {
       text-decoration: none; }
-
-.dropdown-menu {
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  border-color: #eaeaea; }
-  .dropdown-menu > li > a {
-    color: #676a6d; }
-  .dropdown-menu > li i {
-    margin-right: 6px; }
-  .dropdown-menu .active > a, .dropdown-menu .active > a:focus, .dropdown-menu .active > a:hover {
-    background-color: #00AAFF; }
-  .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {
-    color: #a3a3a3; }
 
 /********************
  * SIDEBAR NAVIGATION
