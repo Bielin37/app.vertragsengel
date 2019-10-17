@@ -57,7 +57,7 @@
 <body>	
 		<div>
 			<span>
-				<h1 class="alert alert-success" style="width=100%;">Deine Verträge</h1>  <!-- Anzeige im Header -->
+				<h1 class="alert alert-success" style="width: 100vw;">Deine Verträge</h1>  <!-- Anzeige im Header -->
 			</span>
 		</div>
 <div id="wrapper" style="display: flex; align-items: stretch;">
@@ -88,15 +88,16 @@
 			<!-- Diagramm -->
 					
 
-					<div style="margin-top: 0px; display: flex; flex-direction: row; flex-wrap: no-wrap; width: 100%; padding-left:5%; z-index: 0;">
-						
-						<!-- REALTIME CHART -->
-						<div class="panel panel-headline" style="margin-top: 0px; z-index: 0;">
-								<div class="alert alert-danger alert-dismissible" >
+					<div style="margin-top: 77px; display: flex; flex-direction: column; width: 60vw; z-index: 0;">
+						<div class="container-fluid" style="display: flex; justify-content: center;">
+								<div class="alert alert-danger alert-dismissible" style="width: 40vw;">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 									<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
 									<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-								</div> 
+								</div>
+							</div> 
+						<!-- REALTIME CHART -->
+						<div class="panel panel-headline" style="margin-top: 0px; z-index: 0; width: 60vw; flex: none;" >
 								<div class="panel-heading">
 									<h2>Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2>
 									<!-- hier funktion einbauen! -->
@@ -109,7 +110,7 @@
 										<li>Im Moment hast du <label id="anzahlvertraege"> Verträge
 										<li>und zahlst dafür <label id="gesamtkosten">.
 									</ul>	
-						</div>
+								</div>
 						
 					
 					<!-- Diagramm Ende -->

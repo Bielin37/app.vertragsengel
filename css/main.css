@@ -78,15 +78,6 @@ footer {
 .offcanvas-active #wrapper .sidebar {
   left: 0; }
 
-.main-content {
-  padding: 28px 10px; }
-
-.navbar + .main-content {
-  padding: 105px 0 28px 5px; }
-  @media screen and (max-width: 767px) {
-    .navbar + .main-content {
-      padding-top: 155px; } }
-
 html.fullscreen-bg,
 html.fullscreen-bg body,
 html.fullscreen-bg #wrapper {
@@ -141,7 +132,15 @@ html.fullscreen-bg #wrapper {
       float: right; } }
   @media screen and (max-width: 400px) {
     .text {
-      display: none; } }
+      display: none; 
+      } }
+  @media screen and (max-width: 400px) {
+    .collapse{ 
+      position: absolute;
+      left: 0%;
+      padding-left: 2px;
+      } }
+      
 
       .nav-item{
         font-size: 1.2rem;

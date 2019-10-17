@@ -35,13 +35,36 @@
 	</style>
 </head>
 <body>	
-	<div id="wrapper">
-		<nav class="navbar navbar-default navbar-fixed-top"> 	<!-- navbar-fixed-top: Oben im footer angezeigt -->
-			<div><h1>Vertragsauswahl</h1></div>  				<!-- Anzeige im Header -->
-		</nav>
-
+	<div>
+		<span>
+			<h1 class="alert alert-success" style="width: 100vw;">Vertragsauswahl</h1>  <!-- Anzeige im Header -->
+		</span>
+	</div>
+	<div id="wrapper" style="display: flex;" >
+		<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
+                <ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column;">
+                    <li>
+                        <a href="vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>                    
+                    <li>
+                        <a href="vertragsUebersicht.php"><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>
+                    <li>
+                        <a href="forms/pDaten.php"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+							<li class="nav-item"><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							<li class="nav-item"><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
+							<li class="nav-item"><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
+							<li class="nav-item"><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
+							<li class="nav-item"><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+    	</div>
 <!-- Start - Profil vervollständigen: Meldung -->
-
 		<?php
 			//userdaten abfragen
 			$statement = $pdo->prepare("SELECT * FROM user WHERE ID = ?");
@@ -70,17 +93,17 @@
 			//wenn datensatz fehlt ($full = false), Meldung für den Nutzer ausgeben und ihn auf das Problem hinweisen
 			if(!$full) {
 		?>
-		<div class="main">
-			<div class="main-content">
-				<div class="container-fluid">
-					
-		 			<div class="alert alert-danger alert-dismissible">
-						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
-						<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-					</div> 
-				</div>
-
+		<div class="main" style="display:flex; flex-direction: column; width: 60vw;">
+			<div class="main-content" style="display:flex; flex-direction: column;">
+				<div class="row">
+					<div class="container-fluid" style="display: flex; justify-content: center;">
+						<div class="alert alert-danger alert-dismissible" style="width: 40vw; margin-bottom: 60px; justify-content: center;">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+							<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
+						</div> 
+					</div>
+				</div>	
 
 		<?php
 			//alle nötigen persönlichen Daten sind vorhanden
@@ -99,8 +122,8 @@
 
 <!-- Vertragssparten -->
 <!-- Haushaltsverträge -->
-				<div id="Fragen"></div>
-				<div class="row" id="haushalt">
+			<div id="Fragen"></div>
+				<div class="row" id="haushalt" style="flex: none;">
 					<div class="col-md-4">
 						<div class="panel">
 							<div class="panel-heading">
@@ -134,7 +157,7 @@
 						</div>
 					</div>
 				</div>
-
+			
 <!-- Gesundheitsvorsorge -->
 				<div class="row" id="gesundheit" >
 					<div class="col-md-4">
@@ -442,10 +465,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- footer:  forms/include/footer2.php-->
-	<div class="clearfix"></div>
-		<?php include('forms/include/footer2.php'); ?>
 <!-- Javascript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
