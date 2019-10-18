@@ -218,15 +218,6 @@ input:checked + .slider:before {
 /************************************************************
  * Spaces and Rows Bootstrap-Style
  ************************************************************/
-		
-	
-		.col-md-4{
-			padding: 1%;
-			font-size: 12px;
-			margin-left: -20px;
-			width: 120%;
-		}
-		
 
 		.panel-body{
 			font-size: 14px;
@@ -246,7 +237,6 @@ input:checked + .slider:before {
 			}
 			
 		.row{
-				margin-left: 10%;
 				color: #383838;
 				font-size: 1.2em;
 			}
