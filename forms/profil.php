@@ -44,12 +44,23 @@
 			background-color: white;
 		}
 		
-		#kinderAnzahl, #beraterID {
-			height: 30%;
-			width: 60%;
-			margin-left: 2%;
-			margin-bottom: 3%;
-			padding-left: 2%;
+		#anzahlKinder, #beraterID, #field1, #field2, #field3, #field4, #field5, 
+		#field6, #field7, #field8, #field9, #field10, #field11, #field12, #field13, #field14, #field15, #field16 {
+			margin-left: 15%;
+			border-radius: 5px 20px 5px;
+			border-color: #a4338a;
+			text-align: center;
+			width: 35%;  
+		}
+
+		.fertig-button{
+			border-radius: 15px;
+			border-color: #92F567;
+		}
+		.fertig-button:hover{
+			border-radius: 15px;
+			background-color: #92F567;
+			border-color: black;
 		}
 		
 
@@ -109,21 +120,23 @@
 						
 						
 						
-						
-						<p>Kinder</p>
+					<div class="row" style="display: flex; width: 80vw; flex-direction: column;">
+						<p class="text-1">Kinder</p>
 						<!-- Inputfelder für die Angabe des Alters der jeweiligen Kinder werden über den +-Button hinzugefügt -->
 						<!-- eventuell nicht die beste Lösung, sollte besser automatisch und ohne Button passieren -->
 						<div id="kinderAnzahl">
 							<input type="number" min="0" step="1" id="anzahlKinder" placeholder="Kinder?">
 							<input type="button" value="+" class="addChild" onclick="insertInputFieldChild('kinderAnzahl')">
 						</div>
-						
-						
-						<p>Wer hat Sie beraten?</p>
-						<input type="text" id="beraterID" name="beraterID" placeholder="Berater-ID">
-						<input type="submit" name="submit_profil" value="Fertig">
-						
-						
+					</div>
+					<div class="row" style="display: flex; width: 80vw; flex-direction: column; margin-bottom: 10%; margin-top: 2%;">	
+						<p class="text-1">Wer hat Sie beraten?</p>
+							<input type="text" id="beraterID" name="beraterID" placeholder="Berater-ID">
+					</div>
+						<div class="row" style="display: flex; width: 80vw; flex-direction: column;">	
+							<button class="fertig-button alert alert-success" type="submit" name="submit_profil" style=" width: 35%; position: absolute; left: 40%; right: 40%;">	
+							Fertig</button>	
+						</div>	
 					</form>
 				</div>
 		</div>
