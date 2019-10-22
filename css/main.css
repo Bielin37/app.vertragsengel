@@ -130,18 +130,16 @@ html.fullscreen-bg #wrapper {
   @media screen and (max-width: 640px) {
     .navbar-default #navbar-menu {
       float: right; } }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .text {
       display: none; 
       } }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .collapse{ 
-      position: absolute;
       left: 0%;
       padding-left: 2px;
       } }
-      
-
+  
       .nav-item{
         font-size: 1.2rem;
         -moz-border-radius: 5px 5px 5px 5px;

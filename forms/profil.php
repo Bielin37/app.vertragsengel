@@ -61,15 +61,9 @@
 			border-radius: 15px;
 			background-color: #92F567;
 			border-color: black;
-		}
-		
-
-	
-	
-	</style>
-	
+		}	
+	</style>	
 	</head>
-
 <body>
 	<div>
 		<span>
@@ -100,7 +94,7 @@
                     </li>
                 </ul>
     	</div>
-		<div class="row" id="profil"style="width: 100vw; display:flex;">
+		<div class="row" id="profil" style="width: 100vw; display:flex;">
 				<div class="col-md-12" style="display: flex; justify-content: center; position: relative; ">
 
 					<?php 
@@ -115,6 +109,7 @@
 							<p class="text-1">E-Mail:</p>
 							<h5 class="text-1" style="padding-left: 5%;"><?php echo "</br> ".$userData['E_Mail']; ?></h5>
 						</div>
+						
 						
 						<?php include('include/profilBasis.php'); ?>
 						
