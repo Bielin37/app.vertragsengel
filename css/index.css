@@ -90,7 +90,12 @@ Diese css datei gilt NUR für den Index-Slider!
 			z-index: 11;
 			position: relative;
 			margin: 2% 2% 2% 2%;
-			}	
+			}
+
+			@media screen and (max-width: 500px) {
+				#btnRight,#btnLeft{
+				  width: 30%; 
+				  } }
 
 			#btnRight:hover, #btnLeft:hover{	
 			transition: background 2s #383838;	
@@ -114,6 +119,7 @@ Diese css datei gilt NUR für den Index-Slider!
 				left: 10%;
 				bottom: 10%;
 				right: 10%;
+				min-width: 50px;
 			}
 
 			

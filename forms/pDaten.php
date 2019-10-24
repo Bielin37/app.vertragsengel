@@ -47,7 +47,7 @@
 		}
 
 		#btnLeft{
-			float:right; 
+			float: right; 
 			margin-right: 5%;
 			background-color: white;
 			text-align: center;
@@ -101,6 +101,11 @@
 			-ms-text-overflow: ellipsis;
 			-o-text-overflow: ellipsis;
 			-webkit-text-overflow: ellipsis;
+		} }
+		@media screen and (max-width: 400px) {
+    	#btnLeft {
+			position: absolute;
+			right: 5%;
 		} }
 		
 	</style>
