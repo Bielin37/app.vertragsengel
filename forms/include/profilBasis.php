@@ -7,10 +7,11 @@
 			display: flex;
 			margin-left: 4%;
 		}
-		#name, #vorname, #geburtsdatum, #beruf, #hiddenBeruf, #mobil, #telefon, #strasse, #plz, #ort{
+		#name, #vorname, #geburtsdatum, #beruf, #hiddenBeruf, #mobil, #telefon, #strasse, #plz, #ort, #email{
 			margin-left: 15%;
 			border-radius: 5px 20px 5px;
-  			border-color: #a4338a;
+			border-color: #a4338a;
+			height: 30px;  
 		}
 	</style>
 </head>

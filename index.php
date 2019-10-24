@@ -71,7 +71,7 @@
 		<div class="row" style="width: 100%; height: 90vh;">
 
 		<div class="col-lg-12" style="margin: 0 0 0 0;">
-            <div id="my-slider" class="carousel slide" data-ride="carousel" style="width: 100%; height: 1" >
+            <div id="my-slider" class="carousel slide" data-ride="carousel" style="width: 100%;" >
               <!--  Indikatoren definiert, class activ auf wert 0 (Erstes Bild) gesetzt. -->			
    
                  <ol class="carousel-indicators" style="background-color: #a4338a;">

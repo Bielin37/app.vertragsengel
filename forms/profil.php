@@ -80,8 +80,13 @@
                         <a href="../vertragsUebersicht.php"><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
                     </li>
                     <li>
-                        <a href="pDaten.php"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
-                    </li>
+						<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
+							<ul id="demo1" class="collapse">
+								<li class="nav-item"><a href="forms/pDaten.php"><i class="glyphicon glyphicon-pushpin"></i><span>Mein Profil</span></a></li>
+								<li class="nav-item"><a href="forms/profil.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Alle Daten bearbaiten</span></a></li>
+								<li class="nav-item"><a href="vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							</ul>
+						</li>
                      <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
@@ -103,18 +108,14 @@
 						$userData = $statement->fetch();
 					?>
 		
-    
 					<form style="display: flex; justify-content: center; flex-direction: column;" action="sendRequest.php" method="post">		
 						<div class="row" style="display: flex; width: 80vw; flex-direction: column;">
 							<p class="text-1">E-Mail:</p>
 							<h5 class="text-1" style="padding-left: 5%;"><?php echo "</br> ".$userData['E_Mail']; ?></h5>
 						</div>
 						
-						
-						<?php include('include/profilBasis.php'); ?>
-						
-						
-						
+					<?php include('include/profilBasis.php'); ?>
+							
 					<div class="row" style="display: flex; width: 80vw; flex-direction: column;">
 						<p class="text-1">Kinder</p>
 						<!-- Inputfelder für die Angabe des Alters der jeweiligen Kinder werden über den +-Button hinzugefügt -->

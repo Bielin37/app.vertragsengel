@@ -41,7 +41,7 @@
 		</span>
 	</div>
 	<div id="wrapper" style="display: flex;" >
-	<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
+			<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
 					<ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column; ">
 						<li>
 							<a href="vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>

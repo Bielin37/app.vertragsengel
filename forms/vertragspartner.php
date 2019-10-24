@@ -19,7 +19,7 @@
 		}
 		
 		body{
-			font-size: 		14px;
+			font-size: 		12px;
 			font-family:	meine-schrift;
 		}
 		
@@ -31,24 +31,27 @@
 			margin-bottom: 10%;
 		}
 		
-		.panel-body{
-		
-			width: 100%;
+		#name, #vorname, #geburtsdatum, #beruf, #hiddenBeruf, #mobil, #telefon, #strasse, #plz, #ort, #email
+		{
+			height: 30%;
+			width: 60%;
+			margin-left: 2%;
+			margin-bottom: 3%;
+			border: 1px solid #383838;
+			padding-left: 2%;
 		}
 		
-		.panel-body{
-			font-size: 12px;
+		#geburtsdatum, #beruf{
+			background-color: white;
 		}
 		
-		.main-content{
-			text-align: left;
-			margin-left: 3%;
-		}
-		.main{
-			margin-bottom: 20%;
-		}
-		.wrapper{
-			text-align: left;
+		#anzahlKinder, #beraterID, #field1, #field2, #field3, #field4, #field5, 
+		#field6, #field7, #field8, #field9, #field10, #field11, #field12, #field13, #field14, #field15, #field16 {
+			margin-left: 15%;
+			border-radius: 5px 20px 5px;
+			border-color: #a4338a;
+			text-align: center;
+			width: 35%;  
 		}
 	
 			#btnRight{		
@@ -59,53 +62,79 @@
 			
 			/* Links und rechts */	
 
-			#btnRight,#btnLeft{		
-			margin-top: -20%;
-			text-align: center;		
-			width: 40%;			
-			height: 25px;		
-			padding-top: 1%;
-			font-size: 12px;	
-			color: red;		
-			margin-top: 5%;		
-			background-color: #ffffff;		
-			border-radius: 5%;			
-			box-shadow: 0 5px 5px -5px #333;	
-			z-index: 11;
-
-			}	
-
-			#btnRight:hover, #btnLeft:hover{	
-			transition: background 2s #383838;	
-			-webkit-box-shadow: 0px 9px 2px #a4338a;	
-			-moz-box-shadow: 0px 9px 2px #a4338a;	
-			box-shadow: 0px 0px 9px #a4338a;		
-			}	
-		
-
-		
-	
+			.fertig-button{
+			border-radius: 15px;
+			border-color: #92F567;
+		}
+		.fertig-button:hover{
+			border-radius: 15px;
+			background-color: #92F567;
+			border-color: black;
+		}	
 	</style>
-	</head>
-
-
+</head>
 <body>
-	<div id="wrapper">
+	<div>
+		<span>
+			<h1 class="alert alert-success" style="width: 100vw;">Vertragspartner hinzufügen</h1>  <!-- Anzeige im Header -->
+		</span>
+	</div>
+	<div id="wrapper" style="display: flex;">
 		<!-- NAVBAR -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div><h1>Vertragspartner hinzufügen</h1></div>
-		</nav>
-		<div class="col-md-4">
-		  <div class="main-content">
-			<form action="../db/sendRequest.php" method="post">
-				<p>E-Mail</p>
+			<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
+				<ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column;">
+                    <li>
+                        <a href="../vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>                    
+                    <li>
+                        <a href="../vertragsUebersicht.php"><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
+                    </li>
+                    <li>
+						<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
+							<ul id="demo1" class="collapse">
+								<li class="nav-item"><a href="pDaten.php"><i class="glyphicon glyphicon-pushpin"></i><span>Mein Profil</span></a></li>
+								<li class="nav-item"><a href="profil.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Alle Daten bearbaiten</span></a></li>
+								<li class="nav-item"><a href="vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							</ul>
+						</li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+							<li class="nav-item"><a href="vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							<li class="nav-item"><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
+							<li class="nav-item"><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
+							<li class="nav-item"><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
+							<li class="nav-item"><a href="logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+			</div>
+		
+		<div class="row" id="profil" style="width: 100vw; display:flex;">
+			<div class="col-md-12" style="display: flex; justify-content: center; position: relative; ">
+
+					<?php 
+						$statement = $pdo->prepare("SELECT * FROM user WHERE ID = ".$_SESSION['userID']);
+						$statement->execute(array());
+						$userData = $statement->fetch();
+					?>
+		
+
+				<form style="display: flex; justify-content: center; flex-direction: column;" action="../db/sendRequest.php" method="post">
+					<div class="row" style="display: flex; width: 80vw; flex-direction: column;">
+						<p class="text-1">E-Mail</p>
 				<!--noch sicherstellen, dass es sich wirklich um legitime Adresse handelt (regulärer Ausdruck)-->
-				<input type="email" id="email" name="email" placeholder="username@vertragsengel.de">
+						<input type="email" id="email" name="email" placeholder="username@vertragsengel.de">
+					</div>
 				<?php
 					include('./include/profilBasis.php');
 				?>
 				<input type="hidden" value="<?php echo $_GET['type']; ?>" name="type">
-				<input id="btnRight"type="submit" name="submit_vertragspartner" value="Fertig">
+
+				<div class="row" style="display: flex; width: 80vw; flex-direction: column;">	
+					<button class="fertig-button alert alert-success" type="submit" name="submit_vertragspartner" style=" width: 35%; position: absolute; left: 40%; right: 40%;">	
+					Fertig</button>	
+				</div>
 			</form>
 		  </div>
 		</div>
@@ -116,8 +145,6 @@
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="../js/klorofil-common.js"></script>
-
-	<?php include("include/footer.php");?>
 	</body>
 </html>
 
