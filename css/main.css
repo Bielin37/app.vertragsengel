@@ -151,6 +151,14 @@ html.fullscreen-bg #wrapper {
         min-width: 80px;
       }
 
+      #vertragsengel-logo{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        padding: 10%;
+        font-size: 200%;
+    }
+
 .navbar-btn {
   float: left;
   padding: 16px 0; }

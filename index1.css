@@ -1,0 +1,237 @@
+.container{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow-y: auto;
+}
+#nav{
+    background: #f6faf6;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+    right: auto;
+    width: 175px;
+    z-index: 1;
+    height: 100%;
+    overflow-y: auto;
+    font-family: Raleway;
+}
+#vertragsengel-logo{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 10%;
+}
+.nav-element{
+    padding: 2px;
+    color: #003459;
+    border-color: black;
+}
+.nav-element:hover{
+    cursor: pointer;
+    font-size: 110%;
+}
+#nav-profil-element-2{
+    font-size: 12;
+    display: none;
+}
+#nav-einstellungen-element-2{
+    font-size: 12;
+    display: none;
+}
+.main{
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 195px;
+    background: #ffffff;
+    overflow-y: auto;
+    padding: 0px;
+    margin: 0px;
+}
+.titel{
+    padding-left: 30px;
+    border-bottom: 1px solid #dcdcdd;
+    color: #4c5c68;
+    font-family: Raleway;
+}
+.titel1, .titel2{
+    padding-left: 30px;
+    border-bottom: 1px solid #dcdcdd;
+    color: #4c5c68;
+    font-family: Raleway;
+    cursor: pointer; 
+}
+.titel1:hover, .titel2:hover{
+    font-size: 102%;
+}
+.top-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    background: #f6faf6;
+    width: 100%;
+    display: none;
+    z-index: 1;
+    border-bottom: 2px solid #5f0f40;
+    z-index: 10;
+}
+.icon{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 10px;
+}
+.button{
+    position: absolute;
+    left: 30px;
+    top: 30%;
+    bottom: 30%;
+    font-size: 200%;
+    color: #4c5c68;
+    cursor: pointer;
+}
+.button:hover {
+    color: #5f0f40;
+}
+.main1{
+    position: absolute;
+    top: 70px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+.alert{
+    border: 2px solid #003459;
+    position: relative;
+    right: 20%;
+    left: 20%;
+    width: 60%;
+    font-family: Raleway;
+    text-align: center;
+    border-radius: 30px 0% 30px 0%;
+}
+.alert-danger{
+    border: 2px solid red;
+    font-family: Raleway;
+    text-align: center;
+    right: 20%;
+    left: 20%;
+    width: 60%;
+    position: relative;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 120%;
+}
+.close{
+    color: #4c5c68;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.close:hover{
+    font-size: 200%;
+    opacity: 0.8;
+}
+.positive-button{
+    border: 2px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Raleway;
+}
+.positive-button:hover{
+    border: 3px solid green;
+}
+.row{
+    width: 100%;
+    position: relative;
+    padding: 20px 0px 20px 0px;  
+}
+.strong-red{
+    font-weight: bold;
+    color: red;
+}
+.auswahl-panel-1, .auswahl-panel-2{
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+.auswahl-icon{
+    width: 22%;
+    height: 250px;
+    background: #bcc3c9;
+    margin: 15px;
+    float: left;
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+    text-align: center;
+}
+.auswahl-icon:hover{
+    background: rgb(82, 89, 96);
+    transform: translate(0px, -20px);
+    
+    -moz-box-shadow: 5px 5px 5px rgba(82, 89, 96,0.6);
+	-webkit-box-shadow: 5px 5px 5px rgba(82, 89, 96,0.6);
+	box-shadow: 5px 5px 5px rgba(82, 89, 96,0.6);
+}
+.background-icon{
+    width: 80%;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    right: 10%;
+    top: 5%;
+    bottom: 5%;
+    text-align: center;
+}
+.auswahl-text{
+    color: black;;
+    font-family: Raleway;
+    font-weight: bold;
+}
+.collapsed{
+    color: black;
+    font-size: 800%;
+    position: relative;
+    top: 17%;
+}
+.link{
+    text-decoration: none;
+    color: #003459;
+}
+@media screen and (max-width: 700px) {
+    #nav {  position: fixed;
+            top: 72px;
+            z-index: 1; 
+            display: none;}
+    .main { left: 0; }
+    .titel { display: none; } 
+    .top-nav { display: block; }
+    .alert { width: 80%; }
+    .alert-danger, .alert{ width: 80%; left:10% }}
+@media screen and (max-width: 1207px) { 
+    .auswahl-icon{ width: 30%; }}
+@media screen and (max-width: 1117px) { 
+    .auswahl-icon{ width: 29%; }}
+@media screen and (max-width: 1007px) { 
+    .auswahl-icon{ width: 45%; }}
+@media screen and (max-width: 807px) { 
+    .auswahl-icon{ width: 43%; }}
+@media screen and (max-width: 500px) { 
+    .auswahl-icon{ width: 47%;
+                    margin: 5px; }}
+@media screen and (max-width: 450px) { 
+    .auswahl-icon{ width: 70%;
+                    margin-right: 15%;
+                    margin-left: 15%;
+                    margin-top: 5px;
+                    margin-bottom: 5px;}}

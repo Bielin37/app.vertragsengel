@@ -1,87 +1,73 @@
 <?php 
     include 'db/database.php'; 
 ?>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vertragsauswahl</title>
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <link rel="stylesheet" href="index1.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.css">
-	<link rel="stylesheet" type="text/css" href="fonts/all.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/all.css">
+<head>
+<!-- Titel & MetaDaten (seitenspezifisch) -->
+	<title>Vertragsauswahl</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/linearicons/style.css">
+	
+	<!-- Eigene css -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <script src="js/script.js"></script>
+	
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+	<link rel="stylesheet" href="css/auswahl_ueber.css">  <!--  Hier kann auf den style der index zugegriffen werden -->
 </head>
-<body>
-    <div class="container">
-        <div class="top-nav">
-            <div id="button" class="button">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </div>
-            <div class="icon">
-                <img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo">
-            </div>
-        </div>
-            <div id="nav1">
-                <div id="nav" class="nav">
-                    <div class="logo">
-                        <img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo">
-                    </div>
-                    <div class="nav-element">
-				     	<a class="link" href="vertragsAuswahl.php"><h4>Vertrag Auswahl</h4><a>
-                    </div>
-                    <div class="nav-element">
-						<a class="link" href="vertragsUebersicht.php"><h4>Vertrag Ubersicht</h4></a>
-                    </div>
-                    <div id="show-profil" class="nav-element">
-                        <h4>Profil<i id="caret" class="fa fa-fw fa-caret-down"></i></h4>
-                    </div>
-                        <div id="nav-profil-element-2">
-                            <div class="show-nav-profil-elements">
-                                <div class="nav-element">
-									<a class="link" href="forms/pDaten.php"><p>Mein Profil</p></a>
-                                </div>
-                                <div class="nav-element">
-									<a class="link" href="forms/profil.php"><p>Alle Daten bearbaiten</p></a>
-                                </div>
-                                <div class="nav-element">
-									<a class="link" href="forms/vertragspartner.php"><p>Partner hinzufügen</p></a>
-                                </div>
-                            </div>
-                        </div>    
-                    <div id="show-einstellungen" class="nav-element">
-                        <h4>Einstellungen<i id="caret1" class="fa fa-fw fa-caret-down"></i></h4>
-                    </div>
-                        <div id="nav-einstellungen-element-2">
-                            <div class="show-nav-einstellungen-elements">
-                                <div class="nav-element">
-									<a class="link" href="datenschutz.php"><p>Datenschutz</p></a>
-                                </div>
-                                <div class="nav-element">
-									<a class="link" href="agb.php"><p>AGB</p></a>
-                                </div>
-                                <div class="nav-element">
-									<a class="link" href="faq.php"><p>FAQ</p></a>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="nav-element">
-						<a class="link" href="forms/logout.php"><h4>Logout</h4><a>
-                    </div>
+<body>	
+	<div id="wrapper" >
+			<div class="navbar-collapse navbar-ex1-collapse" style="z-index: 1; padding-right: 20px; background: #f6faf6; position: fixed; top: 0px; left: 0px; bottom:0px; width: 230px;">
+				<div class="logo">
+                        <img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo" class="ember-view logo logo--lg">
                 </div>
-            </div>
-                <div class="main">
-                        <div class="titel">
-                            <span>
-                                <h2>Vertrag Auswahl:</h2>  <!-- Anzeige im Header -->
-                            </span>
-                        </div>
-            <div class="main1">        
-    <?php
+					<ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column; ">
+						<li>
+							<a href="vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>
+						</li>                    
+						<li>
+							<a href="vertragsUebersicht.php"><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
+						</li>
+						<li>
+							<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
+							<ul id="demo1" class="collapse">
+								<li class="nav-item"><a href="forms/pDaten.php"><i class="glyphicon glyphicon-pushpin"></i><span>Mein Profil</span></a></li>
+								<li class="nav-item"><a href="forms/profil.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Alle Daten bearbaiten</span></a></li>
+								<li class="nav-item"><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
+							<ul id="demo" class="collapse">
+								<li class="nav-item"><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
+								<li class="nav-item"><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
+								<li class="nav-item"><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
+								<li class="nav-item"><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+							</ul>
+						</li>
+					</ul>
+			</div>
+			<div style="border-bottom: 2px solid red; position: fixed; top: 0px; left: 230px; width: 100%; height: 70px; z-index: 10;">
+				<span>
+					<h1 style="position: absolute; left: 50px;">Vertragsauswahl:</h1>  <!-- Anzeige im Header -->
+				</span>
+			</div>
+<!-- Start - Profil vervollständigen: Meldung -->
+		<?php
 			//userdaten abfragen
 			$statement = $pdo->prepare("SELECT * FROM user WHERE ID = ?");
 			$statement->execute(array($_SESSION['userID']));
@@ -108,90 +94,74 @@
 			}
 			//wenn datensatz fehlt ($full = false), Meldung für den Nutzer ausgeben und ihn auf das Problem hinweisen
 			if(!$full) {
-    ?>
-					<div class="row">
-					    <div class="alert-danger">
+		?>
+		<div class="main1" style="position: absolute; top: 170px; left: 230px; right: 0px; bottom: 0px;">
+			<div class="main-content">
+				<div class="row">
+					<div class="container-fluid">
+						<div class="alert alert-danger alert-dismissible" style="width: 40vw; margin-bottom: 60px; justify-content: center;">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
-							<a href="forms/profil.php"><strong class="strong-red">Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-                        </div>
-                    </div> 
-    <?php
+							<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+							<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
+						</div> 
+					</div>
+				</div>	
+
+		<?php
 			//alle nötigen persönlichen Daten sind vorhanden
 			} else {
-    ?>
-    <?php
+		?>
+
+		<div class="main2" style="position: absolute; top: 170px; left: 230px; right: 0px; bottom: 0px;">
+			<div class="main-content">
+				<div class="container-fluid">
+		<?php
 			//fagen, die zum heranführen an andere versicherungs-, finanzdienstleistungen dienen, näheres in der entsprechenden datei 
-			include("forms/include/fragen.php");
+				include("forms/include/fragen.php");
 			} 
-	?>
-	            <!-- Ende - Profil vervollständigen: Meldung -->
-						<!-- Vertragssparten -->
-						<!-- Haushaltsverträge -->
-            <div class="row">
-				<div id="titel1" class="titel1">
-                    <span>
-                        <h2> Haushalt: <i id="caret2" class="fa fa-fw fa-caret-down"></i></h2>
-                    </span>
-                </div>
-					<div id="auswahl-panel-1" class="auswahl-panel-1">
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/4TV.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
+		?>
+<!-- Ende - Profil vervollständigen: Meldung -->
+
+<!-- Vertragssparten -->
+<!-- Haushaltsverträge -->
+			<div id="Fragen"></div>
+				<div class="row" id="haushalt">
+					<div class="col-md-4">
+						<div class="panel" style="margin-top: 100px";>
+							<div class="panel-heading">
+								<h2>Haushalt</h2>
+								<div class="right">
+									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+								</div>
 							</div>
-							<p class="auswahl-text">Strom</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/2Gas.php" class="collapsed"><i class="fas fa-burn"></i></a>
+							<div class="panel-body">
+								<table>
+									<tr>
+										<td style="width:2%"><a href="forms/1Strom.php" class="collapsed"><img src="img/icon/1haushalt/strom/strom_gruen.png" alt="" height="50" width="50">
+										<p>Strom </p></a></td>
+										
+										<td style="width:2%"><a href="forms/2Gas.php" class="collapsed"><img src="img/icon/1haushalt/gas/gas_gruen.png" alt="" height="50" width="50">
+										<p>Gas </p></a></td>
+									</tr>
+									<tr>
+									   <td style="width:2%"><a href="forms/3Mobilfunk.php" class="collapsed"><img src="img/icon/1haushalt/mobilfunk/mobilfunk_lila.png" alt=""  height="50" width="50">
+									   <p>Mobilfunk </p></a></td>
+											
+									   <td style="width:2%"><a href="forms/5Internet.php" class="collapsed"><img src="img/icon/1haushalt/internet/internet_lila.png" alt=""  height="50" width="50">
+										<p>Internet</p></a></td>
+									</tr>
+									<tr>
+										<td style="width:2%"><a href="forms/4TV.php" class="collapsed"><img src="img/icon/1haushalt/tv/tv_rot.png" alt=""  height="50" width="50">
+										<p>Fernsehen</p></a></td>
+									</tr>
+								</table>
 							</div>
-							<p class="auswahl-text">Gas</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/3Mobilfunk.php" class="collapsed"><i class="fas fa-mobile-alt"></i></a>
-							</div>
-							<p class="auswahl-text">Mobilfunk</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/5Internet.php" class="collapsed"><i class="fas fa-wifi"></i></a>
-							</div>
-							<p class="auswahl-text">Internet</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/4TV.php" class="collapsed"><i class="fas fa-tv"></i></a>
-							</div>
-							<p class="auswahl-text">Fernsehen</p>
 						</div>
 					</div>
-			</div>
-			<div class="row">
-				<div id="titel2" class="titel2">
-                    <span>
-                        <h2>Gesundheitsvorsorge:<i id="caret3" class="fa fa-fw fa-caret-down"></i></h2>
-                    </span>
-                </div>
-					<div id="auswahl-panel-2" class="auswahl-panel-2">
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/6Krankenkasse.php" class="collapsed"><i class="fas fa-hospital"></i></a>
-							</div>
-							<p class="auswahl-text">Krankenkasse</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-file-medical-alt"></i></a>
-							</div>
-							<p class="auswahl-text">Pflegeversicherung</p>	
-						</div>
-					</div>
-            </div>
-            
+				</div>
 			
 <!-- Gesundheitsvorsorge -->
-			<!--	<div class="row" id="gesundheit" >
+				<div class="row" id="gesundheit" >
 					<div class="col-md-4">
 						<div class="panel">
 							<div class="panel-heading">
@@ -224,10 +194,10 @@
 			if($interesse['Vorsorge'] == 1) {
 		?>
 <!-- selbstbestimmtes Leben -->
-		<!--		<div class="row" id="selbstLeben">
+				<div class="row" id="selbstLeben">
 					<div class="col-md-4">
 							<!-- PANEL WITH FOOTER -->
-				<!--		<div class="panel">
+						<div class="panel">
 							<div class="panel-heading">
 									<h2>Selbstbestimmtes Leben</h2>
 									<div class="right">
@@ -496,13 +466,11 @@
 				</div>
 			</div>
 		</div>
-    </div>
-</div>
+	</div>
 <!-- Javascript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="js/klorofil-common.js"></script>
-    <script src="index1.js"></script>
 </body>
 </html>
