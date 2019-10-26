@@ -9,7 +9,7 @@
     <title>Vertragsauswahl</title>
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="css/vertragsAuswahl.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.css">
@@ -18,6 +18,13 @@
 </head>
 <body>
     <div class="container">
+		<div id="vertragspanel" class="vertragspanel">
+		
+			<?php 
+				include('forms/4TV.php');
+			?>
+
+		</div>
         <div class="top-nav">
             <div id="button" class="button">
                 <i class="fa fa-bars" aria-hidden="true"></i>
@@ -74,13 +81,13 @@
                     </div>
                 </div>
             </div>
-                <div class="main">
+                <div id="main" class="main">
                         <div class="titel">
                             <span>
                                 <h2>Vertrag Auswahl:</h2>  <!-- Anzeige im Header -->
                             </span>
                         </div>
-            <div class="main1">        
+                   
     <?php
 			//userdaten abfragen
 			$statement = $pdo->prepare("SELECT * FROM user WHERE ID = ?");
@@ -128,8 +135,9 @@
 	            <!-- Ende - Profil vervollständigen: Meldung -->
 						<!-- Vertragssparten -->
 						<!-- Haushaltsverträge -->
+		<div class="auswahl-panel">
             <div class="row">
-				<div id="titel1" class="titel1">
+				<div id="titel2" class="titel2">
                     <span>
                         <h2> Haushalt: <i id="caret2" class="fa fa-fw fa-caret-down"></i></h2>
                     </span>
@@ -137,7 +145,7 @@
 					<div id="auswahl-panel-1" class="auswahl-panel-1">
 						<div class="auswahl-icon">
 							<div class="background-icon">
-								<a href="forms/4TV.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
+								<a href="forms/4TV.php" class="collapsed" id="collapsed-strom"><i class="fas fa-charging-station"></i></a>
 							</div>
 							<p class="auswahl-text">Strom</p>
 						</div>
@@ -167,8 +175,9 @@
 						</div>
 					</div>
 			</div>
+			<!-- Gesundheitsvorsorge -->
 			<div class="row">
-				<div id="titel2" class="titel2">
+				<div id="titel3" class="titel3">
                     <span>
                         <h2>Gesundheitsvorsorge:<i id="caret3" class="fa fa-fw fa-caret-down"></i></h2>
                     </span>
@@ -188,33 +197,6 @@
 						</div>
 					</div>
             </div>
-            
-			
-<!-- Gesundheitsvorsorge -->
-			<!--	<div class="row" id="gesundheit" >
-					<div class="col-md-4">
-						<div class="panel">
-							<div class="panel-heading">
-								<h2>Gesundheitsvorsorge</h2>
-								<div class="right">
-									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-								</div>
-							</div>
-							<div class="panel-body">
-								<table>
-									<tr>
-										<td style="width:2%"><a href="forms/6Krankenkasse.php" class="collapsed"><img src="img/icon/2gesundheitsvorsorge/krankenkasse/krankenkasse_gelb.png" alt="" height="50" width="50">
-											<p>Krankenkasse</p></a></td>
-										<td style="width:2%"><a href="Gas.html" class="collapsed"><img src="img/icon/2gesundheitsvorsorge/pflegeV/pflege_gelb.png" alt="" height="50" width="50">
-											<p>Pflegeversicherung</p></a></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
 		<?php
 			//Array $interesse mit Werten aus user_interessen fuellen
 			$statememt = $pdo->prepare('SELECT * FROM user_interessen WHERE ID = ?');
@@ -223,40 +205,47 @@
 			//wenn Spalte Vorsorge auf 1, dann nächsten <div class="row" .... > anzeigen
 			if($interesse['Vorsorge'] == 1) {
 		?>
-<!-- selbstbestimmtes Leben -->
-		<!--		<div class="row" id="selbstLeben">
-					<div class="col-md-4">
-							<!-- PANEL WITH FOOTER -->
-				<!--		<div class="panel">
-							<div class="panel-heading">
-									<h2>Selbstbestimmtes Leben</h2>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-									</div>
+			<!-- selbstbestimmtes Leben -->
+			<div class="row">
+				<div id="titel4" class="titel4">
+                    <span>
+                        <h2>Selbstbestimmtes Leben: <i id="caret4" class="fa fa-fw fa-caret-down"></i></h2>
+                    </span>
+                </div>
+					<div id="auswahl-panel-3" class="auswahl-panel-3">
+						<div class="auswahl-icon">
+							<div class="background-icon">
+								<a href="Gas.html" class="collapsed"><i class="fas fa-pen-fancy"></i></a>
 							</div>
-							<div class="panel-body">
-								<table>
-									<tr>
-										<td style="width:2%"><a href="Strom.html" data-toggle="collapse" class="collapsed"><img src="img/icon/3selbstbestimmtesLeben/vorsorgeVM/vorsorgeVM_gelb.png" alt="Vertragsengel Logo" height="50" width="50">
-												<p>VorsorgevollmachtV</p></a></td>
-										<td style="width:2%"><a href="Gas.html" data-toggle="collapse" class="collapsed"><img src="img/icon/3selbstbestimmtesLeben/patientenVerfuegung/patientenV_gelb.png" alt="Vertragsengel Logo" height="50" width="50">
-												<p>Patientenverfügung</p></a></td>
-									</tr>
-									<tr>
-										<td style="width:2%"><a href="Gas.html" data-toggle="collapse" class="collapsed"><img src="img/icon/3selbstbestimmtesLeben/betreungsVM/006-heart.png" alt="Vertragsengel Logo" height="50" width="50">
-												<p>Betreuungsvollmacht</p></a></td>
-										<td style="width:2%"><a href="Gas.html" data-toggle="collapse" class="collapsed"><img src="img/icon/3selbstbestimmtesLeben/testament/testament_gelb.png" alt="Vertragsengel Logo" height="50" width="50">
-												<p>Testament</p></a></td>
-									</tr>
-									<tr>
-										<td style="width:2%"><a href="Gas.html" data-toggle="collapse" class="collapsed"><img src="img/icon/3selbstbestimmtesLeben/sterbegeld/sterbegeld_gelb.png" alt="Vertragsengel Logo" height="50" width="50">
-												<p>Sterbegeld</p></a></td>
-									</tr>
-								</table>
+							<p class="auswahl-text">Vorsorgevollmacht</p>
+						</div>
+						<div class="auswahl-icon">
+							<div class="background-icon">
+								<a href="Gas.html" class="collapsed"><i class="fas fa-user-injured"></i></a>							
 							</div>
+							<p class="auswahl-text">Patientenverfügung</p>	
+						</div>
+						<div class="auswahl-icon">
+							<div class="background-icon">
+								<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-heart"></i></a>
+							</div>
+							<p class="auswahl-text">Betreuungsvollmacht</p>
+						</div>
+						<div class="auswahl-icon">
+							<div class="background-icon">
+								<a href="Gas.html" class="collapsed"><i class="fas fa-scroll"></i></a>
+							</div>
+							<p class="auswahl-text">Testament</p>	
+						</div>
+						<div class="auswahl-icon">
+							<div class="background-icon">
+								<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-usd"></i></i></a>
+							</div>
+							<p class="auswahl-text">Sterbegeld</p>
 						</div>
 					</div>
-				</div>
+			</div>
+			
 			<?php } ?>
 
 <!-- Altersvorsorge -->			<!-- momentan:  style="display:none"-->
@@ -498,11 +487,8 @@
 		</div>
     </div>
 </div>
+</div>
 <!-- Javascript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="js/klorofil-common.js"></script>
-    <script src="index1.js"></script>
+    <script src="js/vertragsAuswahl.js"></script>
 </body>
 </html>

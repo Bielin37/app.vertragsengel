@@ -5,7 +5,7 @@
     overflow-y: auto;
 }
 #nav{
-    background: #f6faf6;
+    background: #f1afdb;
     display: block;
     position: fixed;
     left: 0;
@@ -18,6 +18,7 @@
     height: 100%;
     overflow-y: auto;
     font-family: Raleway;
+    font-size: 13;
 }
 #vertragsengel-logo{
     width: 50px;
@@ -46,7 +47,7 @@
     position: absolute; 
     top: 0;
     bottom: 0;
-    right: 0;
+    right: 0px;
     left: 195px;
     background: #ffffff;
     overflow-y: auto;
@@ -58,16 +59,6 @@
     border-bottom: 1px solid #dcdcdd;
     color: #4c5c68;
     font-family: Raleway;
-}
-.titel1, .titel2{
-    padding-left: 30px;
-    border-bottom: 1px solid #dcdcdd;
-    color: #4c5c68;
-    font-family: Raleway;
-    cursor: pointer; 
-}
-.titel1:hover, .titel2:hover{
-    font-size: 102%;
 }
 .top-nav{
     position: fixed;
@@ -99,13 +90,6 @@
 }
 .button:hover {
     color: #5f0f40;
-}
-.main1{
-    position: absolute;
-    top: 70px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
 }
 .alert{
     border: 2px solid #003459;
@@ -149,17 +133,27 @@
 }
 .row{
     width: 100%;
-    position: relative;
+    position: static;
     padding: 20px 0px 20px 0px;  
 }
 .strong-red{
     font-weight: bold;
     color: red;
 }
-.auswahl-panel-1, .auswahl-panel-2{
+.titel2, .titel3, .titel4{
+    padding-left: 30px;
+    border-bottom: 1px solid #dcdcdd;
+    color: #4c5c68;
+    font-family: Raleway;
+    cursor: pointer; 
+}
+.titel2:hover, .titel3:hover, .titel4:hover{
+    font-size: 102%;
+}
+.auswahl-panel-1, .auswahl-panel-2, .auswahl-panel-3{
     width: 100%;
-    position: absolute;
     display: none;
+    position: relative;
 }
 .auswahl-icon{
     width: 22%;
@@ -173,7 +167,7 @@
     text-align: center;
 }
 .auswahl-icon:hover{
-    background: rgb(82, 89, 96);
+    background: #f1afdb;
     transform: translate(0px, -20px);
     
     -moz-box-shadow: 5px 5px 5px rgba(82, 89, 96,0.6);
@@ -208,12 +202,32 @@
     text-decoration: none;
     color: #003459;
 }
+.auswahl-panel{
+    display: flex;
+    flex-direction: column;
+}
+.vertragspanel{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: #f1afdb;
+    display: none;
+    padding: 10px;
+    left: auto;
+    width: 30%px;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    font-family: Raleway;
+    font-size: 13;
+}
 @media screen and (max-width: 700px) {
     #nav {  position: fixed;
             top: 72px;
             z-index: 1; 
             display: none;}
-    .main { left: 0; }
+    .main { left: 0; top: 70px; }
     .titel { display: none; } 
     .top-nav { display: block; }
     .alert { width: 80%; }

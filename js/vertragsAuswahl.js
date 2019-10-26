@@ -34,10 +34,10 @@ button.addEventListener("click" , function(event) {
     }
 });
 
-var titel1 = document.getElementById("titel1");
+var titel2 = document.getElementById("titel2");
 var auswahlPanel = document.getElementById("auswahl-panel-1");
 var caret2 = document.getElementById("caret2");
-titel1.addEventListener("click" , function(event) {
+titel2.addEventListener("click" , function(event) {
     if(auswahlPanel.style.display == "block"){
         auswahlPanel.style.display = "none";
         caret2.style.transform = "rotate(360deg)";
@@ -47,16 +47,29 @@ titel1.addEventListener("click" , function(event) {
     }
 });
 
-var titel2 = document.getElementById("titel2");
+var titel3 = document.getElementById("titel3");
 var auswahlPanel2 = document.getElementById("auswahl-panel-2");
 var caret3 = document.getElementById("caret3");
-titel1.addEventListener("click" , function(event) {
+titel3.addEventListener("click" , function(event) {
     if(auswahlPanel2.style.display == "block"){
         auswahlPanel2.style.display = "none";
         caret3.style.transform = "rotate(360deg)";
     } else {
         auswahlPanel2.style.display = "block";
         caret3.style.transform = "rotate(180deg)";
+    }
+});
+
+var titel4 = document.getElementById("titel4");
+var auswahlPanel3 = document.getElementById("auswahl-panel-3");
+var caret4 = document.getElementById("caret4");
+titel4.addEventListener("click" , function(event) {
+    if(auswahlPanel3.style.display == "block"){
+        auswahlPanel3.style.display = "none";
+        caret4.style.transform = "rotate(360deg)";
+    } else {
+        auswahlPanel3.style.display = "block";
+        caret4.style.transform = "rotate(180deg)";
     }
 });
 

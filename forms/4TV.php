@@ -1,7 +1,8 @@
+
 <?php 
-	include('../db/database.php');
-	include('include/logged.php');
-?>
+/*	include('../db/database.php');
+	include('include/logged.php');*/
+?>  
 <!doctype html>
 <html lang="en">
 
@@ -81,7 +82,7 @@
 							<div class="felder">
 							<p>Vertragspartner</p>
 							</div>
-								<?php $type = '4TV'; include('./include/vpinclude.php') ?>
+								<?php $type = '4TV'; include('forms/include/vpinclude.php') ?>
 								</br> </br> </br>
 							<div class="felder">
 							<p>TV-Anbieter</p>
@@ -135,14 +136,6 @@
 							</div>	 	
 						</div>
 						
-						<div id="secondSpace">	
-									<!-- ENGEL -->
-						<h4>Wie wichtig ist dir...?</h4>
-							<?php
-								$kategorie = array('HD-Fernsehen', 'Filme und Serien','Fussball Bundesliga','gewaltfreies Kinder-TV','Dokumentationen');
-								include('include/engel.php');
-							?>
-						
 					</div>
 						<input class="btn" id="submit" type="submit" name="submit_TV" value="Speichern">
 					</div>
@@ -151,10 +144,6 @@
 			</div>
 		</div>
 	</div>
-
-		<!-- END MAIN -->
-		<div class="clearfix"></div>
-		<?php include('include/footer.php'); ?>
 	</div>	
 
 
