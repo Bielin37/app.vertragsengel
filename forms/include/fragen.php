@@ -19,7 +19,8 @@
 		switch ($l) {
 			//Vorsorge
 			case ($l == 1 && $interessen['Vorsorge'] != 1) :
-				?><div class="row">
+				?>
+				<div class="row">
 					<div class="alert">
 							<a href='#' onclick="document.getElementById('cross').submit();" class='close' data-dismiss='alert' aria-label='close'><i class="fa fa-times" aria-hidden="true"></i>
 							</a><p>Besteht Interesse an selbstbestimmter Vorsorge?</p>

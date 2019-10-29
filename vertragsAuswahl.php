@@ -2,19 +2,9 @@
     include 'db/database.php'; 
 ?>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vertragsauswahl</title>
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <link rel="stylesheet" href="css/vertragsAuswahl.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/fontawesome.css">
-	<link rel="stylesheet" type="text/css" href="fonts/all.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/all.css">
+<head>  
+	<title>Vertragsauswahl</title>
+	<?php include('forms/include/meta.php'); ?>
 </head>
 <body>
     <div class="container">
@@ -119,9 +109,9 @@
 					<div class="row">
 					    <div class="alert-danger">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+							<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.
 							<a href="forms/profil.php"><strong class="strong-red">Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-                        </div>
+						</div>
                     </div> 
     <?php
 			//alle nötigen persönlichen Daten sind vorhanden
@@ -143,9 +133,9 @@
                     </span>
                 </div>
 					<div id="auswahl-panel-1" class="auswahl-panel-1">
-						<div class="auswahl-icon">
+						<div id="auswahl-icon" class="auswahl-icon">
 							<div class="background-icon">
-								<a href="forms/4TV.php" class="collapsed" id="collapsed-strom"><i class="fas fa-charging-station"></i></a>
+								<i id="auswahl-icon-strom" class="collapsed fas fa-charging-station"></i>
 							</div>
 							<p class="auswahl-text">Strom</p>
 						</div>

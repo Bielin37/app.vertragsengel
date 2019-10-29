@@ -1,3 +1,26 @@
+var auswahlIconStrom = document.getElementById("auswahl-icon-strom");
+var vertragsPanel = document.getElementById("vertragspanel");
+var main = document.getElementById("main");
+auswahlIconStrom.addEventListener("click" , function(event) {
+    if(vertragsPanel.style.display == "none"){
+        vertragsPanel.style.display = "flex";
+        main.style.right = '300px';
+    } else {
+        vertragsPanel.style.display = "flex";
+        main.style.right = '300px';
+    }
+});
+
+var faTimesCircle = document.getElementById("fa-times-circle");
+var vartragspanel = document.getElementById("vertragspanel");
+var main1 = document.getElementById("main");
+faTimesCircle.addEventListener("click" , function(event) {
+    if(vartragspanel.style.display == "flex"){
+        vartragspanel.style.display = "none";
+        main1.style.right = '0px';
+    }
+});
+
 var profil = document.getElementById("show-profil");
 var element2 = document.getElementById("nav-profil-element-2");
 var caret = document.getElementById("caret");
@@ -38,11 +61,11 @@ var titel2 = document.getElementById("titel2");
 var auswahlPanel = document.getElementById("auswahl-panel-1");
 var caret2 = document.getElementById("caret2");
 titel2.addEventListener("click" , function(event) {
-    if(auswahlPanel.style.display == "block"){
+    if(auswahlPanel.style.display == "flex"){
         auswahlPanel.style.display = "none";
         caret2.style.transform = "rotate(360deg)";
     } else {
-        auswahlPanel.style.display = "block";
+        auswahlPanel.style.display = "flex";
         caret2.style.transform = "rotate(180deg)";
     }
 });
@@ -72,6 +95,7 @@ titel4.addEventListener("click" , function(event) {
         caret4.style.transform = "rotate(180deg)";
     }
 });
+
 
 
 
