@@ -1,7 +1,7 @@
 
 <?php 
-/*	include('../db/database.php');
-	include('include/logged.php');*/
+/*	include('../db/database.php');*/
+	include('include/logged.php');
 ?>  
 <!doctype html>
 <html lang="en">

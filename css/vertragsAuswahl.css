@@ -104,16 +104,16 @@
 }
 .alert-danger{
     border: 2px solid red;
-    font-family: Raleway;
-    text-align: center;
+    background: rgb(248, 178, 178);
+    position: relative;
     right: 20%;
     left: 20%;
-    width: 60%;
-    position: relative;
+    width: 55%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Raleway;
+    text-align: center;
     border-radius: 15px 15px 15px 15px;
-    font-size: 120%;
-    background: #f7b2b2;
-    padding: 15px;
 }
 .close{
     color: #4c5c68;
@@ -136,7 +136,7 @@
 }
 .row{
     width: 100%;
-    position: static;
+    position: relative;
     padding: 20px 0px 20px 0px;  
 }
 .strong-red{

@@ -105,14 +105,14 @@
 			}
 			//wenn datensatz fehlt ($full = false), Meldung für den Nutzer ausgeben und ihn auf das Problem hinweisen
 			if(!$full) {
-    ?>
+	?>
 					<div class="row">
 					    <div class="alert-danger">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.
 							<a href="forms/profil.php"><strong class="strong-red">Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-						</div>
-                    </div> 
+						</div> 
+					</div>
     <?php
 			//alle nötigen persönlichen Daten sind vorhanden
 			} else {

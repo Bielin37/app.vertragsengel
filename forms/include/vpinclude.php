@@ -20,7 +20,7 @@
 		};
 		// Vertragspartner werden via DropDown-Menü angezeigt und es gibt die Option einen neuen anzulegen
 		// $type wird an Weiterleitung gehangen, damit klar ist, von wo diese erfolgt ist -> Rueckkehr moeglich
-		echo "<input type=\"text\" name=\"vertragspartner\" id=\"vertragspartner\" list=\"vertragspartnerListe\" placeholder=\"Vertragspartner\"required>";
+		echo "<div class=\"felder\" <input type=\"text\" name=\"vertragspartner\" id=\"vertragspartner\" class=\"felder-input\" list=\"vertragspartnerListe\" placeholder=\"Vertragspartner\"required></div>";
 		echo "<input type=\"button\" id=\"btn_partner\" onclick=\"parent.location='../forms/vertragspartner.php?type=".$type."'\" value=\"Weitere VP hinzufuegen!\"></button>";
 		echo "<datalist id=\"vertragspartnerListe\">";
 		foreach($vertragspartnerListe as $partner) {

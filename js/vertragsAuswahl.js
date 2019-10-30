@@ -4,10 +4,10 @@ var main = document.getElementById("main");
 auswahlIconStrom.addEventListener("click" , function(event) {
     if(vertragsPanel.style.display == "none"){
         vertragsPanel.style.display = "flex";
-        main.style.right = '300px';
+        main.style.right = '322px';
     } else {
         vertragsPanel.style.display = "flex";
-        main.style.right = '300px';
+        main.style.right = '322px';
     }
 });
 
@@ -74,11 +74,11 @@ var titel3 = document.getElementById("titel3");
 var auswahlPanel2 = document.getElementById("auswahl-panel-2");
 var caret3 = document.getElementById("caret3");
 titel3.addEventListener("click" , function(event) {
-    if(auswahlPanel2.style.display == "block"){
+    if(auswahlPanel2.style.display == "flex"){
         auswahlPanel2.style.display = "none";
         caret3.style.transform = "rotate(360deg)";
     } else {
-        auswahlPanel2.style.display = "block";
+        auswahlPanel2.style.display = "flex";
         caret3.style.transform = "rotate(180deg)";
     }
 });
