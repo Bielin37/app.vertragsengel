@@ -9,7 +9,7 @@
 	//Anmeldung in der Datenbank
 	try {
 		// http://php.net/manual/de/pdo.connections.php
-		$pdo = new PDO('mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!');
+		$pdo = new PDO('mysql:host=localhost; dbname=app.vertragsengel', 'root', '');
 	} catch (PDOException $e) {
 		echo 'Verbindung fehlgeschlagen';
 		// Exception nur ausgeben, wenn getestet wird, sonst werden fuer jeden sichtbar alle Verbindungsdaten inklusive Passwort ausgegeben
