@@ -1,10 +1,10 @@
 <?php 
-    include 'db/database.php'; 
+    include('db/database.php'); 
 ?>
 <html lang="en">
 <head>  
 	<title>Vertragsauswahl</title>
-	<?php include('forms/include/meta.php'); ?>
+	<?php include('./forms/include/meta.php'); ?>
 </head>
 <body>
     <div class="container">
@@ -29,54 +29,57 @@
                         <img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo">
                     </div>
                     <div class="nav-element">
-				     	<a class="link" href="vertragsAuswahl.php"><h4>Vertrag Auswahl</h4><a>
+				     	<a class="link" href="vertragsAuswahl.php">Vertrag Auswahl<a>
                     </div>
                     <div class="nav-element">
-						<a class="link" href="vertragsUebersicht.php"><h4>Vertrag Ubersicht</h4></a>
+						<a class="link" href="vertragsUebersicht.php">Vertrag Ubersicht</a>
                     </div>
                     <div id="show-profil" class="nav-element">
-                        <h4>Profil<i id="caret" class="fa fa-fw fa-caret-down"></i></h4>
+                        Profil<i id="caret" class="fa fa-fw fa-caret-down"></i>
                     </div>
                         <div id="nav-profil-element-2">
                             <div class="show-nav-profil-elements">
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="forms/pDaten.php"><p>Mein Profil</p></a>
                                 </div>
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="forms/profil.php"><p>Alle Daten bearbaiten</p></a>
                                 </div>
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="forms/vertragspartner.php"><p>Partner hinzufügen</p></a>
                                 </div>
                             </div>
                         </div>    
                     <div id="show-einstellungen" class="nav-element">
-                        <h4>Einstellungen<i id="caret1" class="fa fa-fw fa-caret-down"></i></h4>
+                        Einstellungen<i id="caret1" class="fa fa-fw fa-caret-down"></i>
                     </div>
                         <div id="nav-einstellungen-element-2">
                             <div class="show-nav-einstellungen-elements">
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="datenschutz.php"><p>Datenschutz</p></a>
                                 </div>
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="agb.php"><p>AGB</p></a>
                                 </div>
-                                <div class="nav-element">
+                                <div class="nav-element-p">
 									<a class="link" href="faq.php"><p>FAQ</p></a>
                                 </div>
                             </div>
                         </div>
                     <div class="nav-element">
-						<a class="link" href="forms/logout.php"><h4>Logout</h4><a>
+						<a class="link" href="forms/logout.php">Auslogen<a>
                     </div>
                 </div>
             </div>
                 <div id="main" class="main">
-                        <div class="titel">
-                            <span>
-                                <h2>Vertrag Auswahl:</h2>  <!-- Anzeige im Header -->
-                            </span>
-                        </div>
+					<div class="right-container-info">
+
+					</div>
+                    <div class="titel">
+                        <span>
+                            <h2>Vertrag Auswahl:</h2>  <!-- Anzeige im Header -->
+                        </span>
+                    </div>
                    
     <?php
 			//userdaten abfragen
@@ -129,15 +132,15 @@
             <div class="row">
 				<div id="titel2" class="titel2">
                     <span>
-                        <h2> Haushalt: <i id="caret2" class="fa fa-fw fa-caret-down"></i></h2>
+                        <h2> Haushalt:<i id="caret2" class="fa fa-fw fa-caret-down"></i></h2>
                     </span>
                 </div>
 					<div id="auswahl-panel-1" class="auswahl-panel-1">
 						<div id="auswahl-icon" class="auswahl-icon">
 							<div class="background-icon">
-								<i id="auswahl-icon-strom" class="collapsed fas fa-charging-station"></i>
+								<i id="auswahl-icon-fernsehen" class="collapsed fas fa-tv"></i>
 							</div>
-							<p class="auswahl-text">Strom</p>
+							<p class="auswahl-text">Fernsehen</p>
 						</div>
 						<div class="auswahl-icon">
 							<div class="background-icon">
@@ -159,9 +162,9 @@
 						</div>
 						<div class="auswahl-icon">
 							<div class="background-icon">
-								<a href="forms/4TV.php" class="collapsed"><i class="fas fa-tv"></i></a>
+								<a href="forms/1Strom.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
 							</div>
-							<p class="auswahl-text">Fernsehen</p>
+							<p class="auswahl-text">Strom</p>
 						</div>
 					</div>
 			</div>
@@ -189,7 +192,7 @@
             </div>
 		<?php
 			//Array $interesse mit Werten aus user_interessen fuellen
-			$statememt = $pdo->prepare('SELECT * FROM user_interessen WHERE ID = ?');
+			$statememt = $pdo->prepare("SELECT * FROM user_interessen WHERE ID = ?");
 			$statement->execute(array($_SESSION['userID']));
 			$interesse = $statement->fetch();
 			//wenn Spalte Vorsorge auf 1, dann nächsten <div class="row" .... > anzeigen

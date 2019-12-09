@@ -154,7 +154,19 @@
 				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 				<script src="vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 				<script src="js/klorofil-common.js"></script>
-					
+<script>
+/*if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => {
+        console.log('Service worker registered! 😎', reg);
+      })
+      .catch(err => {
+        console.log('😥 Service worker registration failed: ', err);
+      });
+  });
+}
+</script>
     </body>
 </html>
 <?php } ?>

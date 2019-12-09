@@ -29,94 +29,143 @@
 	$vertraege->execute(array());
 
 ?>
-
 <!DOCTYPE html>
-<html lang="de">
-<head>  
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
 	<title>Vertragsübersicht</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./vendor/linearicons/style.css">
-	<link rel="stylesheet" href="./vendor/chartist/css/chartist-custom.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" href="./css/style.css">
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
-	<link rel="stylesheet" href="css/auswahl_ueber.css">  <!--  Hier kann auf den style der vertragsAuswahl und VertragsUebersicht zugegriffen werden -->
-
-</head>
-	
-<body>	
-		<div>
-			<span>
-				<h1 class="alert alert-success" style="width: 100vw;">Deine Verträge</h1>  <!-- Anzeige im Header -->
-			</span>
-		</div>
-<div id="wrapper" style="display: flex; align-items: stretch;">
-		<div class="navbar-collapse navbar-ex1-collapse" style="min-width: 20%; z-index: 1; padding-right: 20px;">
-					<ul class="nav navbar-nav side-nav" style="display: flex; flex-direction: column; ">
-						<li>
-							<a href="vertragsAuswahl.php"><i class="glyphicon glyphicon-th"></i><span class="text">Vertrag Auswahl</span><i class="fa fa-fw fa-caret-down"></i></a>
-						</li>                    
-						<li>
-							<a href="vertragsUebersicht.php"><i class="glyphicon glyphicon-list-alt"></i><span class="text">Vertrag Ubersicht</span><i class="fa fa-fw fa-caret-down"></i></a>
-						</li>
-						<li>
-							<a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-user"></i><span class="text">Profil</span><i class="fa fa-fw fa-caret-down"></i></a>
-							<ul id="demo1" class="collapse">
-								<li class="nav-item"><a href="forms/pDaten.php"><i class="glyphicon glyphicon-pushpin"></i><span>Mein Profil</span></a></li>
-								<li class="nav-item"><a href="forms/profil.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Alle Daten bearbaiten</span></a></li>
-								<li class="nav-item"><a href="forms/vertragspartner.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Partner hinzufügen</span></a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-cog"></i><span class="text">Einstellungen</span><i class="fa fa-fw fa-caret-down"></i></a>
-							<ul id="demo" class="collapse">
-								<li class="nav-item"><a href="datenschutz.php"><i class="glyphicon glyphicon-info-sign"></i> <span>Datenschutz</span></a></li>
-								<li class="nav-item"><a href="agb.php"><i class="glyphicon glyphicon-info-sign"></i> <span>AGB</span></a></li>
-								<li class="nav-item"><a href="faq.php"><i class="glyphicon glyphicon-info-sign"></i> <span>FAQ</span></a></li>
-								<li class="nav-item"><a href="forms/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-							</ul>
-						</li>
-					</ul>
-		</div>
+	<?php include('./forms/include/meta.php'); ?>
+</head>	
+<body>
+		
+		<div class="top-nav">
+            <div id="button" class="button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="icon">
+                <a href="./vertragsUebersicht.php"><img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo"></a>
+            </div>
+        </div>
+                <div id="nav" class="nav">
+                    <div class="logo">
+                        <a href="./vertragsUebersicht.php"><img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo"></a>
+                    </div>
+                    <div class="nav-element">
+				     	<a class="link" href="vertragsAuswahl.php">Vertrag Auswahl<a>
+                    </div>
+                    <div class="nav-element">
+						<a class="link" href="vertragsUebersicht.php">Vertrag Ubersicht</a>
+                    </div>
+                    <div id="show-profil" class="nav-element">
+                        Profil<i id="caret" class="fa fa-fw fa-caret-down"></i>
+                    </div>
+                        <div id="nav-profil-element-2">
+                            <div class="show-nav-profil-elements">
+                                <div class="nav-element-p">
+									<a class="link" href="forms/pDaten.php"><p>Mein Profil</p></a>
+                                </div>
+                                <div class="nav-element-p">
+									<a class="link" href="forms/profil.php"><p>Alle Daten bearbaiten</p></a>
+                                </div>
+                                <div class="nav-element-p">
+									<a class="link" href="forms/vertragspartner.php"><p>Partner hinzufügen</p></a>
+                                </div>
+                            </div>
+                        </div>    
+                    <div id="show-einstellungen" class="nav-element">
+                        Einstellungen<i id="caret1" class="fa fa-fw fa-caret-down"></i></Einstellungen<i>
+                    </div>
+                        <div id="nav-einstellungen-element-2">
+                            <div class="show-nav-einstellungen-elements">
+                                <div class="nav-element-p">
+									<a class="link" href="datenschutz.php"><p>Datenschutz</p></a>
+                                </div>
+                                <div class="nav-element-p">
+									<a class="link" href="agb.php"><p>AGB</p></a>
+                                </div>
+                                <div class="nav-element-p">
+									<a class="link" href="faq.php"><p>FAQ</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="nav-element">
+						<a class="link" href="forms/logout.php">Auslogen<a>
+                    </div>
+                </div>
+                <div id="main" class="main">
+					<div id="right-container-info">
+						<div class="right-container-info-top">
+							<div class="right-container-info-header">
+								<i id="info-header-close" class="far fa-window-close info-header-close"></i>
+							</div>
+							<div class="right-container-info-header-avatar">
+							</div>
+							<div class="right-container-info-header-avatar-text">
+								Rene,<br> <i>Kundenbetreuung</i>
+							</div>
+						</div>
+					</div>
+                        <div class="titel">
+                            <span>
+                                Deine Verträge:  <!-- Anzeige im Header -->
+							</span>
+							<a href="./vertragsAuswahl.php"><div class="vertrage-hinzufugen-button">
+								Verträge hinzufügen
+							</div></a>
+                        </div>
 
 			<!-- Diagramm -->
-					
 
-					<div style="margin-top: 77px; display: flex; flex-direction: column; width: 60vw; z-index: 0;">
-						<div class="container-fluid" style="display: flex; justify-content: center;">
-								<div class="alert alert-danger alert-dismissible" style="width: 40vw;">
-									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-									<strong>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
-									<a href="forms/profil.php"><strong>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-								</div>
-							</div> 
+						<!--<div class="row">
+							<div class="alert-danger">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+								<a href="forms/profil.php"><strong class="strong-red">Klicke hier</strong></a> um deine Angaben zu vervollständigen.
+							</div>
+						</div> -->
 						<!-- REALTIME CHART -->
-						<div class="panel panel-headline" style="margin-top: 0px; z-index: 0; width: 60vw; flex: none;" >
-								<div class="panel-heading">
-									<h2>Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2>
+						<div class="row-info-window">
+						<!--	<h2 class="alert-info">Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2> -->
 									<!-- hier funktion einbauen! -->
+							
+								<div class="row-center">	
+										<div class="row-center-1">
+											<div class="row-center-content-1">
+												<div class="avatar-container">
+												</div>
+												<div class="avatar-info-container">
+													<p style="color: black">Hallo,<br>was kann ich heute für dich tun?<p><br>- Rene, <i>Kundenbetreuung</i>
+													<div id="kontakt-aufnehmen-button">
+														<p>Kontakt aufnehmen</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="two-row-center">
+											<div class="row-center-2">
+												<div class="row-center-content-2">
+													<div class="gesamtkosten">
+														40
+													</div>
+													<div class="gesamtkosten-text">
+														Gesamtkosten pro Monat
+													</div>
+												</div>
+											</div>
+											<div class="row-center-3">
+												<div class="row-center-content-3">
+													<div class="laufende-vertrage">
+														4
+													</div>
+													<div class="laufende-vertrage-text">
+														Laufende Verträge
+													</div>		
+												</div>
+											</div>
+										</div>
+									</div>	
 								</div>
-								<div class="panel-body">
-									<div id="system-load" class="easy-pie-chart" data-percent="" style="margin-top: 0px;">
-										<span class="percent"></span>
-									</div>
-									<ul class="list-unstyled list-justify">
-										<li>Im Moment hast du <label id="anzahlvertraege"> Verträge
-										<li>und zahlst dafür <label id="gesamtkosten">.
-									</ul>	
-								</div>
-						
-					
 					<!-- Diagramm Ende -->
 					<!-- Start - Profil vervollständigen: Meldung -->
 
@@ -150,8 +199,6 @@
 							// Variable kann global von allen Formularen verwendet werden, spart staendige Abfragen an Datenbank
 							$_SESSION['profil'] = 0;
 					?>
-			
-		 			
 					
 					<?php
 						 } else {
@@ -160,15 +207,9 @@
 						 }
 					?>
 					<!-- Ende - Profil vervollständigen: Meldung -->
-
-					<div class="col-md-4-3">
-						<div class="panel panel-body">
-							<div class="panel-heading">
-								<h2>Vertragsübersicht</h2>
-							</div>
 						<!-- TODO keine Verträge dann button hinzufügen für verträge!!!-->
 						<?php
-// Anzeige Vertraege
+				// Anzeige Vertraege		
 							$i=0;
 							$money = 0.00;
 							while ($vertrag = $vertraege->fetch()) {
@@ -187,17 +228,23 @@
 								
 								//Kosten werden mit jedem Schleifendurchlauf summiert
 								$money = $money + $v['Kosten'];
-							}	
-
-							if(count($vArray)<1) {
+								}
+								echo "<div class='vertrag-container'>
+								<div class='alert-info'>
+									<h2>Vertragsübersicht:</h2>
+								</div>";
+								echo $money;
+								echo $i;
+							if(count($vArray) < 1) {
 							?>
-								<p>Keine Verträge angelegt!</p>
+							<div>
+								<p style="margin-bottom: 150px;" class="alert-danger">Keine Verträge angelegt!</p>
 							</div>
 							<?php
 							} else {
 								//array_multisort sortiert nach dem ersten Element im Array, in diesem Fall Vertragsende
 								array_multisort($vArray);
-								$laufzeit = 2*365; //fiktive Laufzeit zum Testen der Bar
+								$laufzeit = 365; //fiktive Laufzeit zum Testen der Bar
 								for($j=0; $j < count($vArray); $j++ ) {
 									$dateDifference = date_diff(new DateTime($vArray[$j][0]),new DateTime('today'));
 									$a = intval($dateDifference->format('%a'));
@@ -207,10 +254,15 @@
 <!-- Einzelne Verträge werden solange angelegt bis die Schleife durchlaufen wurde -->
 <!-- onclick="location.href='...'" verlinkt den gesamten div-container, der 2 GET-Variablen für details.php übergibt -->
 <!-- v0 = Sparten (Int), v1 = VertragsID (INT) -->
-							<div class="metric" onclick="location.href='forms/details.php?v0=<?php echo $vArray[$j][3];?>&v1=<?php echo $vArray[$j][5];?>';" style="cursor:pointer;">
-								<img src='/img/icon/uebersicht/<?php echo $sparten[$vArray[$j][3]]; ?>_weis.png' alt="VertragsIcon" class="img-responsive logo" height="50" width="50">
+						<div class="vertrag-main">
+							<div class="row-list">
+								<div class="image-container" id="image-container" onclick="location.href='forms/details.php?v0=<?php echo $vArray[$j][3];?>&v1=<?php echo $vArray[$j][5];?>';">
+									<div class="vertragImageBox" onclick="location.href='forms/details.php?v0=<?php echo $vArray[$j][3];?>&v1=<?php echo $vArray[$j][5];?>';">	
+										<img class="vertragImage" src='img/icon/uebersicht/<?php echo $sparten[$vArray[$j][3]]; ?>_weis.png' alt="VertragsIcon" height="50px" width="50px" onclick="location.href='forms/details.php?v0=<?php echo $vArray[$j][3];?>&v1=<?php echo $vArray[$j][5];?>';">
+									</div>
+								</div>	
+								<!--<span class="name"><p><?php echo $vArray[$j][1];?></p></span>-->
 								
-								<span class="name"><p><?php echo $vArray[$j][1];?></p></span>
 									
 									<?php									
 										// Abfrage ob der Vertrag bereits gekuendigt wurde (0/1 - ja/nein) 
@@ -243,7 +295,8 @@
 														<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo $time;?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $time*100;?>%">
 															<span class="sr-only"><?php echo $time*100;?>% Complete</span>
 														</div>
-													</div>					
+													</div>
+																	
 													<?php
 													break;
 											}
@@ -257,18 +310,18 @@
 										echo "<p style='color: red'>gekündigt</p>"; 
 									} 
 									?>
-								<span>
+								<div class="row">
 									<?php
 										//Verträge automatisch verlängern, wenn Zeit überschritten
 										// 	-> Infos dazu müssen aus der AnbieterDatenbank (d.h. Herr Schirner) kommen 
 										if ($dateDifference->format('%a') === "1") {
-											echo "<p>Vertragsverlängerung in: ";
+											echo "<p class='vertragText'>Vertragsverlängerung in: ";
 										} else {
-											echo "<p>Vertragsverlängerung in: ";
+											echo "<p class='vertragText'>Vertragsverlängerung in: ";
 										}
 										echo $dateDifference->format('%a')." Tagen</p>";
 									?>
-								</span>
+								</div>
 							</div>
 							<?php
 								}}
@@ -309,15 +362,16 @@
 		</div>
 	<!-- END WRAPPER -->
 	</div>
+	</div>
 	<!-- END MAIN -->
 	<!-- Javascript -->
+	<script src="./js/vertragsUebersicht.js"></script>
 	<script src="./vendor/jquery/jquery.min.js"></script>
 	<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="./vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="./vendor/chartist/js/chartist.min.js"></script>
 	<script src="./js/klorofil-common.js"></script>
-
 	<script>
 		//JQuery 
 		$(function() {
@@ -338,14 +392,14 @@
 			sysLoad.find('.percent').text(<?php echo $i*5;?>);
 
 			$("label[id='anzahlvertraege']").text(<?php echo $i;?>+" Verträge");
-			$("label[id='gesamtkosten']").text(<?php echo $money;?>+" €/Monat");
+			$("label[id='gesamtkosten']").text(<?php echo $money;?>;+" €/Monat");
 		});
 
 	</script>
 
+<?php echo $i;?>
+<br>
+<?php echo $money; ?>
 	<!-- footer -->
-	
-
-
 </body>
 </html>

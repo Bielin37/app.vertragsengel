@@ -58,7 +58,7 @@
 .btn-submit{
     margin: 5px 0px 80px 0px;
 }
-.fa-times-circle{
+/*.fa-times-circle{
     position: absolute;
     top: 15px;
     right: 15px;
@@ -67,10 +67,10 @@
 }
 .fa-times-circle:hover{
     font-size: 250%
-}
+}*/
 .panel-titel{
     padding-right: 160px;
-    border-bottom: 2px solid #003459;
+    border-bottom: 2px solid rgb(0, 52, 89, 0.2);
     color: #4c5c68;
     font-family: Raleway;
 }

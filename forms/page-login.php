@@ -17,7 +17,7 @@
 	    $statement = $pdo->prepare("SELECT ID FROM user WHERE E_Mail = :email");
 	    $result = $statement->execute(array('email' => $email));
 	    $user = $statement->fetch();
-	    echo $userID;
+	    //echo $userID;
 	        
 	    //Überprüfung des Passworts
 	    $statement = $pdo->prepare("SELECT * FROM user_passwort WHERE ID = :id");

@@ -22,8 +22,8 @@
 				?>
 				<div class="row">
 					<div class="alert">
-							<a href='#' onclick="document.getElementById('cross').submit();" class='close' data-dismiss='alert' aria-label='close'><i class="fa fa-times" aria-hidden="true"></i>
-							</a><p>Besteht Interesse an selbstbestimmter Vorsorge?</p>
+							<span onclick="document.getElementById('cross').submit();" class='close' data-dismiss='alert' aria-label='close'><i class="fa fa-times" aria-hidden="true"></i>
+							</span><p>Besteht Interesse an selbstbestimmter Vorsorge?</p>
 							<form method="post" action="../db/sendRequest.php">
 								<p class="text-right demo-button"><button type="submit" name="submit_<?php echo $auswahl[0]; ?>" value="ok" class="positive-button"><?php echo "natürlich!"; ?></button></p>
 							</form>
@@ -66,7 +66,7 @@
 					<div class="alert">
 							<a href='#' onclick="document.getElementById('cross').submit();" class='close' data-dismiss='alert' aria-label='close'><i class="fa fa-times" aria-hidden="true"></i>
 							</a><p>Der Verbraucherschutz hat festgestellt, dass sich Kosten in deutschen Lebens- und Rentenversicherungen grundsätzlich um bis zu 50% reduzieren lassen. Durch den Policencheck erhöht sich der Wert Ihrer Auszahkung um durchschnittlich 15.000 €. Interesse an einem Policencheck?</p>
-							<form method="post" action="../db/sendRequest.php">
+							<form method="post" action="db/sendRequest.php">
 								<p class="text-right demo-button"><button type="submit" name="submit_<?php echo $auswahl[3]; ?>" value="ok" class="positive-button"><?php echo "selbstverständlich!"; ?></button></p>
 							</form>
 					</div>		
@@ -76,7 +76,7 @@
 		}
 		//Formular, das bei "Wegklicken" der Frage submit ausloest und den Timer fuer letzte Aenderung (user_interessen -> LAST) aktualisiert
 		?>
-		<form id="cross" method="post" action="../db/sendRequest.php" style="display:none;">
+		<form id="cross" method="post" action="db/sendRequest.php" style="display:none;">
 			<input type="text" name="cross" value="1">
 		</form>
 		
@@ -84,6 +84,6 @@
 		<?php
 
 	} else {
-		echo $diff;
+		return false;
 	}
 ?>

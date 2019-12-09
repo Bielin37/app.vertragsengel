@@ -1,10 +1,7 @@
-
 <?php 
-/*	include('../db/database.php');*/
 	include('include/logged.php');
 ?>  
-<!doctype html>
-<html lang="en">
+
 <head>
 </head>
 	<body>
@@ -34,7 +31,7 @@
 		<!-- MAIN -->
 
 			<!-- MAIN CONTENT -->
-				<form name="formular" id="strom-formular" method="post" action="../db/sendRequest.php" enctype="multipart/form-data">
+				<form name="formular" id="strom-formular" method="post" action="db/sendRequest.php" enctype="multipart/form-data">
 					<div class="panel-body">		
 						<input class="file" type="file" id="file" onchange="savePart()" name="fileInput[]" multiple size="50" accept=".png, .jpg, jpeg, .pdf" />
 						<!--	<label class="label" for="file">
@@ -103,10 +100,6 @@
 
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="../vendor/jquery/jquery.min.js"></script>
-	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../js/klorofil-common.js"></script>
 </body>
 
 </html>
