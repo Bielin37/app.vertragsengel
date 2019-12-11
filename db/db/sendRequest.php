@@ -7,8 +7,7 @@
 	$sparten = [1 =>'strom',2 =>'gas',3 =>'mobilfunk',4 =>'tv',5 =>'internet'];
 	//Anmeldung Datenbank
 	try {
-		$pdo = new PDO('mysql:host=localhost;dbname=db385776_41', 'root', '');
-		//'mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!'
+		$pdo = new PDO('mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!');
 	} catch (PDOException $e) {
 		echo 'Verbindung fehlgeschlagen';
 		// Exception nur ausgeben, wenn getestet wird, sonst werden fuer jeden sichtbar alle Verbindungsdaten inklusive Passwort ausgegeben
@@ -19,7 +18,7 @@
 	//Funktion, die das verzögerte Weiterleiten auf andere Seiten ermöglicht
 	//dient hauptsächlich Testzwecken
 	function holding() {
-		//header("refresh:0; ../vertragsAuswahl.php");
+		header("refresh:0; ../vertragsUebersicht.php");
 	}
 	
 	// es wird geprüft ob der Nutzer bei den Engeln einen Auswahl vorgenommen hat, wenn nicht wird der Wert auf 0 gesetzt
@@ -137,7 +136,8 @@
 		}
 		//gibt es dateien für die Datenbank? (Bildupload)	
 		if(empty($_FILES['fileInput']['tmp_name'][0])) {
-			return false; //kein File
+			echo ("<p>kein Fileupload</p>");
+			return false;
 		}
 		else {
 
@@ -329,6 +329,7 @@
 		//$string wird in den vorhergehnden if-schleifen festgelegt
 		$statement = $pdo->prepare("INSERT INTO user_vertrag_".$string." (ID, VertragsID) VALUE (?,?)");
 		$statement->execute(array($_SESSION['userID'],''));	
+        
     }
 
 	//notwendig zur Erfassung der Inputfelder aus dem Formular /forms/profil.php
@@ -521,7 +522,6 @@
 		//TV
 		if(isset($_POST['submit_TV'])) {
 			insertNewVertrag($pdo, 4);
-			echo "<h1>super udało się</h1>";
 		}
 		//INTERNET/FESTNETZ
 		if(isset($_POST['submit_internet'])) {

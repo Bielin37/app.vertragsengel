@@ -1,96 +1,17 @@
 <?php
-	include('../db/database.php');
 	// in database.php ist Variable $blacklist enhalten
 	// die Elemente dieses Arrays enthalten die Namen der Spalten, die in den Vertragsdetails nicht angezeigt werden sollten
 	// für Stromverträge sind beispielsweise auch die Werte der Engel ausgeklammert
-	include('include/logged.php');
+	include('../db/database.php');
+	include('./include/logged.php');
 ?>
 
 <head>
 	<title>VertragsDetails</title>
-	<?php include('include/meta.php'); ?>
-	<style>
-		@font-face { font-family: 'meine-schrift';
-				 src: url('../fonts/Raleway-Medium.ttf') format('truetype'); }
-		
-		
-		h1{
-			font-size: 		16px;
-			font-family:	meine-schrift;
-		}
-		
-		body{
-			font-size: 		14px;
-			font-family:	meine-schrift;
-		}
-		
-
-		.col-md-4{
-			margin-top: 15%;
-			padding-left: 3%;
-			font-size: 12px;
-			width: 100%;
-			margin-bottom: 10%;
-		}
-		
-		.panel-body{
-		
-			width: 100%;
-		}
-		
-		.panel-body{
-			font-size: 12px;
-		}
-		
-		.main-content{
-			margin-top: -80px;
-			text-align: left;
-			margin-left: 2%;
-		}
-		.main{
-			margin-bottom: 20%;
-		}
-		.wrapper{
-			margin-top: 10%;
-			text-align: left;
-			padding-left: 3%;
-		}
-	
-			#btnRight{		
-			float:right; 		
-			margin-right: 2%;	
-			background-color: Honeydew;	
-			}
-			
-			/* Links und rechts */	
-
-			#btnRight,#btnLeft{		
-			margin-top: -20%;
-			text-align: center;		
-			width: 40%;			
-			height: 25px;		
-			padding-top: 1%;
-			font-size: 12px;	
-			color: red;		
-			margin-top: 5%;		
-			background-color: #ffffff;		
-			border-radius: 5%;			
-			box-shadow: 0 5px 5px -5px #333;	
-			z-index: 11;
-
-			}	
-
-			#btnRight:hover, #btnLeft:hover{	
-			transition: background 2s #383838;	
-			-webkit-box-shadow: 0px 9px 2px #a4338a;	
-			-moz-box-shadow: 0px 9px 2px #a4338a;	
-			box-shadow: 0px 0px 9px #a4338a;		
-			}		
-		
-	</style>
+	<?php include('../forms/include/meta.php'); ?>
 </head> 
-
 <body>	<!-- WRAPPER -->
+
 	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -99,7 +20,7 @@
 		</nav>
 		<!-- END NAVBAR -->
 		<!-- MAIN -->
-		<div class="main">
+		<!--<div class="main">-->
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<?php
@@ -176,12 +97,10 @@
 		</div>
 	</div>
 	<!-- END MAIN -->	
-	<div class="clearfix"></div>
-		<?php include('../forms/include/footer.php'); ?>
 			<!-- Javascript -->
-	<script src="../vendor/jquery/jquery.min.js"></script>
+	<!--<script src="../vendor/jquery/jquery.min.js"></script>
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../js/klorofil-common.js"></script>
+	<script src="../js/klorofil-common.js"></script> -->
 	</body>
 </html>

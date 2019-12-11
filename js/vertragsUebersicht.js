@@ -10,7 +10,6 @@ profil.addEventListener("click", function(event) {
     caret.style.transform = "rotate(180deg)";
   }
 });
-
 var einstellungen = document.getElementById("show-einstellungen");
 var element3 = document.getElementById("nav-einstellungen-element-2");
 var caret1 = document.getElementById("caret1");
@@ -47,5 +46,17 @@ infoHeaderClose.addEventListener("click", function(event) {
     rightContainer.style.display = "block";
   } else {
     rightContainer.style.display = "none";
+  }
+});
+var main = document.getElementById("main");
+var buttonCloseInfoVertragUebersicht = document.getElementById(
+  "button-close-info-vertrag-uebersicht"
+);
+var display = document.getElementById("info-vertrag-uebersicht");
+buttonCloseInfoVertragUebersicht.addEventListener("click", function() {
+  if (display.style.display == "block") {
+    display.style.display = "none";
+    main.style.right = "0%";
+    buttonCloseInfoVertragUebersicht.style.display = "none";
   }
 });

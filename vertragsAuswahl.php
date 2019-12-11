@@ -11,7 +11,7 @@
 		<div id="vertragspanel" class="vertragspanel">
 		
 			<?php 
-				include('forms/4TV.php');
+				include('./forms/4TV.php');
 			?>
 
 		</div>
