@@ -58,7 +58,7 @@
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">  <!--  Bootstrap -->
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">  <!--  Bootstrap -->
 			<link href="vendor/bootstrap/css/bootstrap-touch-slider.css" rel="stylesheet" media="all">   <!--  Bootstrap -->
-			<link rel="stylesheet" href="css/index.css">  <!--  Hier kann auf den style der index zugegriffen werden -->
+			<link rel="stylesheet" href="css/alt-css/index.css">  <!--  Hier kann auf den style der index zugegriffen werden -->
     </head>
 
     <body>
@@ -150,10 +150,7 @@
 				
 							   
 <!--  Scripts zu den Bootstrap template -->
-				<script src="vendor/jquery/jquery.min.js"></script>
-				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-				<script src="vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-				<script src="js/klorofil-common.js"></script>
+				
 <script>
 /*if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -165,7 +162,7 @@
         console.log('😥 Service worker registration failed: ', err);
       });
   });
-}
+}*/
 </script>
     </body>
 </html>

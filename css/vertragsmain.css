@@ -138,10 +138,9 @@ body{
     display: flex;
     justify-content: center;
 }
-.gesamtkosten::after{
-    content: "€";
-    font-size: 22px;
-    padding-top: 15px;
+.gesamtkostenAfter{
+    font-size: 30px;
+    margin: 15px 0 0 5px;
 }
 .gesamtkosten-text, .laufende-vertrage-text{
     font-size: 14px;
@@ -210,7 +209,7 @@ body{
     position: fixed;
     top: 0px;
     right: 0px;
-    width: 375px;
+    width: 400px;
     height: 100%;
     background: #ffffff;
     z-index: 102;
@@ -226,7 +225,7 @@ body{
 .info-header-close{
     color: #ffffff;
     position: relative;
-    left: 325px;
+    left: 350px;
     top: 15px;
     cursor: pointer;
     font-size: 110%;
@@ -238,7 +237,7 @@ body{
     width: 100px;
     border-radius: 50%;
     position: relative;
-    left: 137.5px;
+    margin: auto;
     bottom: 50px;
     border: 1px solid #ffffff;
 }
@@ -328,30 +327,36 @@ body{
 .rest-info-container > p{
     margin: 0px;
 }
-#progress{
+#progressgreen, #progressyellow, #progressred{
     top: 80px;
     width: 100%;
     max-height: 5px; 
     -webkit-appearance: none;
     appearance: none;
 }
-#progress[value]::-webkit-progress-bar{
+#progressred[value]::-webkit-progress-bar, #progressyellow[value]::-webkit-progress-bar,#progressgreen[value]::-webkit-progress-bar{
     background-color: #eee;
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; 
 }
-#progress[value]::-webkit-progress-value{
-    background: hsla(225, 73%, 57%, 0.5);
+#progressred[value]::-webkit-progress-value{
+    background: rgba(241, 77, 48, 0.5);
+}
+#progressyellow[value]::-webkit-progress-value{
+    background: hsla(66, 83%, 66%, 0.5);
+}
+#progressgreen[value]::-webkit-progress-value{
+    background: hsla(138, 81%, 64%, 0.5);
 }
 #info-vertrag-uebersicht{
     position: fixed;
     top: 0;
-    left: 63%;
+    left: 70%;
     height: 100%;
     overflow-y: auto;
     background: white;
     z-index: 20;
-    width: 37%;
+    width: 30%;
     display: none;
     opacity: 1;
     cursor: auto;
@@ -372,31 +377,36 @@ body{
 }
 @media screen and (max-width: 1190px) {
     .row-center-1{
-        width: 50%;
+        width: 50%!important;
+        transition-duration: 0.5s;
     }
     .row-center-2, .row-center-3{
-        height: 50%;
-        width: 100%;
+        height: 50%!important;
+        width: 100%!important;
+        transition-duration: 0.5s;
     }
     .two-row-center{
-        flex-direction: column;
-        width: 50%;
-        left: 50%;
-        height: 142px;
+        flex-direction: column!important;
+        width: 50%!important;
+        left: 50%!important;
+        height: 142px!important;
+        transition-duration: 0.5s;
     }
     .row-center-content-2, .row-center-content-3{
-        height: 68px;
-        margin: 0;
+        height: 68px!important;
+        margin: 0!important;
     }
     .row-center-content-3{
-        border-top: 1px solid  rgb(151, 152, 162, 0.2);
+        border-top: 1px solid  rgb(151, 152, 162, 0.2)!important;
     }
     .gesamtkosten, .laufende-vertrage{
-        font-size: 42px;
+        font-size: 42px!important;
+        transition-duration: 0.5s;
     }
-    .gesamtkosten::after{
-        font-size: 16px;
-        padding-top: 9px;
+    .gesamtkostenAfter{
+        font-size: 16px!important;
+        margin-top: 8px!important;
+        transition-duration: 0.5s;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -407,45 +417,50 @@ body{
         display: flex;
         flex-direction: column;
     }
-    .vertrag-container{ margin: 50px 0px 50px 0px; }
-    .row-info-window{ margin: 30px 0px 30px 0px; }
+    .vertrag-container{ margin: 50px 0px 50px 0px!important; }
+    .row-info-window{ margin: 30px 0px 30px 0px!important; }
     .row-center-2, .row-center-3, .row-center-1, .two-row-center{
-        border-style: hidden;
-        position: relative;
-        width: 100%;
+        border-style: hidden!important;
+        position: relative!important;
+        width: 100%!important;
     }
     .row-center-2, .row-center-3{
-        height: 75px;
-        left: 0px;
+        height: 75px!important;
+        left: 0px!important;
     }
     .two-row-center{
-        left: 0%;
-        height: 150px;
+        left: 0%!important;
+        height: 150px!important;
     }
-    .row-center-content-1{ justify-content: center; }
-    .avatar-container{ margin-right: 5px;}
-    .avatar-info-container{ margin-left: 5px;}
-    .row-center-1, .row-center-3{ border-bottom: 1px solid rgb(151, 152, 162, 0.2); }
+    .row-center-content-1{ justify-content: center!important; }
+    .avatar-container{ margin-right: 5px!important;}
+    .avatar-info-container{ margin-left: 5px!important;}
+    .row-center-1, .row-center-3{ border-bottom: 1px solid rgb(151, 152, 162, 0.2)!important; }
     .row-center-content-2, .row-center-content-3{
-        flex-direction: row;
-        position: absolute;
-        width: 100%;
-        height: 75px;
+        flex-direction: row!important;
+        position: absolute!important;
+        width: 100%!important;
+        height: 75px!important;
     }
     .gesamtkosten-text, .laufende-vertrage-text{
         text-align: left;
-        margin: 30px 0 0 5px;
-        width: 58%;
+        margin: 30px 0 0 5px!important;
+        width: 58%!important;
     }
     .gesamtkosten, .laufende-vertrage{
-        justify-content: flex-end;
-        margin-right: 5px;
-        width: 42%;
-        font-size: 55px;
-        margin: 5px 5px 10px 0;
+        justify-content: flex-end!important;
+        margin-right: 5px!important;
+        width: 42%!important;
+        font-size: 55px!important;
+        margin: 5px 5px 10px 0!important;
     }
 }
-
+@media screen and (max-width: 1250px) {
+    #info-vertrag-uebersicht{
+        width: 100%;
+        left: 195px;
+    }
+}
 
 .vertrag-info{
     width: 200px;
@@ -710,6 +725,8 @@ body{
             -webkit-box-shadow: 1px 1px 8px 1px #ccc;
             box-shadow:         1px 1px 8px 1px #ccc;
         }
+    #info-vertrag-uebersicht { left: 0px; 
+        transition-duration: 0.5s;}
     .alert-info-button{ display: block; }
     .main { left: 0; top: 70px; }
     .titel { display: none; } 

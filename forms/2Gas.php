@@ -15,7 +15,7 @@
 		****************************************************/	
 		
 			h4{
-				color: : #C9301A;
+				color: #C9301A;
 			}
 			
 			.btn{  
@@ -68,7 +68,7 @@
 		?>
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<form name="formular" id="formular" method="post" action="../db/sendRequest.php"enctype="multipart/form-data" >
+				<form name="formular" id="formular" method="post" action="../db/sendRequest.php" enctype="multipart/form-data" >
 				
 				<div class="col-md-3">
 					<div class="panel panel-headline">
@@ -132,6 +132,10 @@
 									  <p>Vertragslaufzeit</p>
 									</div>
 									  <input class="inputFelder" class="inputFelder" type="date" id="vertrag" name="vertrag" value="<?php echo date('Y-m-d'); ?>" required>
+									  <div class="felder" style="display: none">
+								<p class="felder-text">Vertragsanfang</p>
+							</div>
+								<input style="display: none" class="felder-input" type="date" id="vertragsanfang" name="vertragsanfang" value="<?php echo date('Y-m-d'); ?>" required>
 								  
 									
 									<div class="felder">

@@ -1,0 +1,40 @@
+// MIXINS //
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+@mixin formFields{
+    @include flexColumn;
+        font-size: 18px;
+        margin-top: 20px;
+        label{
+            margin-top: 20px;
+            width: 100%!important;
+        }
+        select{
+            padding: 15px 35px 15px 15px;
+            border: $border;
+            font-size: 16px;
+            width: 100%!important;
+            margin-top: 10px;
+        }
+}
+@mixin button{
+    border: 1px solid #4169e1ab;
+        border-radius: 5px;
+        width: 50%;
+        padding: 12px;
+        cursor: pointer;
+        color: $textColorBlue;
+        margin: auto;
+        margin-top: 50px;
+        &:hover{
+            border-color: #4169e14d;
+        }
+}
+@mixin mediaQ($number){
+    @media screen and (max-width: $number) {
+        @content;
+    }
+}

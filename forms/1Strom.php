@@ -182,6 +182,10 @@
 									  <h4>Vertrag läuft bis?</h4>
 								</div>
 									  <input type="date" id="vertrag" name="vertrag" value="<?php echo date('Y-m-d'); ?>" required>
+									  <div class="felder" style="display: none">
+								<p class="felder-text">Vertragsanfang</p>
+							</div>
+								<input style="display: none" class="felder-input" type="date" id="vertragsanfang" name="vertragsanfang" value="<?php echo date('Y-m-d'); ?>" required>
 
 <!-- Kündigungsstatus-->
 								<div class="felder">	

@@ -63,24 +63,23 @@
 							<div class="felder">
 								<p class="felder-text">Kundennummer</p>
 							</div>
-								<input class="felder-input" type="text" id="kundennummer" name="kundennummer" placeholder="Zb 000123" >
+								<input class="felder-input" type="text" id="kundennummer" name="kundennummer" placeholder="Zb 000123" required>
 							<div class="felder">		 
 								<p class="felder-text">Kosten</p>
 							</div>
-							    <input class="felder-input" type="text" id="kosten" name="kosten" placeholder="Zb. 20,00 Euro" >		
+							    <input class="felder-input" type="text" id="kosten" name="kosten" placeholder="Zb. 20,00 Euro" required>		
 							<div class="felder">
 							<p class="felder-text">Tarifbezeichnung</p>
 							</div>
-								<input class="felder-input" type="text" id="tarif" name="tarif" placeholder="Zb TV Size M" >
+								<input class="felder-input" type="text" id="tarif" name="tarif" placeholder="Zb TV Size M" required>
 							<div class="felder">
 								<p class="felder-text">Vertragslaufzeit</p>
-							</div>
-								<input class="felder-input" type="date" id="vertrag" name="vertrag" value="<?php echo date('Y-m-d'); ?>" >		
-							
+								<input class="felder-input" type="date" id="vertrag" name="vertrag" value="<?php echo date('Y-m-d'); ?>" required>		
+								</div>
 							<div class="felder" style="display: none">
 								<p class="felder-text">Vertragsanfang</p>
 							</div>
-								<input class="felder-input" type="date" id="vertragsanfang" name="vertragsanfang" value="<?php echo date('Y-m-d'); ?>" >
+								<input style="display: none" class="felder-input" type="date" id="vertragsanfang" name="vertragsanfang" value="<?php echo date('Y-m-d'); ?>" required>
 							
 							<div class="felder">		
 								<p class="felder-text">Schon gekündigt?</p>

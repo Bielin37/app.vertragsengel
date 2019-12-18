@@ -1,0 +1,101 @@
+// VARIABLES //
+@import "_variables";
+
+// MIXINS //
+@import "_mixins";
+
+
+#mail-window-info{
+    transition-duration: 1.5s;
+    position: absolute;
+    top: 0px;
+    height: 75px;
+    background: #15aa15;
+    z-index: 500;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    display: none;
+}
+.right-container-info-top{
+    color: $textColorBlack;
+}
+#right-container-info-erledigt{
+    @include flexColumn;
+    margin: 20px;
+    text-align: center;
+    display: none;
+    h1{
+        color: $textColorBlue;
+    }
+    .info-handy-button{
+        @include button;
+    }
+}
+#right-container-info-handy{
+    @include flexColumn;
+    text-align: center;
+    margin: 20px;
+    font-size: 16px;
+    display: none;
+    a{
+        color: $textColorBlue;
+    }
+    .info-handy-button{
+        @include button;
+    }
+}
+#right-container-info-form{
+    color: $textColorGrey;
+    margin: 20px;
+    font-size: 16px;
+    .right-container-info-form-text{
+        margin-bottom: 15px;
+        p{
+            font-family: $mainFont;
+            font-size: 24px;
+            color: $textColorGrey;
+        }
+    }
+    .right-container-info-form-fields{
+        @include formFields;
+    }
+    #right-container-info-form-fields2{
+        @include formFields;
+        display: none;
+    }
+    #right-container-info-form-fields3{
+        margin-top: 20px;
+        display: none;
+        flex-direction: column;
+        label{
+            font-size: 16px;
+            color: $textColorGrey;
+        }
+        textarea{
+            width: 100%;
+            margin: 10px 0 20px 0;
+            font-size: 16px;
+            border: $border;
+        }
+        #right-container-button-submit{
+            @include button;
+            display: none;
+            margin-top: 30px;
+            font-size: 20px;
+            color: white;
+            background-color: $textColorBlue;
+            width: 250px;
+            text-align: center;
+            &:hover{
+                background: #4169e180;
+            }
+        }
+    }
+}
+@include mediaQ(400px){
+    #right-container-info{
+        width: 100%;
+    }
+}

@@ -8,7 +8,7 @@
 	//Anmeldung Datenbank
 	try {
 		$pdo = new PDO('mysql:host=localhost;dbname=db385776_41', 'root', '');
-		//'mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!'
+		//'mysql:host=127.0.0.3; dbname=db385776_41', 'db385776_41', 'Datenbank41!' 
 	} catch (PDOException $e) {
 		echo 'Verbindung fehlgeschlagen';
 		// Exception nur ausgeben, wenn getestet wird, sonst werden fuer jeden sichtbar alle Verbindungsdaten inklusive Passwort ausgegeben
@@ -225,10 +225,10 @@
 			$engel = engelAuswahl(5);
             $sqlInsertString = 
                 "INSERT INTO vertrag_strom (ID, Vertragspartner, Anbieter, AnbieterCheck, Kundennummer, Zaehlernummer, Kosten, Notiz, Verbrauch, Vertragsende, Gekuendigt,
-                Engel_Oekostrom, Engel_Preisgarantie, Engel_Kuendigungsfrist, Engel_Zahlweise, Engel_Neukundenbonus) 
+                Engel_Oekostrom, Engel_Preisgarantie, Engel_Kuendigungsfrist, Engel_Zahlweise, Engel_Neukundenbonus, Vertragsanfang) 
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $statement = $pdo->prepare($sqlInsertString);
-            $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer, $zaehlernummer, $kosten, $notiz, $verbrauch, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4]));
+            $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer, $zaehlernummer, $kosten, $notiz, $verbrauch, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4], $vertragsanfang));
             //Kuendigungstatus wird in user_vertrag_* angepasst
             $statementKuendigung = $pdo->prepare("INSERT INTO user_vertrag_strom Gekuendigt = ?");
             $statementKuendigung->execute(array($gekuendigt));
@@ -244,11 +244,11 @@
 			$engel = engelAuswahl(5);
             $sqlInsertString = 
                 "INSERT INTO vertrag_gas (ID, Vertragspartner, Anbieter, AnbieterCheck, Kundennummer, Zaehlernummer, Kosten, Notiz, Verbrauch, Vertragsende, Gekuendigt,
-                Engel_Oekostrom, Engel_Preisgarantie, Engel_Kuendigungsfrist, Engel_Zahlweise, Engel_Neukundenbonus) 
+                Engel_Oekostrom, Engel_Preisgarantie, Engel_Kuendigungsfrist, Engel_Zahlweise, Engel_Neukundenbonus, Vertragsanfang) 
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $statement = $pdo->prepare($sqlInsertString);
             $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer,
-                    $zaehlernummer, $kosten, $notiz, $verbrauch, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4]));  
+                    $zaehlernummer, $kosten, $notiz, $verbrauch, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4], $vertragsanfang));  
 
             bildWrite($string,$pdo);
 		}
@@ -258,11 +258,11 @@
 			$engel = engelAuswahl(5);
             $sqlInsertString = 
                 "INSERT INTO vertrag_mobilfunk (ID, Vertragspartner, Anbieter, AnbieterCheck, Kundennummer, Kosten, Notiz, Vertragsende, Gekuendigt,
-                Engel_Netzqualitaet, Engel_ALLNetFlat, Engel_SMSFlat, Engel_InternetFlat, Engel_Handyversicherung) 
+                Engel_Netzqualitaet, Engel_ALLNetFlat, Engel_SMSFlat, Engel_InternetFlat, Engel_Handyversicherung, Vertragsanfang) 
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $statement = $pdo->prepare($sqlInsertString);
             $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer,
-                    $kosten, $notiz, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4]));  
+                    $kosten, $notiz, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4], $vertragsanfang));  
 		
             bildWrite($string,$pdo);
 		}
@@ -288,11 +288,11 @@
 			$engel = engelAuswahl(5);
             $sqlInsertString = 
                 "INSERT INTO vertrag_internet (ID, Vertragspartner, Anbieter, AnbieterCheck, Kundennummer, Kosten, Tarif, Notiz, Vertragsende, Gekuendigt,
-                Engel_Nutzung, Engel_WLAN, Engel_Festnetz, Engel_Mobilfunknetz, Engel_Streaming)
+                Engel_Nutzung, Engel_WLAN, Engel_Festnetz, Engel_Mobilfunknetz, Engel_Streaming, Vertragsanfang)
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $statement = $pdo->prepare($sqlInsertString);
             $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer,
-                    $kosten, $tarif, $notiz, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4]));  
+                    $kosten, $tarif, $notiz, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4], $vertragsanfang));  
 		
             bildWrite($string,$pdo);
 		}
@@ -366,7 +366,7 @@
             WHERE ID = ".$_SESSION['userID'];
             
 		$statement = $pdo->prepare($sqlUpdateString);
-		$statement->execute(array($_POST['name'], $_POST['vorname'], $_POST['geburtsdatum'], $beruf, $_POST['telefon'], $_POST['mobil'], $strasse, $hasunummer, $_POST['plz'], $kinder, $_POST['beraterID']));
+		$statement->execute(array($_POST['name'], $_POST['vorname'], $_POST['geburtsdatum'], $beruf, $_POST['telefon'], $_POST['mobil'], $strasse, $hausnummer, $_POST['plz'], $kinder, $_POST['beraterID']));
 
 		isPLZ($pdo,$_POST['plz'],$_POST['ort']);    //Abfrage ob PLZ schon in der Datenbank (Zeile 435)
 	}
@@ -651,5 +651,5 @@
 			header('refresh:0, ../vertragsAuswahl.php');
 		}
 // E*******************************************************************************************************************
-    }
+	}		
 ?> 

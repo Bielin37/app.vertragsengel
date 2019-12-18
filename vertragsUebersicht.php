@@ -8,7 +8,6 @@
 	}	 
 	//Abfrage der SESSION_ID aus dem Login + Begruessung
 	$userid = $_SESSION['userID'];
-
 	$vertraege = $pdo->prepare("
 		SELECT user_vertrag_gas.VertragsID, user_vertrag_gas.Sparte, user_vertrag_gas.Status 
 		FROM user_vertrag_gas
@@ -27,8 +26,8 @@
 						WHERE user_vertrag_internet.ID = ".$_SESSION['userID']."
 		ORDER BY Sparte");
 	$vertraege->execute(array());
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +67,9 @@
 		// Variable kann global von allen Formularen verwendet werden, spart staendige Abfragen an Datenbank
 		$_SESSION['profil'] = 0;
 ?>
-					
+	
+	
+
 <?php
 		} else {
 		// Variable wird auf 1 gesetzt, d.h. alle noetigen persoenlichen Informationen sind angegeben
@@ -100,12 +101,8 @@
 			}
 			?>
 
-	<div id="button-close-info-vertrag-uebersicht">
-		
-	</div>
-	<div id="info-vertrag-uebersicht">
-			
-	</div>
+	<div id="button-close-info-vertrag-uebersicht"></div>
+	<div id="info-vertrag-uebersicht"></div>
 <?php
 			echo "<div class='top-nav'>
 			<div id='button' class='button'>
@@ -120,7 +117,7 @@
 						<a href='./vertragsUebersicht.php'><img id='vertragsengel-logo' src='img/vertragsengelkreis logo.png' alt='Vertragsengel logo'></a>
 					</div>
 					<div class='nav-element'>
-							<a class='link' href='vertragsAuswahl.php'>Vertrag Auswahl<a>
+						<a class='link' href='vertragsAuswahl.php'>Vertrag Auswahl<a>
 					</div>
 					<div class='nav-element'>
 						<a class='link' href='vertragsUebersicht.php'>Vertrag Ubersicht</a>
@@ -131,7 +128,7 @@
 						<div id='nav-profil-element-2'>
 							<div class='show-nav-profil-elements'>
 								<div class='nav-element-p'>
-														<a class='link' href='forms/pDaten.php'><p>Mein Profil</p></a>
+									<a class='link' href='forms/pDaten.php'><p>Mein Profil</p></a>
 								</div>
 								<div class='nav-element-p'>
 									<a class='link' href='forms/profil.php'><p>Alle Daten bearbaiten</p></a>
@@ -161,20 +158,9 @@
 						<a class='link' href='forms/logout.php'>Auslogen<a>
 					</div>
 				</div>
-				<div id='main' class='main'>
-					<div id='right-container-info'>
-						<div class='right-container-info-top'>
-							<div class='right-container-info-header'>
-								<i id='info-header-close' class='far fa-window-close info-header-close'></i>
-							</div>
-							<div class='right-container-info-header-avatar'>
-							</div>
-							<div class='right-container-info-header-avatar-text'>
-								Rene,<br> <i>Kundenbetreuung</i>
-							</div>
-						</div>
-					</div>
-						<div class='titel'>
+				<div id='main' class='main'>"; ?>
+					
+					<?php echo "<div class='titel'>
 							<span>
 								Deine Verträge:  <!-- Anzeige im Header -->
 							</span>
@@ -215,6 +201,7 @@
 												<div class='row-center-content-2'>
 													<div class='gesamtkosten'>
 														 $money
+														 <span class='gesamtkostenAfter'>€</span>
 													</div>
 													<div class='gesamtkosten-text'>
 														Gesamtkosten pro Monat
@@ -274,20 +261,67 @@
 									<img id="vertragImage" src='img/icon/uebersicht/<?php echo $sparten[$vArray[$j][4]]; ?>_weis.png' alt="VertragsIcon">
 								</div>				
 							<div class="rest-info-container">
-							<script type="text/javascript">
+								<script type="text/javascript">
 									var buttonCloseInfoVertragUebersicht = document.getElementById("button-close-info-vertrag-uebersicht");
 									var rowList = document.getElementById("<?php echo $vArray[$j][6];?>");
 									var main = document.getElementById("main");
-									rowList.addEventListener("click", function refreshData(e){
+									var rowCenter1 = document.querySelector('.row-center-1');
+									var rowCenter2 = document.querySelector('.row-center-2');
+									var rowCenter3 = document.querySelector('.row-center-3');
+									var twoRowCenter = document.querySelector('.two-row-center');
+									var rowCenterContent2 = document.querySelector('.row-center-content-2');
+									var rowCenterContent3 = document.querySelector('.row-center-content-3');
+									var gesamtkosten = document.querySelector('.gesamtkosten');
+									var gesamtkostenAfter = document.querySelector('.gesamtkostenAfter');
+									var laufendeVertrage = document.querySelector('.laufende-vertrage');
 									var display = document.getElementById("info-vertrag-uebersicht");
+									rowList.addEventListener("click", function refreshData(e){
 										if (display.style.display == "none") {
 											display.style.display = "block";
-											main.style.right = "37%";
+											main.style.right = "30%";
+											display.style.transitionDuration = "0.5s";
 											buttonCloseInfoVertragUebersicht.style.display = "block";
+											rowCenter1.style.width = "50%";
+											rowCenter2.style.width = "100%";
+											rowCenter2.style.height = "50%";
+											rowCenter3.style.width = "100%";
+											rowCenter3.style.height = "50%";
+											twoRowCenter.style.height = "142px";
+											twoRowCenter.style.width = "50%";
+											twoRowCenter.style.flexDirection = "column";
+											twoRowCenter.style.left = "50%";
+											rowCenterContent2.style.margin = "0";
+											rowCenterContent2.style.height = "68px";
+											rowCenterContent3.style.margin = "0";
+											rowCenterContent3.style.height = "68px";
+											rowCenterContent3.style.borderTop = "1px solid rgb(151, 152, 162, 0.2)";
+											gesamtkosten.style.fontSize = "42px";
+											laufendeVertrage.style.fontSize = "42px";
+											gesamtkostenAfter.style.fontSize = "16px";
+											gesamtkostenAfter.style.marginTop = "8px";
 										} else {
 											display.style.display = "block";
-											main.style.right = "37%";
+											main.style.right = "30%";
+											display.style.transitionDuration = "0.5s";
 											buttonCloseInfoVertragUebersicht.style.display = "block";
+											rowCenter1.style.width = "50%";
+											rowCenter2.style.width = "100%";
+											rowCenter2.style.height = "50%";
+											rowCenter3.style.width = "100%";
+											rowCenter3.style.height = "50%";
+											twoRowCenter.style.height = "142px";
+											twoRowCenter.style.width = "50%";
+											twoRowCenter.style.flexDirection = "column";
+											twoRowCenter.style.left = "50%";
+											rowCenterContent2.style.margin = "0";
+											rowCenterContent2.style.height = "68px";
+											rowCenterContent3.style.margin = "0";
+											rowCenterContent3.style.height = "68px";
+											rowCenterContent3.style.borderTop = "1px solid rgb(151, 152, 162, 0.2)";
+											gesamtkosten.style.fontSize = "42px";
+											laufendeVertrage.style.fontSize = "42px";
+											gesamtkostenAfter.style.fontSize = "16px";
+											gesamtkostenAfter.style.marginTop = "8px";
 										}
 									var xmlhttp = new XMLHttpRequest();
 									xmlhttp.open("GET", "forms/details.php?v0=<?php echo $vArray[$j][4];?>&v1=<?php echo $vArray[$j][6];?>");
@@ -305,26 +339,26 @@
 									<?php									
 										// Abfrage ob der Vertrag bereits gekuendigt wurde (0/1 - ja/nein) 
 										// wenn gekuendigt wird Progressbar mit Schriftzug gekuendigt ersetzt
-										if($vArray[$j][4] !== 0) { 
+										if($vArray[$j][4] !== 0 && $vArray[$j][1] !== $vArray[$j][0]) { 
 										// Auswahl der Farbe der Progressbar via Switch-Case	
 										$laufzeitMonate = $a / 30;
 											switch ($laufzeitMonate) {
 												//Vertrag läuft noch länger als 4,5 Monate -> grüne Farbe
 												case $laufzeitMonate > 4.5 : ?>
-														<progress id="progress" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
+														<progress id="progressgreen" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
 														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete<p>			
 													<?php
 													break;
 												//Vertrag läuft noch länger als 3 Monate -> gelbe Farbe
 												case $laufzeitMonate > 3 : ?>
-														<progress id="progress" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
+														<progress id="progressyellow" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
 														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>				
 													<?php
 													break;
 												//Vertrag läuft nur 3 oder weniger Monate -> rote Farbe
 												case $laufzeitMonate > 0 : ?>
-														<progress id="progress" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
-														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>					
+														<progress id="progressred" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
+														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>				
 													<?php
 													break;
 											}
@@ -343,7 +377,7 @@
 										//Verträge automatisch verlängern, wenn Zeit überschritten
 										// 	-> Infos dazu müssen aus der AnbieterDatenbank (d.h. Herr Schirner) kommen 
 										if ($dateDifference->format('%a') === "1") {
-											echo "Vertragsverlängerung in: ";
+											echo "Vertragsverlängerung in: -";
 										} else {
 											echo "Vertragsverlängerung in: ";
 										}
@@ -354,8 +388,87 @@
 						</div>
 					</div>
 							<?php
-								}}
-								
+								}} ?>
+					<div id="right-container-info">
+						<div class="right-container-info-top">
+							<div class="right-container-info-header">
+                                <i id='info-header-close' class='far fa-window-close info-header-close'></i>
+							</div>
+							<div class="right-container-info-header-avatar">
+							</div>
+							<div class="right-container-info-header-avatar-text">
+								Rene,<br> <i>Kundenbetreuung</i>
+							</div>
+						</div>
+						<div id="right-container-info-erledigt">
+							<h1>Schon erledigt!</h1>
+							<p>Lehn dich ruhig zurück während wir uns um dein Anliegen kümmern.</p>
+							<a href="./vertragsUebersicht.php"><div class="info-handy-button">
+								Zu deinen Verträgen
+							</div></a>
+						</div>
+						<div id="right-container-info-handy">
+							<h1>
+								<a href="tel:+49 12 2343 345 53">+49 12 2343 345 53</a>
+							</h1>
+							<p>Bitte ruf uns am besten direkt an, damit wir deinen Versicherungsschaden aufnehmen können. 
+								Du erreichst uns Montag bis Freitag von 09 - 17 Uhr.</p>
+							<a href="./vertragsUebersicht.php"><div class="info-handy-button">
+								Zu deinen Verträgen
+							</div></a>
+						</div>
+						<form id="right-container-info-form" method="post" action="">
+							<div class="right-container-info-form-text">
+								<p>Hallo,</p>
+								<span class>bitte beantworte die folgenden Fragen, damit ich die beste Lösung für dich finden kann.</span>
+							</div>
+							<div class="right-container-info-form-fields">
+								<label>Was möchtest du?</label>
+								<select name="name" id="right-container-select">
+									<option value="0">Bitte auswählen</option>
+									<option value="1">Versicherungsschaden melden</option>
+									<option value="2">Kundenservice kontaktieren</option>
+								</select>
+							</div>
+							<div id="right-container-info-form-fields2">
+								<label>Um was geht es genau?</label>
+								<select name="name" id="right-container-select-2">
+									<option value="0">Bitte auswählen</option>
+									<option value="Vertrag">Um meinen Vertrag</option>
+									<option value="Benutzerkonto">Um mein Benutzerkonto</option>
+									<option value="Kündigung">Um meine Kündigung</option>
+									<option value="Rechnung">Um eine Rechnung</option>
+									<option value="Sonstiges">Sonstiges</option>
+								</select>	
+							</div>
+							<div id="right-container-info-form-fields3">
+								<label>Bitte schreibe dein Anliegen kurz auf, 
+									damit sich das richtige Team schnellstmöglich darum kümmern kann.</label>
+								<textarea name="right-container-textarea" name="right-container-textarea" id="right-container-textarea" cols="60" rows="4"></textarea>	
+								<div id="right-container-button-submit" name="submit" type="submit">Anfrage jetzt absenden</div>
+							</div>
+						</form>
+						<script type="text/javascript">
+                                        $(document).ready(function(){
+
+											$('#right-container-button-submit').click(function(){
+												var msg = $('#right-container-textarea').val();
+												var titel = $('#right-container-select-2').val();
+
+												var varData = 'msg=' + msg + '&titel=' + titel;
+												$.ajax({
+													type: "POST",
+													url: 'forms/contact-form.php',
+													data: varData,
+													//success: function(){
+														//alert("It was a success");
+													//}
+												})
+											});
+										});
+								</script>
+							</div>
+							<?php	
 
 // Anzeige Krankenkassenvertraege 
 
@@ -379,7 +492,7 @@
 									<img src='/img/icon/uebersicht/<?php echo $sparten[6]; ?>_weis.png' alt="VertragsIcon" class="img-responsive logo" height="50" width="50">
 									<span class="name"><p><?php echo $details['Anbieter'];?></p></span>
 								</div>
-								<?php
+								<?php 
 								}}								
 							?>
 						<!--End panel-body  -->
@@ -397,11 +510,5 @@
 	<!-- END MAIN -->
 	<!-- Javascript -->
 	<script src="./js/vertragsUebersicht.js"></script>
-	<!--<script src="./vendor/jquery/jquery.min.js"></script>
-	<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="./vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-	<script src="./vendor/chartist/js/chartist.min.js"></script>-->	
-	<!-- footer -->
 </body>
 </html>

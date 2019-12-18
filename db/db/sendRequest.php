@@ -367,7 +367,7 @@
             WHERE ID = ".$_SESSION['userID'];
             
 		$statement = $pdo->prepare($sqlUpdateString);
-		$statement->execute(array($_POST['name'], $_POST['vorname'], $_POST['geburtsdatum'], $beruf, $_POST['telefon'], $_POST['mobil'], $strasse, $hasunummer, $_POST['plz'], $kinder, $_POST['beraterID']));
+		$statement->execute(array($_POST['name'], $_POST['vorname'], $_POST['geburtsdatum'], $beruf, $_POST['telefon'], $_POST['mobil'], $strasse, $hausnummer, $_POST['plz'], $kinder, $_POST['beraterID']));
 
 		isPLZ($pdo,$_POST['plz'],$_POST['ort']);    //Abfrage ob PLZ schon in der Datenbank (Zeile 435)
 	}
@@ -651,5 +651,14 @@
 			header('refresh:0, ../vertragsAuswahl.php');
 		}
 // E*******************************************************************************************************************
-    }
+	}
+	if(isset($_POST['submit'])){
+		$to = "Bielin1964@interia.pl";
+		$msg = wordwrap($_POST['right-container-textarea'], 70);
+		$titel = $_POST['name'];
+		//$additional_header = $user['E_Mail'];
+	
+		mail($to, $titel, $msg//, $additional_header
+	);
+	}
 ?> 
