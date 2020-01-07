@@ -521,7 +521,7 @@
 		//TV
 		if(isset($_POST['submit_TV'])) {
 			insertNewVertrag($pdo, 4);
-			echo "<h1>super udało się</h1>";
+			echo "<h1>Erfolg!!</h1>";
 		}
 		//INTERNET/FESTNETZ
 		if(isset($_POST['submit_internet'])) {

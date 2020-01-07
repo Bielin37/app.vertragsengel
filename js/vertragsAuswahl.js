@@ -1,26 +1,3 @@
-var auswahlIconFernsehen = document.getElementById("auswahl-icon-fernsehen");
-var vertragsPanel = document.getElementById("vertragspanel");
-var main = document.getElementById("main");
-auswahlIconFernsehen.addEventListener("click", function(event) {
-  if (vertragsPanel.style.display == "none") {
-    vertragsPanel.style.display = "flex";
-    main.style.right = "322px";
-  } else {
-    vertragsPanel.style.display = "flex";
-    main.style.right = "322px";
-  }
-});
-
-var faTimesCircle = document.getElementById("fa-times-circle");
-var vartragspanel = document.getElementById("vertragspanel");
-var main1 = document.getElementById("main");
-faTimesCircle.addEventListener("click", function(event) {
-  if (vartragspanel.style.display == "flex") {
-    vartragspanel.style.display = "none";
-    main1.style.right = "0px";
-  }
-});
-
 var profil = document.getElementById("show-profil");
 var element2 = document.getElementById("nav-profil-element-2");
 var caret = document.getElementById("caret");
@@ -57,41 +34,75 @@ button.addEventListener("click", function(event) {
   }
 });
 
-var titel2 = document.getElementById("titel2");
-var auswahlPanel = document.getElementById("auswahl-panel-1");
-var caret2 = document.getElementById("caret2");
-titel2.addEventListener("click", function(event) {
-  if (auswahlPanel.style.display == "flex") {
-    auswahlPanel.style.display = "none";
-    caret2.style.transform = "rotate(360deg)";
-  } else {
-    auswahlPanel.style.display = "flex";
-    caret2.style.transform = "rotate(180deg)";
-  }
+var auswahlList = document.querySelector(".auswahl-list");
+var vertragslistElement = document.querySelector(".vertragslist-element");
+var fernsehen = document.getElementById("Fernsehen");
+var vertragsList = document.getElementById("vertragspanel-vertragslist");
+var fernsehenSelect = document.querySelector("#fernsehen-select");
+fernsehenSelect.addEventListener("click", function(e) {
+  var div = document.createElement("div");
+  var div1 = document.createElement("div");
+  var div2 = document.createElement("div");
+  var i1 = document.createElement("i");
+  var i = document.createElement("i");
+  div.className = "vertragslist-element";
+  div1.className = "vertragslist-element-text";
+  div2.className = "vertragslist-element-image";
+  i1.className = "far fa-times-circle";
+  i1.id = "fa-times-circle";
+  i.className = "fas fa-tv";
+  div1.innerHTML = "<b>Fernsehen:</b><br>" + e.target.innerHTML;
+  vertragsList.append(div2);
+  div2.append(i);
+  vertragsList.append(div);
+  div.append(div2);
+  div.append(div1);
+  div.append(i1);
+  fernsehen.style.display = "none";
+  vertragsList.children.length > 1
+    ? (vertragsList.style.display = "block")
+    : true;
+  var vertragslistElementClose = document.getElementById("fa-times-circle");
+  vertragslistElementClose.addEventListener("click", function(e) {
+    e.target.parentNode.remove();
+    vertragsList.children.length === 1
+      ? (vertragsList.style.display = "none")
+      : true;
+    fernsehen.style.display = "block";
+  });
 });
 
-var titel3 = document.getElementById("titel3");
-var auswahlPanel2 = document.getElementById("auswahl-panel-2");
-var caret3 = document.getElementById("caret3");
-titel3.addEventListener("click", function(event) {
-  if (auswahlPanel2.style.display == "flex") {
-    auswahlPanel2.style.display = "none";
-    caret3.style.transform = "rotate(360deg)";
-  } else {
-    auswahlPanel2.style.display = "flex";
-    caret3.style.transform = "rotate(180deg)";
-  }
-});
-
-const titel4 = document.getElementById("titel4");
-var auswahlPanel3 = document.getElementById("auswahl-panel-3");
-var caret4 = document.getElementById("caret4");
-titel4.addEventListener("click", function(event) {
-  if (auswahlPanel3.style.display == "block") {
-    auswahlPanel3.style.display = "none";
-    caret4.style.transform = "rotate(360deg)";
-  } else {
-    auswahlPanel3.style.display = "block";
-    caret4.style.transform = "rotate(180deg)";
-  }
+var gas = document.getElementById("Gas");
+var gasSelect = document.querySelector("#gas-select");
+gasSelect.addEventListener("click", function(e) {
+  var div = document.createElement("div");
+  var div1 = document.createElement("div");
+  var div2 = document.createElement("div");
+  var i1 = document.createElement("i");
+  var i = document.createElement("i");
+  div.className = "vertragslist-element";
+  div1.className = "vertragslist-element-text";
+  div2.className = "vertragslist-element-image";
+  i1.className = "far fa-times-circle";
+  i1.id = "fa-times-circle1";
+  i.className = "fas fa-burn";
+  div1.innerHTML = "<b>Gas:</b><br>" + e.target.innerHTML;
+  vertragsList.append(div2);
+  div2.append(i);
+  vertragsList.append(div);
+  div.append(div2);
+  div.append(div1);
+  div.append(i1);
+  gas.style.display = "none";
+  vertragsList.children.length > 1
+    ? (vertragsList.style.display = "block")
+    : true;
+  var vertragslistElementClose = document.getElementById("fa-times-circle1");
+  vertragslistElementClose.addEventListener("click", function(e) {
+    e.target.parentNode.remove();
+    vertragsList.children.length === 1
+      ? (vertragsList.style.display = "none")
+      : true;
+    gas.style.display = "block";
+  });
 });

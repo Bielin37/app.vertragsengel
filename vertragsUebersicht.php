@@ -5,16 +5,16 @@
 	//Prüfung ob SESSION_ID gesetzt
 	if(!isset($_SESSION['userID'])) {
 		die('Bitte zuerst <a href="login.php">einloggen</a>');
-	}	 
+	}
 	//Abfrage der SESSION_ID aus dem Login + Begruessung
 	$userid = $_SESSION['userID'];
 	$vertraege = $pdo->prepare("
-		SELECT user_vertrag_gas.VertragsID, user_vertrag_gas.Sparte, user_vertrag_gas.Status 
+		SELECT user_vertrag_gas.VertragsID, user_vertrag_gas.Sparte, user_vertrag_gas.Status
 		FROM user_vertrag_gas
-		WHERE user_vertrag_gas.ID = ".$_SESSION['userID']." 
-			UNION SELECT user_vertrag_strom.VertragsID, user_vertrag_strom.Sparte, user_vertrag_strom.Status 
+		WHERE user_vertrag_gas.ID = ".$_SESSION['userID']."
+			UNION SELECT user_vertrag_strom.VertragsID, user_vertrag_strom.Sparte, user_vertrag_strom.Status
 			FROM user_vertrag_strom
-			WHERE user_vertrag_strom.ID = ".$_SESSION['userID']." 
+			WHERE user_vertrag_strom.ID = ".$_SESSION['userID']."
 				UNION SELECT user_vertrag_tv.VertragsID, user_vertrag_tv.Sparte, user_vertrag_tv.Status
 				FROM user_vertrag_tv
 				WHERE user_vertrag_tv.ID = ".$_SESSION['userID']."
@@ -32,10 +32,10 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Vertragsübersicht</title>
 	<?php include('./forms/include/meta.php'); ?>
-</head>	
+</head>
 <body>
 					<!-- Start - Profil vervollständigen: Meldung -->
 <?php
@@ -45,7 +45,7 @@
 	$user = $statement->fetch();
 	$full = true;
 	//schleifendurchläufe
-	$runs = count($user)/2;				
+	$runs = count($user)/2;
 	//geburtsdatum prüfen (grunsätzlich kein leeres feld)
 	if($user['Geburtsdatum'] = 0000-00-00) {
 		$full = false;
@@ -60,15 +60,15 @@
 				$full = false;
 				break;
 			}
-		}	
+		}
 	}
 	//wenn datensatz fehlt ($full = false), Meldung für den Nutzer ausgeben und ihn auf das Problem hinweisen
 	if(!$full) {
 		// Variable kann global von allen Formularen verwendet werden, spart staendige Abfragen an Datenbank
 		$_SESSION['profil'] = 0;
 ?>
-	
-	
+
+
 
 <?php
 		} else {
@@ -79,7 +79,7 @@
 <!-- Ende - Profil vervollständigen: Meldung -->
 	<!-- TODO keine Verträge dann button hinzufügen für verträge!!!-->
 	<?php
-				// Anzeige Vertraege		
+				// Anzeige Vertraege
 		$i=0;
 		$money = 0.00;
 		while ($vertrag = $vertraege->fetch()) {
@@ -95,7 +95,7 @@
 			$v[] = $vertrag['VertragsID'];
 			//Array (Vertragsende, Vertragsanfang, Anbieter, Kosten, Sparte, Status, vertragsID)
 			$vArray[] = $v;
-								
+
 			//Kosten werden mit jedem Schleifendurchlauf summiert
 			$money = $money + $v['Kosten'];
 			}
@@ -137,7 +137,7 @@
 									<a class='link' href='forms/vertragspartner.php'><p>Partner hinzufügen</p></a>
 								</div>
 							</div>
-						</div>    
+						</div>
 					<div id='show-einstellungen' class='nav-element'>
 						Einstellungen<i id='caret1' class='fa fa-fw fa-caret-down'></i></Einstellungen<i>
 					</div>
@@ -158,8 +158,8 @@
 						<a class='link' href='forms/logout.php'>Auslogen<a>
 					</div>
 				</div>
-				<div id='main' class='main'>"; ?>
-					
+				<div id='mainVU' class='mainVU'>"; ?>
+
 					<?php echo "<div class='titel'>
 							<span>
 								Deine Verträge:  <!-- Anzeige im Header -->
@@ -168,13 +168,13 @@
 								Verträge hinzufügen
 							</div></a>
 						</div>
-					
+
 								<!-- Diagramm -->
-					
+
 						<!--<div class='row'>
 							<div class='alert-danger'>
 								<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-								<strong class='strong-red'>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br> 
+								<strong class='strong-red'>Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.<br>
 								<a href='forms/profil.php'><strong class='strong-red'>Klicke hier</strong></a> um deine Angaben zu vervollständigen.
 							</div>
 						</div> -->
@@ -182,8 +182,8 @@
 						<div class='row-info-window'>
 						<!--	<h2 class='alert-info'>Durch eine Haushaltsberatung kannst du bis zu 20% sparen</h2> -->
 									<!-- hier funktion einbauen! -->
-												
-								<div class='row-center'>	
+
+								<div class='row-center'>
 										<div class='row-center-1'>
 											<div class='row-center-content-1'>
 												<div class='avatar-container'>
@@ -215,11 +215,11 @@
 													</div>
 													<div class='laufende-vertrage-text'>
 														Laufende Verträge
-													</div>		
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>	
+									</div>
 								</div>
 										<!-- Diagramm Ende -->";
 			echo "<div class='vertrag-container'>
@@ -249,7 +249,7 @@
 									$dateDifference = date_diff(new DateTime($vArray[$j][0]),new DateTime('today'));
 									$a = intval($dateDifference->format('%a'));
 									$time = $a/$laufzeit;
-									
+
 							?>
 <!-- Einzelne Verträge werden solange angelegt bis die Schleife durchlaufen wurde -->
 <!-- onclick="location.href='...'" verlinkt den gesamten div-container, der 2 GET-Variablen für details.php übergibt -->
@@ -259,12 +259,12 @@
 							<div class="row-list" id="<?php echo $vArray[$j][6];?>">
 								<div id="image-container">
 									<img id="vertragImage" src='img/icon/uebersicht/<?php echo $sparten[$vArray[$j][4]]; ?>_weis.png' alt="VertragsIcon">
-								</div>				
+								</div>
 							<div class="rest-info-container">
 								<script type="text/javascript">
 									var buttonCloseInfoVertragUebersicht = document.getElementById("button-close-info-vertrag-uebersicht");
 									var rowList = document.getElementById("<?php echo $vArray[$j][6];?>");
-									var main = document.getElementById("main");
+									var main1 = document.getElementById("mainVU");
 									var rowCenter1 = document.querySelector('.row-center-1');
 									var rowCenter2 = document.querySelector('.row-center-2');
 									var rowCenter3 = document.querySelector('.row-center-3');
@@ -278,7 +278,7 @@
 									rowList.addEventListener("click", function refreshData(e){
 										if (display.style.display == "none") {
 											display.style.display = "block";
-											main.style.right = "30%";
+											main1.style.right = "30%";
 											display.style.transitionDuration = "0.5s";
 											buttonCloseInfoVertragUebersicht.style.display = "block";
 											rowCenter1.style.width = "50%";
@@ -301,7 +301,7 @@
 											gesamtkostenAfter.style.marginTop = "8px";
 										} else {
 											display.style.display = "block";
-											main.style.right = "30%";
+											main1.style.right = "30%";
 											display.style.transitionDuration = "0.5s";
 											buttonCloseInfoVertragUebersicht.style.display = "block";
 											rowCenter1.style.width = "50%";
@@ -329,62 +329,64 @@
 									xmlhttp.send();
 									xmlhttp.onreadystatechange = function() {
 										if (this.readyState === 4 && this.status === 200) {
-										display.innerHTML = this.responseText;
+											display.innerHTML = this.responseText;
 										} else {
-										display.innerHTML = "Loading...";
+											display.innerHTML = "Loading...";
 										};
 									}
 									});
 							</script>
-									<?php									
-										// Abfrage ob der Vertrag bereits gekuendigt wurde (0/1 - ja/nein) 
+									<?php
+										// Abfrage ob der Vertrag bereits gekuendigt wurde (0/1 - ja/nein)
 										// wenn gekuendigt wird Progressbar mit Schriftzug gekuendigt ersetzt
-										if($vArray[$j][4] !== 0 && $vArray[$j][1] !== $vArray[$j][0]) { 
-										// Auswahl der Farbe der Progressbar via Switch-Case	
-										$laufzeitMonate = $a / 30;
+										if($vArray[$j][4] !== 0 && $vArray[$j][1] !== $vArray[$j][0]) {
+										// Auswahl der Farbe der Progressbar via Switch-Case
+										$laufzeitMonate = round(100 - ((($b-$c)/$b)*100));
 											switch ($laufzeitMonate) {
-												//Vertrag läuft noch länger als 4,5 Monate -> grüne Farbe
-												case $laufzeitMonate > 4.5 : ?>
+												//Vertrag läuft noch länger als 50% -> grüne Farbe
+												case $laufzeitMonate <= 49 : ?>
 														<progress id="progressgreen" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
-														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete<p>			
+														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete<p>
 													<?php
 													break;
-												//Vertrag läuft noch länger als 3 Monate -> gelbe Farbe
-												case $laufzeitMonate > 3 : ?>
+												//Vertrag läuft noch länger 15% -> gelbe Farbe
+												case $laufzeitMonate <= 84 : ?>
 														<progress id="progressyellow" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
-														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>				
+														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>
 													<?php
 													break;
-												//Vertrag läuft nur 3 oder weniger Monate -> rote Farbe
-												case $laufzeitMonate > 0 : ?>
+												//Vertrag läuft 15 oder weniger % -> rote Farbe
+												case $laufzeitMonate >= 85 && $laufzeitMonate < 100 : ?>
 														<progress id="progressred" min="0" max="<?php echo $b ?>" value="<?php echo $b-$c; ?>"></progress>
-														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>				
+														<p><?php echo round(100 - ((($b-$c)/$b)*100)) ?>% Complete</p>
+													<?php
+													break;
+												case $laufzeitMonate >= 100 : ?>
+														<p>Fertig</p>
 													<?php
 													break;
 											}
 									?>
-								
-							<!-- 
+
+							<!--
 							Über der Vertragsgesellschaft soll der Beitrag (Monatlich angegeben) stehen
-							-->	
-								
-									<?php } else { 
-										echo "<p style='color: red'>gekündigt</p>"; 
-									} 
+							-->
+
+									<?php } else {
+										echo "<p style='color: red'>gekündigt</p>";
+									}
 									?>
 								<div class="row">
 									<?php
 										//Verträge automatisch verlängern, wenn Zeit überschritten
-										// 	-> Infos dazu müssen aus der AnbieterDatenbank (d.h. Herr Schirner) kommen 
-										if ($dateDifference->format('%a') === "1") {
-											echo "Vertragsverlängerung in: -";
-										} else {
+										// 	-> Infos dazu müssen aus der AnbieterDatenbank (d.h. Herr Schirner) kommen
+										if ($laufzeitMonate <= 100) {
 											echo "Vertragsverlängerung in: ";
+											echo $dateDifference->format('%a')." Tagen";
 										}
-										echo $dateDifference->format('%a')." Tagen";
 									?>
 								</div>
-							</div>	
+							</div>
 						</div>
 					</div>
 							<?php
@@ -411,7 +413,7 @@
 							<h1>
 								<a href="tel:+49 12 2343 345 53">+49 12 2343 345 53</a>
 							</h1>
-							<p>Bitte ruf uns am besten direkt an, damit wir deinen Versicherungsschaden aufnehmen können. 
+							<p>Bitte ruf uns am besten direkt an, damit wir deinen Versicherungsschaden aufnehmen können.
 								Du erreichst uns Montag bis Freitag von 09 - 17 Uhr.</p>
 							<a href="./vertragsUebersicht.php"><div class="info-handy-button">
 								Zu deinen Verträgen
@@ -439,12 +441,12 @@
 									<option value="Kündigung">Um meine Kündigung</option>
 									<option value="Rechnung">Um eine Rechnung</option>
 									<option value="Sonstiges">Sonstiges</option>
-								</select>	
+								</select>
 							</div>
 							<div id="right-container-info-form-fields3">
-								<label>Bitte schreibe dein Anliegen kurz auf, 
+								<label>Bitte schreibe dein Anliegen kurz auf,
 									damit sich das richtige Team schnellstmöglich darum kümmern kann.</label>
-								<textarea name="right-container-textarea" name="right-container-textarea" id="right-container-textarea" cols="60" rows="4"></textarea>	
+								<textarea name="right-container-textarea" name="right-container-textarea" id="right-container-textarea" cols="60" rows="4"></textarea>
 								<div id="right-container-button-submit" name="submit" type="submit">Anfrage jetzt absenden</div>
 							</div>
 						</form>
@@ -468,13 +470,13 @@
 										});
 								</script>
 							</div>
-							<?php	
+							<?php
 
-// Anzeige Krankenkassenvertraege 
+// Anzeige Krankenkassenvertraege
 
 								// SQL Select - Vertragsids von Krankenkassenvertregen des Nutzers auslesen
 								$statement = $pdo->prepare("SELECT VertragsID FROM user_vertrag_krankenkasse WHERE ID =".$_SESSION['userID']);
-								$statement->execute(array()); 
+								$statement->execute(array());
 								$arrayVId = [];
 								while ($vID = $statement->fetch()) {
 									// array anlegen, dass alle Vertragsids enthaelt
@@ -492,8 +494,8 @@
 									<img src='/img/icon/uebersicht/<?php echo $sparten[6]; ?>_weis.png' alt="VertragsIcon" class="img-responsive logo" height="50" width="50">
 									<span class="name"><p><?php echo $details['Anbieter'];?></p></span>
 								</div>
-								<?php 
-								}}								
+								<?php
+								}}
 							?>
 						<!--End panel-body  -->
 						</div>

@@ -41,7 +41,7 @@ kontaktButton.addEventListener("click", function(event) {
     rightContainer.style.display = "block";
   }
 });
-var main = document.getElementById("main");
+var main = document.getElementById("mainVU");
 var buttonCloseInfoVertragUebersicht = document.getElementById(
   "button-close-info-vertrag-uebersicht"
 );

@@ -42,8 +42,8 @@
 					$columnNames = [];		
 					while ($columnNames[] = $statement->fetch()) {};
 
-					echo "<table>";
-					for ($i=0;$i < count($columnNames)-1;$i++) {
+					echo "<table id='table'>";
+					for ($i=0; $i < count($columnNames)-1; $i++) {
 						if(!in_array($columnNames[$i][0],$blacklist)) {
 							echo "<tr>";
 							echo "<td>".$columnNames[$i][0]."</td>";
@@ -51,8 +51,11 @@
 							if ($columnNames[$i][0] == 'Gekuendigt') {
 								if ($vertragDetails[$i] == 0) {
 									echo "<td>Nein</td>";
+									$link = 'kuendigung.php?v0='.$_GET['v0'].'&v1='.$_GET['v1'];
+									echo "<a href='".$link."'><p id='btnRight' >Vertrag kündigen</p></a>";
 								} else {
 									echo "<td>Ja</td>";
+									echo "<p id='btnRight' style='color:black'> Vertrag ist bereits gekündigt </p>";
 								}
 							continue;
 							} 
@@ -79,28 +82,11 @@
 							}
 							echo "</tr>";
 						}
-
 					}
 					echo "</table>";
-					$link = 'kuendigung.php?v0='.$_GET['v0'].'&v1='.$_GET['v1'];
-					echo "<a href='".$link."'><p id='btnRight' >Vertrag kündigen</p></a>";
-
-					//
-					$statement = $pdo->prepare("SELECT Status FROM user_vertrag_".$sparten[$_GET['v0']]." WHERE VertragsID =".$_GET['v1']);
-							$statement->execute(array());
-							$status = $statement->fetch();
-							if ($status[0] == 0 	) {
-								echo "<td><p style='color:red'> Vertrag ist bereits gekündigt </p></td>";
-							}
 				?>
 			</div>
 		</div>
 	</div>
-	<!-- END MAIN -->	
-			<!-- Javascript -->
-	<!--<script src="../vendor/jquery/jquery.min.js"></script>
-	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../js/klorofil-common.js"></script> -->
 	</body>
 </html>

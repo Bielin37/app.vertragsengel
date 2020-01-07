@@ -1,19 +1,24 @@
-<?php 
-    include('db/database.php'); 
+<?php
+    include('db/database.php');
 ?>
 <html lang="en">
-<head>  
+<head>
 	<title>Vertragsauswahl</title>
 	<?php include('./forms/include/meta.php'); ?>
 </head>
 <body>
-    <div class="container">
-		<div id="vertragspanel" class="vertragspanel">
-		
-			<?php 
-				include('./forms/4TV.php');
-			?>
-
+	<div id="wrapper">
+		<di id="vertragspanel" class="vertragspanel">
+			<div class="vertragspanel-titel">
+				<h1>Jetzt wird aufgeräumt,
+					<br>
+					 lieber Nutzer!
+				</h1>
+				<p>Klicke jetzt auf eine Kategorie und wähle deinen Anbieter aus.</p>
+			</div>
+			<ul id="vertragspanel-vertragslist">
+				<p>Deine Auswahl:</p>
+			</ul>
 		</div>
         <div class="top-nav">
             <div id="button" class="button">
@@ -49,7 +54,7 @@
 									<a class="link" href="forms/vertragspartner.php"><p>Partner hinzufügen</p></a>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
                     <div id="show-einstellungen" class="nav-element">
                         Einstellungen<i id="caret1" class="fa fa-fw fa-caret-down"></i>
                     </div>
@@ -71,17 +76,17 @@
                     </div>
                 </div>
             </div>
-                <div id="main" class="main">
+                <div id="mainVA" class="mainVA">
 					<div class="right-container-info">
 
 					</div>
                     <div class="titel">
                         <span>
-                            <h2>Vertrag Auswahl:</h2>  <!-- Anzeige im Header -->
+                            <p>Bitte wählen deine Verträge aus</p>  <!-- Anzeige im Header -->
                         </span>
                     </div>
-                   
-    <?php
+
+    <!-- <?php
 			//userdaten abfragen
 			$statement = $pdo->prepare("SELECT * FROM user WHERE ID = ?");
 			$statement->execute(array($_SESSION['userID']));
@@ -89,7 +94,7 @@
 			$full = true;
 			//schleifendurchläufe, array $user ist doppelt so lang wie die menge der spalten der tabelle
 			$runs = count($user)/2;
-			
+
 			//geburtsdatum prüfen (grunsätzlich kein leeres feld)
 			if($user['Geburtsdatum'] = 0000-00-00) {
 				$full = false;
@@ -104,7 +109,7 @@
 						$full = false;
 						break;
 					}
-				}	
+				}
 			}
 			//wenn datensatz fehlt ($full = false), Meldung für den Nutzer ausgeben und ihn auf das Problem hinweisen
 			if(!$full) {
@@ -114,82 +119,77 @@
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							<strong class="strong-red">Vorsicht!</strong> Solange Dein Profil nicht vervollständigt ist, können wir kein Geld für dich sparen.
 							<a href="forms/profil.php"><strong class="strong-red">Klicke hier</strong></a> um deine Angaben zu vervollständigen.
-						</div> 
+						</div>
 					</div>
     <?php
 			//alle nötigen persönlichen Daten sind vorhanden
 			} else {
     ?>
     <?php
-			//fagen, die zum heranführen an andere versicherungs-, finanzdienstleistungen dienen, näheres in der entsprechenden datei 
+			//fagen, die zum heranführen an andere versicherungs-, finanzdienstleistungen dienen, näheres in der entsprechenden datei
 			include("forms/include/fragen.php");
-			} 
-	?>
+			}
+	?> -->
 	            <!-- Ende - Profil vervollständigen: Meldung -->
 						<!-- Vertragssparten -->
 						<!-- Haushaltsverträge -->
-		<div class="auswahl-panel">
-            <div class="row">
-				<div id="titel2" class="titel2">
-                    <span>
-                        <h2> Haushalt:<i id="caret2" class="fa fa-fw fa-caret-down"></i></h2>
-                    </span>
-                </div>
-					<div id="auswahl-panel-1" class="auswahl-panel-1">
-						<div id="auswahl-icon" class="auswahl-icon">
-							<div class="background-icon">
-								<i id="auswahl-icon-fernsehen" class="collapsed fas fa-tv"></i>
-							</div>
-							<p class="auswahl-text">Fernsehen</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/2Gas.php" class="collapsed"><i class="fas fa-burn"></i></a>
-							</div>
-							<p class="auswahl-text">Gas</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/3Mobilfunk.php" class="collapsed"><i class="fas fa-mobile-alt"></i></a>
-							</div>
-							<p class="auswahl-text">Mobilfunk</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/5Internet.php" class="collapsed"><i class="fas fa-wifi"></i></a>
-							</div>
-							<p class="auswahl-text">Internet</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/1Strom.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
-							</div>
-							<p class="auswahl-text">Strom</p>
-						</div>
-					</div>
-			</div>
+	<div class="auswahl-panel">
+		<ul class="auswahl-list">
+			<li id="Fernsehen" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/4TV.php" class="collapsed"><i class="fas fa-tv"></i></a>
+				</div>
+				<p class="auswahl-text">Fernsehen</p>
+				<div id="auswahl-select-fernsehen">
+					<ul id="fernsehen-select" class="auswahl-select">
+						<li id="auswahl-list-item-fernsehen-vodafone" class="auswahl-list-item">Vodafone</li>
+						<li id="auswahl-list-item-fernsehen-telekom" class="auswahl-list-item">Telekom</li>
+					</ul>
+				</div>
+			</li>
+			<li id="Gas" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/2Gas.php" class="collapsed"><i class="fas fa-burn"></i></a>
+				</div>
+				<p class="auswahl-text">Gas</p>
+				<div id="auswahl-select-gas">
+					<ul id="gas-select" class="auswahl-select">
+						<li id="auswahl-list-item-gas-eprimo" class="auswahl-list-item">empiro</li>
+						<li id="auswahl-list-item-gas-Yellow Strom" class="auswahl-list-item">Yellow Strom</li>
+					</ul>
+				</div>
+			</li>
+			<li id="Mobilfunk" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/3Mobilfunk.php" class="collapsed"><i class="fas fa-mobile-alt"></i></a>
+				</div>
+				<p class="auswahl-text">Mobilfunk</p>
+			</li>
+			<li id="Internet" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/5Internet.php" class="collapsed"><i class="fas fa-wifi"></i></a>
+				</div>
+				<p class="auswahl-text">Internet</p>
+			</li>
+			<li id="Strom" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/1Strom.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
+				</div>
+				<p class="auswahl-text">Strom</p>
+			</li>
 			<!-- Gesundheitsvorsorge -->
-			<div class="row">
-				<div id="titel3" class="titel3">
-                    <span>
-                        <h2>Gesundheitsvorsorge:<i id="caret3" class="fa fa-fw fa-caret-down"></i></h2>
-                    </span>
-                </div>
-					<div id="auswahl-panel-2" class="auswahl-panel-2">
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="forms/6Krankenkasse.php" class="collapsed"><i class="fas fa-hospital"></i></a>
-							</div>
-							<p class="auswahl-text">Krankenkasse</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-file-medical-alt"></i></a>
-							</div>
-							<p class="auswahl-text">Pflegeversicherung</p>	
-						</div>
-					</div>
-            </div>
+			<li id="Krankenkasse" class="auswahl-card">
+				<div class="background-icon">
+					<a href="forms/6Krankenkasse.php" class="collapsed"><i class="fas fa-hospital"></i></a>
+			</div>
+				<p class="auswahl-text">Krankenkasse</p>
+			</li>
+			<li id="Pflegeversicherung" class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-file-medical-alt"></i></a>
+				</div>
+				<p class="auswahl-text">Pflegeversicherung</p>
+			</li>
 		<?php
 			//Array $interesse mit Werten aus user_interessen fuellen
 			$statememt = $pdo->prepare("SELECT * FROM user_interessen WHERE ID = ?");
@@ -199,46 +199,36 @@
 			if($interesse['Vorsorge'] == 1) {
 		?>
 			<!-- selbstbestimmtes Leben -->
-			<div class="row">
-				<div id="titel4" class="titel4">
-                    <span>
-                        <h2>Selbstbestimmtes Leben: <i id="caret4" class="fa fa-fw fa-caret-down"></i></h2>
-                    </span>
-                </div>
-					<div id="auswahl-panel-3" class="auswahl-panel-3">
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-pen-fancy"></i></a>
-							</div>
-							<p class="auswahl-text">Vorsorgevollmacht</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-user-injured"></i></a>							
-							</div>
-							<p class="auswahl-text">Patientenverfügung</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-heart"></i></a>
-							</div>
-							<p class="auswahl-text">Betreuungsvollmacht</p>
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-scroll"></i></a>
-							</div>
-							<p class="auswahl-text">Testament</p>	
-						</div>
-						<div class="auswahl-icon">
-							<div class="background-icon">
-								<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-usd"></i></i></a>
-							</div>
-							<p class="auswahl-text">Sterbegeld</p>
-						</div>
-					</div>
-			</div>
-			
+			<li class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-pen-fancy"></i></a>
+				</div>
+				<p class="auswahl-text">Vorsorgevollmacht</p>
+			</li>
+			<li class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-user-injured"></i></a>
+				</div>
+				<p class="auswahl-text">Patientenverfügung</p>
+			</li>
+			<li class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-heart"></i></a>
+				</div>
+				<p class="auswahl-text">Betreuungsvollmacht</p>
+			</li>
+			<li class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-scroll"></i></a>
+				</div>
+				<p class="auswahl-text">Testament</p>
+			</li>
+			<li class="auswahl-card">
+				<div class="background-icon">
+					<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-usd"></i></a></a>
+				</div>
+				<p class="auswahl-text">Sterbegeld</p>
+			</li>
 			<?php } ?>
 
 <!-- Altersvorsorge -->			<!-- momentan:  style="display:none"-->
@@ -305,7 +295,7 @@
 						</div>
 					</div>
 				</div>
-		
+
 <!-- Absicherung der Arbeitskraft -->			<!-- momentan:  style="display:none"-->
 <!-- icon src="" muss noch angepasst werden -->
 				<div class="row" id="arbeit" style="display:none" >
@@ -383,7 +373,7 @@
 				</div>
 
 
-<!-- Hobby/Tiere/Reisen -->				<!-- momentan:  style="display:none"-->	
+<!-- Hobby/Tiere/Reisen -->				<!-- momentan:  style="display:none"-->
 <!-- icon src="" muss noch angepasst werden -->
 				<div class="row" id="hobby" style="display:none" >
 					<div class="col-md-4">
@@ -422,9 +412,9 @@
 							</div>
 						</div>
 					</div>
-				</div>										
+				</div>
 
-<!-- Geld -->			<!-- momentan:  style="display:none"-->					
+<!-- Geld -->			<!-- momentan:  style="display:none"-->
 <!-- icon src="" muss noch angepasst werden -->
 				<div class="row" id="geld" style="display:none" >
 					<div class="col-md-4">
@@ -471,15 +461,15 @@
 										<td style="width:2%"><a href="Gas.html" data-toggle="collapse" class="collapsed"><img src="" alt="Vertragsengel Logo" height="40" width="40">
 											<p>Kfz-Kredit</p></a></td>
 									</tr>
-								</table>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</ul>
 		</div>
     </div>
-</div>
 </div>
 <!-- Javascript -->
     <script src="js/vertragsAuswahl.js"></script>
