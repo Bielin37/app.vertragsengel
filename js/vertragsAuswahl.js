@@ -33,13 +33,16 @@ button.addEventListener("click", function(event) {
     nav.style.display = "block";
   }
 });
-
+var vertragsArray = [];
 var auswahlList = document.querySelector(".auswahl-list");
 var vertragslistElement = document.querySelector(".vertragslist-element");
 var fernsehen = document.getElementById("Fernsehen");
 var vertragsList = document.getElementById("vertragspanel-vertragslist");
 var fernsehenSelect = document.querySelector("#fernsehen-select");
 fernsehenSelect.addEventListener("click", function(e) {
+  key = "Fernsehen";
+  value = e.target.innerHTML;
+  vertragsArray.push({ key, value });
   var div = document.createElement("div");
   var div1 = document.createElement("div");
   var div2 = document.createElement("div");
@@ -51,7 +54,11 @@ fernsehenSelect.addEventListener("click", function(e) {
   i1.className = "far fa-times-circle";
   i1.id = "fa-times-circle";
   i.className = "fas fa-tv";
-  div1.innerHTML = "<b>Fernsehen:</b><br>" + e.target.innerHTML;
+  div1.innerHTML =
+    "<b id='key'>Fernsehen:</b><br>" +
+    "<b id='value'>" +
+    e.target.innerHTML +
+    "</b>";
   vertragsList.append(div2);
   div2.append(i);
   vertragsList.append(div);
@@ -64,6 +71,12 @@ fernsehenSelect.addEventListener("click", function(e) {
     : true;
   var vertragslistElementClose = document.getElementById("fa-times-circle");
   vertragslistElementClose.addEventListener("click", function(e) {
+    for (let i = 0; i < vertragsArray.length; i++) {
+      if (vertragsArray[i].key === "Fernsehen") {
+        vertragsArray.splice(i, 1);
+        i--;
+      }
+    }
     e.target.parentNode.remove();
     vertragsList.children.length === 1
       ? (vertragsList.style.display = "none")
@@ -75,6 +88,9 @@ fernsehenSelect.addEventListener("click", function(e) {
 var gas = document.getElementById("Gas");
 var gasSelect = document.querySelector("#gas-select");
 gasSelect.addEventListener("click", function(e) {
+  key = "Gas";
+  value = e.target.innerHTML;
+  vertragsArray.push({ key, value });
   var div = document.createElement("div");
   var div1 = document.createElement("div");
   var div2 = document.createElement("div");
@@ -86,7 +102,7 @@ gasSelect.addEventListener("click", function(e) {
   i1.className = "far fa-times-circle";
   i1.id = "fa-times-circle1";
   i.className = "fas fa-burn";
-  div1.innerHTML = "<b>Gas:</b><br>" + e.target.innerHTML;
+  div1.innerHTML = key + "<br>" + e.target.innerHTML;
   vertragsList.append(div2);
   div2.append(i);
   vertragsList.append(div);
@@ -99,10 +115,25 @@ gasSelect.addEventListener("click", function(e) {
     : true;
   var vertragslistElementClose = document.getElementById("fa-times-circle1");
   vertragslistElementClose.addEventListener("click", function(e) {
+    for (let i = 0; i < vertragsArray.length; i++) {
+      if (vertragsArray[i].key === "Gas") {
+        vertragsArray.splice(i, 1);
+        i--;
+      }
+    }
     e.target.parentNode.remove();
     vertragsList.children.length === 1
       ? (vertragsList.style.display = "none")
       : true;
     gas.style.display = "block";
+  });
+});
+var vertragspanelButton = document.querySelector(".vertragspanel-button");
+vertragspanelButton.addEventListener("click", function() {
+  vertragsArray.forEach(element => {
+    let key = element.key;
+    const value = element.value;
+    localStorage.setItem(key, value);
+    window.location.replace("vertragsUebersicht.php");
   });
 });

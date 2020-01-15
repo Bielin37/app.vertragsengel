@@ -10,6 +10,6 @@ include('../db/database.php');
 		$headers = 'From: ' . $user['E_Mail'] . "\r\n" .
         'Reply-To: ' . $user['E_Mail'] . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
-        
+
 		mail($to, $titel, $msg, $headers);
 ?>

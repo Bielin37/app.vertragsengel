@@ -12,13 +12,13 @@
 	<style>
 			/****************************************************
 			* Seitenspezifische CSS Für die Farben
-			****************************************************/	
-			
+			****************************************************/
+
 				h4{
-					color: : #C9301A;
+					color: #C9301A;
 				}
-				
-				.btn{  
+
+				.btn{
 					  background: white;
 					  border: 1px solid #8fbc26;
 					  color: #8fbc26;
@@ -46,8 +46,8 @@
 			// 1/0 = ja/nein
 			if($_SESSION['profil'] == 0) {
 
-			?>	
-			
+			?>
+
 		<div class="col-md-2">
 			<div class="panel">
 				<div class="panel-heading">
@@ -60,9 +60,9 @@
 				</div>
 			</div>
 		</div>
-			
+
 		<?php
-			} 
+			}
 		?>
 		</div>
 			<!-- MAIN CONTENT -->
@@ -84,32 +84,32 @@
 									<div class="felder">
 									  <p>Mobilfunk-Anbieter</p>
 									</div>
-									 	<?php	
-											// SQL INSERT 
+									 	<?php
+											// SQL INSERT
 											$sql = "SELECT DISTINCT Name FROM anbieter WHERE Sparten LIKE '%3%'";
 											$anbieterListe = array();
 											foreach ($pdo->query($sql) as $anbieter) {
 												$anbieterListe[] = $anbieter[0];
 											};
-											
+
 											echo "<input type=\"text\" placeholder=\"Ihr Mobilfunk-Anbieter\"list=\"anbieterListe\" id=\"anbieter\" name=\"anbieter\">";
 											echo "<datalist id=\"anbieterListe\">";
 											foreach($anbieterListe as $anbieter) {
 												echo	"<option value=\"".$anbieter."\">";
 											};
-											echo "</datalist>";	
+											echo "</datalist>";
 										?>
-									
+
 									<div class="felder">
 									  <p>Kundennummer</p>
 									</div>
 										<input type="text" id="kundennummer" name="kundennummer" placeholder="Zb 0011233" required>
-									
+
 									<div class="felder">
 									  <p>Kosten</p>
 									</div>
 									  <input type="text" id="kosten" name="kosten" placeholder="Zb 39,00 " required>
-									
+
 									<div class="felder">
 									  <p>Vertragslaufzeit</p>
 									</div>
@@ -118,7 +118,7 @@
 								<p class="felder-text">Vertragsanfang</p>
 							</div>
 								<input style="display: none" class="felder-input" type="date" id="vertragsanfang" name="vertragsanfang" value="<?php echo date('Y-m-d'); ?>" required>
-		
+
 									<div class="felder">
 									  </br> <p>Schon gekündigt?</p>
 									</div>
@@ -127,30 +127,30 @@
 										  <span class="slider round"></span>
 										</label>
 										</br> </br>
-										
+
 										<div class="felder">
 								<p>Notizen</p>	<textarea id="notiz" name="notiz" cols="30" rows="2" placeholder="Hier kannst Du deine Wünsche und Bemerkungen eintragen"></textarea>
-							</div>	 	
+							</div>
 						</div>
 							</div>
-						
+
 						<div id="secondSpace">
 							<!-- ENGEL -->
 						<h4>Wie wichtig ist dir...?</h4>
-							<?php 
+							<?php
 								$kategorie = array('Die Netzqualität','Eine Flat in alle Netze','SMS Flat', 'Intenet Flat', 'Handyversicherung');
 								include('include/engel.php');
 							?>
 					</div>
 						<input class="btn" id="submit" type="submit" name="submit_mobilfunk" value="Speichern">
 					</div>
-			</form>	
+			</form>
 		</div><!-- END MAIN -->
 	</div><!-- END WRAPPER -->
 </div>
 		<div class="clearfix"></div>
-		<?php include('include/footer.php'); ?>	
-	</div>	
+		<?php include('include/footer.php'); ?>
+	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
 	<script src="../vendor/jquery/jquery.min.js"></script>

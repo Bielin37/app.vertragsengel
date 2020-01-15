@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<di id="vertragspanel" class="vertragspanel">
+		<div id="vertragspanel" class="vertragspanel">
 			<div class="vertragspanel-titel">
 				<h1>Jetzt wird aufgeräumt,
 					<br>
@@ -19,6 +19,7 @@
 			<ul id="vertragspanel-vertragslist">
 				<p>Deine Auswahl:</p>
 			</ul>
+			<button class="vertragspanel-button">Speichern</button>
 		</div>
         <div class="top-nav">
             <div id="button" class="button">
