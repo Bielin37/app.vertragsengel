@@ -10,17 +10,14 @@
 #mainVU{
     @include main;
     right: 0px;
+    height: auto;
 }
 #fenster-erfolg{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 75px;
-    background-color: #7ec219;
-    box-sizing: border-box;
-    padding: 28px;
-    font-size: 19px;
-    color: #ffffff;
+    @include fensterErfolg;
+}
+#fenster-erfolg-loschen{
+    @include fensterErfolg;
+    background: #f97860;
 }
 .vertrag-main1{
     margin-bottom: 100px;
@@ -116,12 +113,12 @@
 }
 #panel-ausfullen{
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: 2000;
     overflow-y: auto;
     background: #9697a2b3;
-    padding: 50px 0 50px 0;
+    padding: 70px 0 70px 0;
     box-sizing: border-box;
     #panel-ausfullen-details{
         display: flex;
@@ -256,7 +253,7 @@
         width: 20px;
     }
 }
-@include mediaQ(400px){
+@include MaxMediaQ(400px){
     #right-container-info{
         width: 100%;
     }
@@ -288,14 +285,30 @@
 #vertragspanel{
     @include vertragspanel;
     overflow-y: auto;
+    @include flexColumn;
     .vertragspanel-titel{
         margin: 10px;
-        padding: 10px 0 10px 0;
+        padding: 10px 0 20px 0;
         border-bottom: $border;
+        box-sizing: border-box;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
         h1{
+            box-sizing: border-box;
             font-size: 22px;
             text-align: center;
             line-height: 35px;
+            margin-top: 0px;
+            top: 30px;
+        }
+        div{
+            color: $textColorBlue;
+            cursor: pointer;
+            text-align: center;
+            font-size: 22px;
+            margin: 10px;
+            @include animation('arrow normal 1.5s linear 0s 500000 both');
         }
         p{
             font-size: 16px;
@@ -347,30 +360,15 @@
                     background-color: $backgroundGrey;
                 }
             }
-            input{
-                height: 0px;
-                width: 0px;
-            }
-            .button{
-                font-size: 14px;
-                height: 20px;
-                width: 40px;
-                position: absolute;
-                top: 250px;
-                right: 350px;
-            }
         }
     }
     .vertragspanel-button{
-        background: $textColorBlue;
-        color: #ffffff;
-        position: absolute;
-        bottom: 10px;
-        cursor: pointer;
+        @include button;
+        margin: auto auto 50px auto;
     }
 }
 .auswahl-panel{
-    height: 100%;
+    height: auto;
     width: auto;
     margin: 10px;
     box-sizing: border-box;
@@ -379,65 +377,143 @@
         padding: 0px;
         display: flex;
         flex-wrap: wrap;
+        .box, .box-is-active{
+            position: relative;
+            min-width: 23%!important;
+            height: 270px;
+            background-color: #ffffff;
+            bottom: 0px;
+            margin: 1%;
+            z-index: 1;
+            .background{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                z-index: 125;
+                cursor: pointer;
+            }
+        }
         .auswahl-card{
             background-color: $backgroundGrey;
             list-style: none;
             height: 270px;
-            min-width: 31.3333%;
-            margin: 1%;
+            width: 100%;
+            margin: 0px;
             position: relative;
             border-radius: 10px;
             text-align: center;
             cursor: pointer;
+            .background-icon{
+                height: 200px;
+            }
+            .auswahl-text{
+                height: 70px;
+                margin: 0px;
+            }
             .auswahl-select{
+                @include flexColumn;
+                display: none;
+                position: absolute;
+                bottom: -295px;
+                width: 100%;
+                height: 300px;
+                z-index: 1;
+                background: $backgroundGrey;
+                border: $border;
                 cursor: pointer;
                 list-style: none;
                 padding: 0px;
-                width: 80%;
-                @include flexColumn;
                 margin: auto;
+                overflow-y: auto;
                 .auswahl-list-item{
-                    padding: 10px 0 10px 0;
-                    border-bottom: $border;
-                }
-                .auswahl-list-item:hover{
-                    color: $textColorBlue;
+                    padding: 10px 10% 10px 10%;
+                    width: 80%;
+                    margin: 0 auto 0 auto;
+                    &::after{
+                        content: "";
+                        display: block;
+                        margin: 0 auto;
+                        border-bottom: $border;
+                        width: 100%;
+                    }
+                    &:hover{
+                        color: $textColorBlue;
+                    }
                 }
             }
         }
-        .auswahl-card:hover{
-            -moz-box-shadow:    0px 6px 5px 2px #ccccccb2;
-            box-shadow:         0px 6px 5px 2px #ccccccb2;
-            transition-duration: 0.5s;
-        }
     }
 }
-@include mediaQ(1150px){
-    .auswahl-card{
+
+@include MinMediaQ(1251px){
+    .box, .box-is-active{
+        width: 31.333%!important;
+    }
+}
+@include MaxMediaQ(1550px){
+    .box, .box-is-active{
+        width: 31.333%;
+    }
+}
+@include MaxMediaQ(1250px){
+    .box, .box-is-active{
         width: 48%;
     }
 }
-@include mediaQ(1000px){
+@include MinMediaQ(1551px){
+    .box, .box-is-active{
+        width: 23%!important;
+    }
+}
+@include MaxMediaQ(1000px){
     #vertragspanel{
         @include vertragspanel;
         left: 195px;
         bottom: 0px;
         width: auto;
         height: 180px;
+        button{
+            display: none;
+        }
+        .vertragspanel-titel{
+            border-bottom: none;
+            display: flex;
+            flex-direction: column-reverse;
+            h1{
+                border-top: $border;
+                padding-top: 20px;
+            }
+            p{
+                margin: 0px;
+            }
+        }
     }
     #mainVA{
         right: 0px;
         bottom: 180px;
         height: auto;
     }
+    .vertragspanel-isOpened{
+        top: 0px!important;
+    }
+    .vertragspanel-titel{
+        h1{
+            position: relative;
+        }
+    }
 }
-@include mediaQ(700px){
+@include MaxMediaQ(700px){
     #vertragspanel{
         @include vertragspanel;
         left: 0px;
         bottom: 0px;
         width: auto;
         height: 180px;
+        button{
+            display: none;
+        }
     }
     #mainVA{
         left: 0px;
@@ -446,5 +522,19 @@
     #mainVU{
         left: 0px;
         top: 70px;
+    }
+    .box-is-active{
+        margin-bottom: 70px!important;
+        max-height: 100%!important;
+        height: auto!important;
+        top: 0px!important;
+    }
+    .vertragspanel-isOpened{
+        top: 70px!important;
+    }
+}
+@include MaxMediaQ(500px){
+    #panel-ausfullen-details{
+        width: 100%!important;
     }
 }

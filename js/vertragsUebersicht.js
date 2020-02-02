@@ -153,13 +153,25 @@ infoHeaderClose.addEventListener("click", function(event) {
     }
   }
 });
+if (localStorage.getItem("status-erfolg2")) {
+  var div8 = document.createElement("div");
+  div8.id = "fenster-erfolg";
+  div8.innerText =
+    "Die Liste der zu genehmigenden Verträge wurde aktualisiert!";
+  main.append(div8);
+  setTimeout(function() {
+    div8.remove();
+    localStorage.removeItem("status-erfolg2");
+  }, 4000);
+}
 var a = "";
 var b = "";
 var x = "";
 var y = "";
 var z = "";
+var vertragMain1 = document.querySelector(".vertrag-main1");
+var vertragAuthBox = document.getElementById("vertrag-auth-box");
 var addVertrag = function(a, b, x, y, z) {
-  var vertragMain1 = document.querySelector(".vertrag-main1");
   if (localStorage.getItem(x)) {
     var div = document.createElement("div");
     var div1 = document.createElement("div");
@@ -167,10 +179,10 @@ var addVertrag = function(a, b, x, y, z) {
     var div3 = document.createElement("div");
     var i = document.createElement("i");
     div.className = "container-for-rowlist";
+    div.id = x;
     div1.id = "image-container";
     div2.className = "rest-info-container";
     div3.className = "row-list";
-    div3.id = x;
     i.className = "fas fa-tv";
     div2.innerHTML = x + "<br>" + localStorage.getItem(x);
     vertragMain1.append(div);
@@ -235,6 +247,7 @@ var addVertrag = function(a, b, x, y, z) {
             e.preventDefault();
             xhr.onload = function() {
               if (this.readyState === 4 && this.status === 200) {
+                localStorage.setItem("status-erfolg", "newVertrag");
                 var div6 = document.createElement("div");
                 div6.id = "fenster-erfolg";
                 div6.innerText = "Der Vertrag wurde aktualisiert!";
@@ -242,10 +255,12 @@ var addVertrag = function(a, b, x, y, z) {
                 localStorage.removeItem(x);
                 z.remove();
                 div4.remove();
-                setTimeout(function() {
-                  location.reload();
-                  div6.remove();
-                }, 1500);
+                if (localStorage.getItem("status-erfolg")) {
+                  setTimeout(function() {
+                    div6.remove();
+                    localStorage.removeItem("status-erfolg");
+                  }, 4000);
+                }
               } else {
                 console.log("Loading...");
               }
@@ -257,9 +272,23 @@ var addVertrag = function(a, b, x, y, z) {
                 "Vertrag wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
               )
             ) {
+              localStorage.setItem("status-erfolg1", "loschenVertrag");
+              var div7 = document.createElement("div");
+              div7.id = "fenster-erfolg-loschen";
+              div7.innerText = "Der Vertrag wurde gelöscht!";
+              main.append(div7);
               localStorage.removeItem(x);
               z.remove();
               div4.remove();
+              if (localStorage.getItem("status-erfolg1")) {
+                setTimeout(function() {
+                  div7.remove();
+                  localStorage.removeItem("status-erfolg1");
+                }, 4000);
+              }
+              if (vertragMain1.childNodes.length === 1) {
+                vertragAuthBox.style.display = "none";
+              }
             }
           });
         } else {
@@ -277,3 +306,13 @@ addVertrag(
   "fernsehen"
 );
 addVertrag("submit_gas", "gas-formular", "Gas", "forms/2Gas.php?item=", "gas");
+addVertrag(
+  "submit_mobilfunk",
+  "Mobilfunk-formular",
+  "Mobilfunk",
+  "forms/3Mobilfunk.php?item=",
+  "mobilfunk"
+);
+if (vertragMain1.childNodes.length === 1) {
+  vertragAuthBox.style.display = "none";
+}

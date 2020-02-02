@@ -35,7 +35,7 @@
                         <img id="vertragsengel-logo" src="img/vertragsengelkreis logo.png" alt="Vertragsengel logo">
                     </div>
                     <div class="nav-element">
-				     	<a class="link" href="vertragsAuswahl.php">Vertrag Auswahl<a>
+				     	<a class="link" href="vertragsAuswahl.php">Vertrag Auswahl</a>
                     </div>
                     <div class="nav-element">
 						<a class="link" href="vertragsUebersicht.php">Vertrag Ubersicht</a>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                     <div class="nav-element">
-						<a class="link" href="forms/logout.php">Auslogen<a>
+						<a class="link" href="forms/logout.php">Auslogen</a>
                     </div>
                 </div>
             </div>
@@ -136,61 +136,108 @@
 						<!-- Haushaltsverträge -->
 	<div class="auswahl-panel">
 		<ul class="auswahl-list">
-			<li id="Fernsehen" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/4TV.php" class="collapsed"><i class="fas fa-tv"></i></a>
-				</div>
-				<p class="auswahl-text">Fernsehen</p>
-				<div id="auswahl-select-fernsehen">
-					<ul id="fernsehen-select" class="auswahl-select">
-						<li id="auswahl-list-item-fernsehen-vodafone" class="auswahl-list-item">Vodafone</li>
-						<li id="auswahl-list-item-fernsehen-telekom" class="auswahl-list-item">Telekom</li>
+			<div id="box-fernsehen" class="box">
+				<li id="Fernsehen" class="auswahl-card" style="width: 100%; margin: 0px">
+					<div class="background-icon">
+						<i class="fas fa-tv" id="image"></i>
+					</div>
+					<p class="auswahl-text">Fernsehen</p>
+					<ul id="fernsehen-select" class="auswahl-select" style="width: 100%">
+						<li class="auswahl-list-item">Vodafone</li>
+						<li class="auswahl-list-item">Telekom</li>
+						<li class="auswahl-list-item">Sky</li>
+						<li class="auswahl-list-item">1&1</li>
+						<li class="auswahl-list-item">T-Mobile</li>
+						<li class="auswahl-list-item">NetCologne</li>
+						<li class="auswahl-list-item">Vodafone</li>
+						<li class="auswahl-list-item">Telekom</li>
+						<li class="auswahl-list-item">Sky</li>
+						<li class="auswahl-list-item">1&1</li>
+						<li class="auswahl-list-item">T-Mobile</li>
+						<li class="auswahl-list-item">NetCologne</li>
 					</ul>
-				</div>
-			</li>
-			<li id="Gas" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/2Gas.php" class="collapsed"><i class="fas fa-burn"></i></a>
-				</div>
-				<p class="auswahl-text">Gas</p>
-				<div id="auswahl-select-gas">
-					<ul id="gas-select" class="auswahl-select">
-						<li id="auswahl-list-item-gas-eprimo" class="auswahl-list-item">empiro</li>
-						<li id="auswahl-list-item-gas-Yellow Strom" class="auswahl-list-item">Yellow Strom</li>
-					</ul>
-				</div>
-			</li>
-			<li id="Mobilfunk" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/3Mobilfunk.php" class="collapsed"><i class="fas fa-mobile-alt"></i></a>
-				</div>
-				<p class="auswahl-text">Mobilfunk</p>
-			</li>
-			<li id="Internet" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/5Internet.php" class="collapsed"><i class="fas fa-wifi"></i></a>
-				</div>
-				<p class="auswahl-text">Internet</p>
-			</li>
-			<li id="Strom" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/1Strom.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
-				</div>
-				<p class="auswahl-text">Strom</p>
-			</li>
-			<!-- Gesundheitsvorsorge -->
-			<li id="Krankenkasse" class="auswahl-card">
-				<div class="background-icon">
-					<a href="forms/6Krankenkasse.php" class="collapsed"><i class="fas fa-hospital"></i></a>
+				</li>
+				<span id="background-fernsehen" class="background"></span>
 			</div>
-				<p class="auswahl-text">Krankenkasse</p>
-			</li>
-			<li id="Pflegeversicherung" class="auswahl-card">
-				<div class="background-icon">
-					<a href="Gas.html" class="collapsed"><i class="fas fa-file-medical-alt"></i></a>
+				<div id="box-gas" class="box">
+					<li id="Gas" class="auswahl-card" style="width: 100%; margin: 0px">
+						<div class="background-icon">
+							<i class="fas fa-burn" id="image"></i>
+						</div>
+						<p class="auswahl-text">Gas</p>
+						<ul id="gas-select" class="auswahl-select">
+							<li class="auswahl-list-item">Vodafone</li>
+							<li class="auswahl-list-item">Telekom</li>
+							<li class="auswahl-list-item">Sky</li>
+							<li class="auswahl-list-item">1&1</li>
+							<li class="auswahl-list-item">T-Mobile</li>
+							<li class="auswahl-list-item">NetCologne</li>
+							<li class="auswahl-list-item">Vodafone</li>
+							<li class="auswahl-list-item">Telekom</li>
+							<li class="auswahl-list-item">Sky</li>
+							<li class="auswahl-list-item">1&1</li>
+							<li class="auswahl-list-item">T-Mobile</li>
+							<li class="auswahl-list-item">NetCologne</li>
+						</ul>
+					</li>
+					<span id="background-gas" class="background"></span>
 				</div>
-				<p class="auswahl-text">Pflegeversicherung</p>
-			</li>
+				<div id="box-mobilfunk" class="box">
+					<li id="Mobilfunk" class="auswahl-card" style="width: 100%; margin: 0px">
+						<div class="background-icon">
+							<i class="fas fa-mobile-alt"></i>
+						</div>
+						<p class="auswahl-text">Mobilfunk</p>
+						<ul id="mobilfunk-select" class="auswahl-select">
+							<li class="auswahl-list-item">Vodafone</li>
+							<li class="auswahl-list-item">Telekom</li>
+							<li class="auswahl-list-item">Sky</li>
+							<li class="auswahl-list-item">1&1</li>
+							<li class="auswahl-list-item">T-Mobile</li>
+							<li class="auswahl-list-item">NetCologne</li>
+							<li class="auswahl-list-item">Vodafone</li>
+							<li class="auswahl-list-item">Telekom</li>
+							<li class="auswahl-list-item">Sky</li>
+							<li class="auswahl-list-item">1&1</li>
+							<li class="auswahl-list-item">T-Mobile</li>
+							<li class="auswahl-list-item">NetCologne</li>
+						</ul>
+					</li>
+					<span id="background-mobilfunk" class="background"></span>
+				</div>
+				<div id="box-Internet" class="box">
+					<li id="Internet" class="auswahl-card">
+						<div class="background-icon">
+							<a href="forms/5Internet.php" class="collapsed"><i class="fas fa-wifi"></i></a>
+						</div>
+						<p class="auswahl-text">Internet</p>
+					</li>
+				</div>
+				<div id="box-Strom" class="box">
+					<li id="Strom" class="auswahl-card">
+						<div class="background-icon">
+							<a href="forms/1Strom.php" class="collapsed"><i class="fas fa-charging-station"></i></a>
+						</div>
+						<p class="auswahl-text">Strom</p>
+					</li>
+				</div>
+			<!-- Gesundheitsvorsorge -->
+				<div id="box-Krankenskasse" class="box">
+					<li id="Krankenkasse" class="auswahl-card">
+						<div class="background-icon">
+							<a href="forms/6Krankenkasse.php" class="collapsed"><i class="fas fa-hospital"></i></a>
+						</div>
+						<p class="auswahl-text">Krankenkasse</p>
+					</li>
+				</div>
+				<div id="box-Pflegeversicherung" class="box">
+					<li id="Pflegeversicherung" class="auswahl-card">
+						<div class="background-icon">
+							<a href="Gas.html" class="collapsed"><i class="fas fa-file-medical-alt"></i></a>
+						</div>
+						<p class="auswahl-text">Pflegeversicherung</p>
+					</li>
+				</div>
 		<?php
 			//Array $interesse mit Werten aus user_interessen fuellen
 			$statememt = $pdo->prepare("SELECT * FROM user_interessen WHERE ID = ?");
@@ -226,7 +273,7 @@
 			</li>
 			<li class="auswahl-card">
 				<div class="background-icon">
-					<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-usd"></i></a></a>
+					<a href="Gas.html" class="collapsed"><i class="fas fa-hand-holding-usd"></i></a>
 				</div>
 				<p class="auswahl-text">Sterbegeld</p>
 			</li>

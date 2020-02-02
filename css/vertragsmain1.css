@@ -11,6 +11,50 @@ h2 {
   font-weight: 100;
 }
 
+@-webkit-keyframes arrow {
+  0% {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  100% {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  100% {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+@-webkit-keyframes arrow2 {
+  0% {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  100% {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+@keyframes arrow2 {
+  0% {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  100% {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
 #mainVU {
   position: absolute;
   top: 0px;
@@ -22,6 +66,7 @@ h2 {
   margin: 0px;
   height: 100%;
   right: 0px;
+  height: auto;
 }
 
 #fenster-erfolg {
@@ -35,6 +80,20 @@ h2 {
   padding: 28px;
   font-size: 19px;
   color: #ffffff;
+}
+
+#fenster-erfolg-loschen {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #7ec219;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 28px;
+  font-size: 19px;
+  color: #ffffff;
+  background: #f97860;
 }
 
 .vertrag-main1 {
@@ -241,12 +300,12 @@ h2 {
 
 #panel-ausfullen {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 2000;
   overflow-y: auto;
   background: #9697a2b3;
-  padding: 50px 0 50px 0;
+  padding: 70px 0 70px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -493,18 +552,49 @@ h2 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #vertragspanel .vertragspanel-titel {
   margin: 10px;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 20px 0;
   border-bottom: 1px solid #9798a233;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #vertragspanel .vertragspanel-titel h1 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 22px;
   text-align: center;
   line-height: 35px;
+  margin-top: 0px;
+  top: 30px;
+}
+
+#vertragspanel .vertragspanel-titel div {
+  color: #4169e1ab;
+  cursor: pointer;
+  text-align: center;
+  font-size: 22px;
+  margin: 10px;
+  -webkit-animation: arrow normal 1.5s linear 0s 500000 both;
+  animation: arrow normal 1.5s linear 0s 500000 both;
 }
 
 #vertragspanel .vertragspanel-titel p {
@@ -571,30 +661,24 @@ h2 {
   background-color: #f6f6f6;
 }
 
-#vertragspanel #vertragspanel-vertragslist .vertragslist-element input {
-  height: 0px;
-  width: 0px;
-}
-
-#vertragspanel #vertragspanel-vertragslist .vertragslist-element .button {
-  font-size: 14px;
-  height: 20px;
-  width: 40px;
-  position: absolute;
-  top: 250px;
-  right: 350px;
-}
-
 #vertragspanel .vertragspanel-button {
-  background: #4169e1ab;
-  color: #ffffff;
-  position: absolute;
-  bottom: 10px;
+  border: 1px solid #4169e1ab;
+  border-radius: 5px;
+  width: 50%;
+  padding: 12px;
   cursor: pointer;
+  color: #4169e1ab;
+  margin: auto;
+  margin-top: 50px;
+  margin: auto auto 50px auto;
+}
+
+#vertragspanel .vertragspanel-button:hover {
+  border-color: #4169e14d;
 }
 
 .auswahl-panel {
-  height: 100%;
+  height: auto;
   width: auto;
   margin: 10px;
   -webkit-box-sizing: border-box;
@@ -611,23 +695,48 @@ h2 {
       flex-wrap: wrap;
 }
 
+.auswahl-panel .auswahl-list .box, .auswahl-panel .auswahl-list .box-is-active {
+  position: relative;
+  min-width: 23% !important;
+  height: 270px;
+  background-color: #ffffff;
+  bottom: 0px;
+  margin: 1%;
+  z-index: 1;
+}
+
+.auswahl-panel .auswahl-list .box .background, .auswahl-panel .auswahl-list .box-is-active .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 125;
+  cursor: pointer;
+}
+
 .auswahl-panel .auswahl-list .auswahl-card {
   background-color: #f6f6f6;
   list-style: none;
   height: 270px;
-  min-width: 31.3333%;
-  margin: 1%;
+  width: 100%;
+  margin: 0px;
   position: relative;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
 }
 
+.auswahl-panel .auswahl-list .auswahl-card .background-icon {
+  height: 200px;
+}
+
+.auswahl-panel .auswahl-list .auswahl-card .auswahl-text {
+  height: 70px;
+  margin: 0px;
+}
+
 .auswahl-panel .auswahl-list .auswahl-card .auswahl-select {
-  cursor: pointer;
-  list-style: none;
-  padding: 0px;
-  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -635,28 +744,60 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: none;
+  position: absolute;
+  bottom: -295px;
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+  background: #f6f6f6;
+  border: 1px solid #9798a233;
+  cursor: pointer;
+  list-style: none;
+  padding: 0px;
   margin: auto;
+  overflow-y: auto;
 }
 
 .auswahl-panel .auswahl-list .auswahl-card .auswahl-select .auswahl-list-item {
-  padding: 10px 0 10px 0;
+  padding: 10px 10% 10px 10%;
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.auswahl-panel .auswahl-list .auswahl-card .auswahl-select .auswahl-list-item::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
   border-bottom: 1px solid #9798a233;
+  width: 100%;
 }
 
 .auswahl-panel .auswahl-list .auswahl-card .auswahl-select .auswahl-list-item:hover {
   color: #4169e1ab;
 }
 
-.auswahl-panel .auswahl-list .auswahl-card:hover {
-  -webkit-box-shadow: 0px 6px 5px 2px #ccccccb2;
-          box-shadow: 0px 6px 5px 2px #ccccccb2;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+@media screen and (min-width: 1251px) {
+  .box, .box-is-active {
+    width: 31.333% !important;
+  }
 }
 
-@media screen and (max-width: 1150px) {
-  .auswahl-card {
+@media screen and (max-width: 1550px) {
+  .box, .box-is-active {
+    width: 31.333%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .box, .box-is-active {
     width: 48%;
+  }
+}
+
+@media screen and (min-width: 1551px) {
+  .box, .box-is-active {
+    width: 23% !important;
   }
 }
 
@@ -676,10 +817,36 @@ h2 {
     width: auto;
     height: 180px;
   }
+  #vertragspanel button {
+    display: none;
+  }
+  #vertragspanel .vertragspanel-titel {
+    border-bottom: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #vertragspanel .vertragspanel-titel h1 {
+    border-top: 1px solid #9798a233;
+    padding-top: 20px;
+  }
+  #vertragspanel .vertragspanel-titel p {
+    margin: 0px;
+  }
   #mainVA {
     right: 0px;
     bottom: 180px;
     height: auto;
+  }
+  .vertragspanel-isOpened {
+    top: 0px !important;
+  }
+  .vertragspanel-titel h1 {
+    position: relative;
   }
 }
 
@@ -699,6 +866,9 @@ h2 {
     width: auto;
     height: 180px;
   }
+  #vertragspanel button {
+    display: none;
+  }
   #mainVA {
     left: 0px;
     top: 70px;
@@ -706,6 +876,21 @@ h2 {
   #mainVU {
     left: 0px;
     top: 70px;
+  }
+  .box-is-active {
+    margin-bottom: 70px !important;
+    max-height: 100% !important;
+    height: auto !important;
+    top: 0px !important;
+  }
+  .vertragspanel-isOpened {
+    top: 70px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #panel-ausfullen-details {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=vertragsmain1.css.map */

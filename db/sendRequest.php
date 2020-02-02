@@ -245,7 +245,7 @@
             $sqlInsertString =
                 "INSERT INTO vertrag_gas (ID, Vertragspartner, Anbieter, AnbieterCheck, Kundennummer, Zaehlernummer, Kosten, Notiz, Verbrauch, Vertragsende, Gekuendigt,
                 Engel_Oekostrom, Engel_Preisgarantie, Engel_Kuendigungsfrist, Engel_Zahlweise, Engel_Neukundenbonus, Vertragsanfang)
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $statement = $pdo->prepare($sqlInsertString);
             $statement->execute(array('', $vertragspartner[0], $anbieter, $anbieterCheck, $kundennummer,
                     $zaehlernummer, $kosten, $notiz, $verbrauch, $vertragsende, $gekuendigt, $engel[0], $engel[1], $engel[2], $engel[3], $engel[4], $vertragsanfang));

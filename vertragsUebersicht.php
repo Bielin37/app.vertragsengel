@@ -154,7 +154,7 @@
 							</div>
 						</div>
 					<div class='nav-element'>
-						<a class='link' href='forms/logout.php'>Auslogen<a>
+						<a class='link' href='forms/logout.php'>Auslogen</a>
 					</div>
 				</div>
 				<div id='mainVU' class='mainVU'>"; ?>
@@ -222,12 +222,14 @@
 								</div>
 										<!-- Diagramm Ende -->";
 			echo "<div class='vertrag-container'>
-			<div class='alert-box-info'>
-				<div class='alert-info'>
-					Verträge zur Authentifizierung:
+			<div id='vertrag-auth-box'>
+				<div class='alert-box-info'>
+					<div class='alert-info'>
+						Verträge zur Authentifizierung:
+					</div>
 				</div>
-			</div>
-			<div class='vertrag-main1'>
+				<div class='vertrag-main1'>
+				</div>
 			</div>
 			<div class='alert-box-info'>
 				<div class='alert-info'>
